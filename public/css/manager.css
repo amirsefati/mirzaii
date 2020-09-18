@@ -1,0 +1,75 @@
+body{
+    direction: rtl!important;
+    font-family: 'Vazir';
+}
+.app-sidebar .app-sidebar__inner{
+    text-align: right!important;
+}
+.fixed-sidebar .app-main .app-main__outer{
+    padding-right: 280px!important;
+    padding-left: 0px!important;
+}
+.app-header .app-header__content{
+    direction: ltr!important;
+}
+.closed-sidebar.fixed-sidebar .app-main__outer{
+    padding-left: 0px!important;
+    padding-right: 80px!important;
+}
+@media (max-width: 991.98px){
+    .app-sidebar{
+        transform:translateX(220px)!important;
+    }
+    .closed-sidebar.fixed-sidebar .app-main__outer{
+        padding-right:60px!important
+    }
+    .sidebar-mobile-open .app-sidebar{
+        transform:translateX(10px)!important;
+    }
+    .closed-sidebar .app-sidebar .app-sidebar__inner .metismenu-icon{
+        left:8%!important;
+    }
+    .app-sidebar .app-sidebar__inner{
+        padding:2px 1rem 1.5rem!important;
+    }
+}
+
+.hamburger{
+    padding:8px!important;
+}
+.row{
+    text-align: right!important;
+}
+
+#myInput {
+    background-image: url('/images/searchicon.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+  }
+  
+  #myTable {
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Full-width */
+    border: 1px solid #ddd; /* Add a grey border */
+    font-size: 18px; /* Increase font-size */
+  }
+  
+  #myTable th, #myTable td {
+    text-align: right; /* Left-align text */
+    padding: 12px; /* Add padding */
+  }
+  
+  #myTable tr {
+    /* Add a bottom border to all table rows */
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #myTable tr.header, #myTable tr:hover {
+    /* Add a grey background color to the table header and on hover */
+    background-color: #f1f1f1;
+  }

@@ -38,8 +38,17 @@
                                 </div>
 
                                 <div class="col-md-4 mt-4">
-                                    <label for="name">توضیحات کلاس : </label>
-                                    <input type="text" class="form-control" value="{{$class_select->desc}}" name="desc" placeholder="">
+                                    <label for="name">پایه کلاس : </label>
+                                    <select name="desc" class="form-control">
+                                        <option value="">لیست پایه ها</option>
+                                        <option value="پایه اول">پایه اول</option>
+                                        <option value="پایه دوم">پایه دوم</option>
+                                        <option value="پایه سوم">پایه سوم</option>
+                                        <option value="پایه چهارم">پایه چهارم</option>
+                                        <option value="پایه پنجم">پایه پنجم</option>
+                                        <option value="پایه ششم">پایه ششم</option>
+
+                                    </select>
                                 </div>
                             </div>
 

@@ -231,12 +231,7 @@
                                                 </i>لیست کلاس ها
                                             </a>
                                         </li>
-                                        <li>
-                                            <a href="components-accordions.html">
-                                                <i class="metismenu-icon">
-                                                </i>در حال فکر
-                                            </a>
-                                        </li>
+                                        
                                         
                                         
                                         
@@ -244,12 +239,7 @@
                                        
                                     </ul>
                                 </li>
-                                <li  >
-                                    <a href="tables-regular.html">
-                                        <i class="metismenu-icon pe-7s-display2"></i>
-                                        تمرین کلاس
-                                    </a>
-                                </li>
+                                
                                 <li class="app-sidebar__heading">دانش آموزان</li>
                                 <li>
                                 <a href="#">
@@ -311,27 +301,34 @@
                                                 لیست معلم 
                                             </a>
                                         </li>
-                                        
-                                       
-                                        
-                                        <li>
-                                            <a href="elements-dropdowns.html">
-                                                <i class="metismenu-icon">
-                                                </i>
-                                            </a>
-                                        </li>
-                                        
                                     </ul>
                                 </li>
                                 
                                 
-                                <li class="app-sidebar__heading">تمرین ها</li>
+                                <li class="app-sidebar__heading">دروس</li>
                                 <li>
-                                    <a href="charts-chartjs.html">
-                                        <i class="metismenu-icon pe-7s-graph2">
-                                        </i>مشاهده تمرین با کلاس بندی
+                                <a href="#">
+                                        <i class="metismenu-icon pe-7s-diamond"></i>
+                                        مدیریت دروس 
+                                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                     </a>
+                                    <ul>
+                                        <li>
+                                            <a href="/manager/add_course">
+                                                <i class="metismenu-icon"></i>
+                                                افزودن درس 
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="/manager/edit_cource">
+                                                <i class="metismenu-icon"></i>
+                                                ویرایش درس 
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
+                                
+                                
                                 
                             </ul>
                         </div>

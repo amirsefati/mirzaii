@@ -26,7 +26,7 @@
                         <select class="form-control" name="class">
                             <option value="">لیست کلاس ها </option>
                             @foreach($list_class as $class)
-                                <option value="{{$class->id}}">{{$class->kind}} -- {{$class->name}}  {{$class->desc}}</option>
+                                <option value="{{$class->id}}">{{$class->kind}}انه -- {{$class->name}} - {{$class->desc}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -72,7 +72,7 @@
                     </div>
                     
                     @foreach($lst as $lst_teacher)
-                        {{$lst_teacher->kind}} - {{$lst_teacher->name}} {{$lst_teacher->desc}} |
+                        {{$lst_teacher->kind}} - {{$lst_teacher->name}} - {{$lst_teacher->desc}} |
                     @endforeach
                 </td>
                 

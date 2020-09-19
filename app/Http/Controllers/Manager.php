@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Classify;
+use App\Models\Course;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -343,7 +344,7 @@ class Manager extends Controller
 
     public function select_class_to_show_list_post(Request $request){
         $class = $request->class;
-        $class_info = Classify::find($class)->first();
+        $class_info = Classify::where('id',$class)->first();
         $list = Classify::find($class)->classify_to_class()->get();
 
         return view('manager.select_class_to_show_list_post',compact(['class_info','list']));
@@ -358,5 +359,38 @@ class Manager extends Controller
         $student = User::find($id);
         $student->class_to_classify()->detach();
         return redirect('manager/reform_classify');
+    }
+
+    public function add_course(){
+        return view('manager.add_course');
+    }
+
+    public function add_course_post(Request $request){
+        $request->validate([
+            'title' => 'required',
+            'grade' => 'required',
+            'desc' => 'required',
+        ]);
+        $img_url = '';
+        if($request->hasFile('img')){
+            $image = $request->file('img');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/images/course/');
+            $image->move($destinationPath, $name);
+            $img_url = '/images/course/' . $name ;
+        }
+
+        Course::create([
+            'title'=>$request->title,
+            'grade'=>$request->grade,
+            'desc'=>$request->desc,
+            'img'=> $img_url,
+            'show'=>$request->show,
+        ]);
+        return redirect('manager/add_course');
+    }
+
+    public function edit_cource(){
+        return view('manager.edit_cource');
     }
 }

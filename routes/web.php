@@ -63,5 +63,15 @@ Route::prefix('manager')->group(function(){
     Route::get('reform_classify',[Manager::class,'reform_classify']);
     Route::get('reform_student_class/{id}',[Manager::class,'reform_student_class']);
 
+    Route::get('add_course',[Manager::class,'add_course']);
+    Route::post('add_course',[Manager::class,'add_course_post']);
     
+    Route::get('edit_cource',[Manager::class,'edit_cource']);
+
+    
+});
+
+
+Route::prefix('teacher')->group(function(){
+
 });

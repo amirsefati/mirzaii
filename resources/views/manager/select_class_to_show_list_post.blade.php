@@ -44,7 +44,8 @@
                                         <th style="padding:1px">
                                             <img src="{{$teacher->profile_img}}" width="65px" alt="">
                                         </th>
-                                        <td>{{$teacher->name}} {{$teacher->family}}</td>
+                                        <td><a href="find_student/{{$teacher->identity_code}}">
+                                        {{$teacher->name}} {{$teacher->family}}</a></td>
                                         <td>{{$teacher->father_name}}</td>
                                         <td>{{$teacher->identity_code}}</td>
                                         </tr>

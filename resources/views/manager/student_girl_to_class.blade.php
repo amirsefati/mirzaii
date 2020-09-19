@@ -34,7 +34,7 @@
                         <select name="class" class="form-control" id="">
                             <option value="">لیست کلاس ها </option>
                             @foreach($class_list as $class)
-                                <option value="{{$class->id}}">{{$class->kind}} - {{$class->name}} {{$class->desc}}</option>
+                                <option value="{{$class->id}}">{{$class->kind}}انه - {{$class->name}} - {{$class->desc}}</option>
                             @endforeach
                         </select>
                     </div>

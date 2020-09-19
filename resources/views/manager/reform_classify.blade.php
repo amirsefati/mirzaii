@@ -27,8 +27,8 @@
                             </a>
                         </td>
                         <td>{{$student->father_name}}</td>
-                        <td>{{App\Models\User::find($student->id)->class_to_classify[0]->kind}} -
-                        {{App\Models\User::find($student->id)->class_to_classify[0]->name}}
+                        <td>{{App\Models\User::find($student->id)->class_to_classify[0]->kind}}انه -
+                        {{App\Models\User::find($student->id)->class_to_classify[0]->name}} -
                         {{App\Models\User::find($student->id)->class_to_classify[0]->desc}}
                         </td>
                         <td>    

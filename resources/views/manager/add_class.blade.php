@@ -18,7 +18,7 @@
                 <div class="card">
                     <h5 class="card-header">افزودن کلاس</h5>
                     <div class="card-body">
-                        <form action="/manager/add_course" method="POST">
+                        <form action="/manager/add_class" method="POST">
                             @csrf
                             <div class="row">
                                 <div class="col-md-4 mt-4">
@@ -27,7 +27,7 @@
                                 </div>
 
                                 <div class="col-md-4 mt-4">
-                                    <label for="name"> جنسیت کلاس : </label>
+                                    <label for="kind"> جنسیت کلاس : </label>
                                     <select name="kind" class="form-control">
                                         <option value="">انتخاب کنید ... </option>
                                         <option value="پسر">پسر</option>
@@ -36,7 +36,7 @@
                                 </div>
 
                                 <div class="col-md-4 mt-4">
-                                    <label for="name">پایه کلاس : </label>
+                                    <label for="desc">پایه کلاس : </label>
                                     <select name="desc" class="form-control">
                                         <option value="">لیست پایه ها</option>
                                         <option value="پایه اول">پایه اول</option>

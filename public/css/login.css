@@ -1,0 +1,26 @@
+.cart_login{
+    background: #ffffff;
+    height: 80vh;
+    margin-top: 5vh;
+    min-height: 500px;
+    box-shadow: 4px 6px 33px -9px rgba(0,0,0,0.81);
+    border-radius: 30px;
+}
+
+body{
+    direction: rtl!important;
+    font-family: 'Vazir';
+}
+
+.input_right_padding{
+    padding-right:80px;
+}
+
+@media only screen and (max-width: 600px) {
+    .input_right_padding{
+        padding-right:10px;
+    }
+    .hide_in_mobile{
+        display: none;
+    }
+  }

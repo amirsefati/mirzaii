@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Authentication;
+use App\Http\Controllers\Teacher;
 use App\Http\Controllers\Manager;
 use Illuminate\Support\Facades\Route;
 
@@ -13,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/',[Authentication::class,'user_to_page']);
 
-Route::get('/', function () {
-    return view('manager.master');
-});
+Route::get('/login',[Authentication::class,'login']);
+Route::post('/login',[Authentication::class,'login_post']);
 
 Route::prefix('manager')->group(function(){
 
@@ -73,5 +75,12 @@ Route::prefix('manager')->group(function(){
 
 
 Route::prefix('teacher')->group(function(){
+    Route::get('class_list',[Teacher::class,'class_list']);
+ 
+    Route::get('list_student_class/{id}',[Teacher::class,'list_student_class']);
 
+
+    Route::get('courses_list_teacher',[Teacher::class,'courses_list_teacher']);
+
+    
 });

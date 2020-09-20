@@ -10,4 +10,11 @@ class Course extends Model
     use HasFactory;
     protected $guarded =[];
 
+    public function course_to_classify(){
+        return $this->belongsToMany(Classify::class,'course_classify');
+    }
+
+    public function course_to_assigment(){
+        
+    }
 }

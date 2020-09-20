@@ -14,5 +14,9 @@ class Classify extends Model
     public function classify_to_class(){
         return $this->belongsToMany(User::class,'classify_user');
     }
+
+    public function classify_to_course(){
+        return $this->belongsToMany(Course::class,'course_classify');
+    }
     
 }

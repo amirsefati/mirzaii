@@ -15,7 +15,7 @@ class Authentication extends Controller
                 return redirect('/student');
             }
             elseif($user_level == 2){
-                return redirect('/teacher');
+                return redirect('/teacher/class_list');
             }
             elseif($user_level == 3){
                 return redirect('/manager');

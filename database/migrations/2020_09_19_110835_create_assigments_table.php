@@ -36,6 +36,15 @@ class CreateAssigmentsTable extends Migration
             $table->integer('who_visit')->nullable();
             $table->timestamps();
         });
+
+
+        Schema::create('course_assigment' , function (Blueprint $table){
+            $table->unsignedBigInteger('course_id');
+            $table->unsignedBigInteger('assigment_id');
+
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
+            $table->foreign('assigment_id')->references('id')->on('assigments')->onDelete('cascade');
+        });
     }
 
     /**

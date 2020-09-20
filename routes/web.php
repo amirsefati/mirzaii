@@ -82,5 +82,17 @@ Route::prefix('teacher')->group(function(){
 
     Route::get('courses_list_teacher',[Teacher::class,'courses_list_teacher']);
 
+    Route::get('add_course_to_class/{id_course}',[Teacher::class,'add_course_to_class']);
+
+    Route::post('add_to_class_post',[Teacher::class,'add_to_class_post']);
+
+    
+    Route::get('select_class_to_add_course',[Teacher::class,'select_class_to_add_course']);
+    
+    Route::get('select_class_to_select_course/{id_class}',[Teacher::class,'select_class_to_select_course']);
+
+    Route::get('select_course_show_assigment/{id_course}',[Teacher::class,'select_course_show_assigment']);
+
+    
     
 });

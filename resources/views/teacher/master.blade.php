@@ -155,15 +155,21 @@
                                     </a>
                                 </li>
                                 <li class="app-sidebar__heading">دروس</li>
-                                <li
-         
-                                >
+                                <li>
+                                    <a href="/teacher/select_class_to_add_course" >
+                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        افزودن درس به کلاس
+                                    </a>
+                                </li>
+
+                                <li>    
                                     <a href="#">
                                         <i class="metismenu-icon pe-7s-diamond"></i>
                                         مدیریت  دروس 
                                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                     </a>
                                     <ul>
+                                        
                                         <li>
                                             <a href="/teacher/courses_list_teacher">
                                                 <i class="metismenu-icon"></i>
@@ -174,9 +180,7 @@
                                        
                                     </ul>
                                 </li>
-                                <li
-    
-                                >
+                                <li>
                                    
                                     <ul
                                         

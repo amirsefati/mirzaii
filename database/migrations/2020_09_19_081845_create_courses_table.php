@@ -23,9 +23,19 @@ class CreateCoursesTable extends Migration
             $table->string('img')->nullable();
             $table->integer('show')->default(1);
 
-
             $table->timestamps();
         });
+
+        Schema::create('course_classify' , function (Blueprint $table){
+            $table->unsignedBigInteger('course_id');
+            $table->unsignedBigInteger('classify_id');
+
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
+            $table->foreign('classify_id')->references('id')->on('classifies')->onDelete('cascade');
+        });
+
+
+        
     }
 
     /**

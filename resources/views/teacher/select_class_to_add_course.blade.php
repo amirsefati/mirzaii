@@ -15,7 +15,7 @@
                             <p style="color:white;font-size:18px;margin-top:25px;">{{$class->name}}</p> 
                             <p style="color:white;font-size:12px;margin:5px;">نوع کلاس : {{$class->kind}}انه</p> 
                             <p style="color:white;font-size:12px;margin:5px;">پایه کلاس : {{$class->desc}}</p> 
-                            <p style="color:white;font-size:12px;margin:5px;">تعداد دانش آموزان : {{App\Models\User::where('level',1)->first()->class_to_classify()->where('classify_id',$class->id)->count()}} نفر</p>
+                            <p style="color:white;font-size:12px;margin:5px;">تعداد دانش آموزان : {{App\Models\Classify::where('id',$class->id)->first()->classify_to_class->where('level',1)->count()}} نفر</p>
                             <a href="/teacher/select_class_to_select_course/{{$class->id}}">
                                 <button class="btn btn-warning" style="margin-top:10px;margin-right:30%">ورود به کلاس</button>
                             </a>

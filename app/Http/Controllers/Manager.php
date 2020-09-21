@@ -285,7 +285,7 @@ class Manager extends Controller
             'doc_img' => $doc_url
         ]);
 
-        return redirect('manager/list_student');
+        return redirect('manager/list_student_boy');
 
     }
 

@@ -93,6 +93,7 @@ Route::prefix('teacher')->group(function(){
 
     Route::get('select_course_show_assigment/{id_course}',[Teacher::class,'select_course_show_assigment']);
 
-    
+    Route::get('add_assigment_to_course/{id_course}',[Teacher::class,'add_assigment_to_course']);
+
     
 });

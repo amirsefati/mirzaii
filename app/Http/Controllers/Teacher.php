@@ -62,7 +62,11 @@ class Teacher extends Controller
 
     public function select_course_show_assigment($id_course){
         $course = Course::where('id',$id_course)->first();
-        
-        return view('teacher.select_course_show_assigment');
+        return view('teacher.select_course_show_assigment',compact('course'));
+    }
+
+    public function add_assigment_to_course($id_course){
+        $course = Course::where('id',$id_course)->first();
+        return view('teacher.add_assigment_to_course',compact('course'));
     }
 }

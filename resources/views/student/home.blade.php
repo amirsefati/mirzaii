@@ -26,10 +26,11 @@
         <div class="carousel_school">
             @foreach($school_notification as $school)
             <div class="item_in">
-                <div  >
+                <div>
                     <img src="{{$school->img}}" class="img_notice_school" alt="">
                 </div>
-                <p>{{$school->title}}</p>
+                <p class="title_in_school">{{$school->title}}</p>
+                <p class="desc_in_school"> ... {{substr($school->desc,0,55)}}</p>
 
             </div>
             @endforeach

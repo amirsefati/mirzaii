@@ -328,6 +328,19 @@
                                     </ul>
                                 </li>
                                 
+                                <li class="app-sidebar__heading">اطلاعیه ها</li>
+                                <li>
+                                    <a href="/manager/notice_school" >
+                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        افزودن اطلاعیه 
+                                    </a>
+
+                                    <a href="/manager/notice_school_manage" >
+                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        مدیریت اطلاعیه ها
+                                    </a>
+                                </li>
+
                                 
                                 
                             </ul>

@@ -7,16 +7,16 @@ $(document).ready(function(){
             {
                 breakpoint: 2500,
                 settings: {
-                  slidesToShow: 6,
-                  slidesToScroll: 6,
+                  slidesToShow: 7,
+                  slidesToScroll: 7,
                   infinite: true,
                 }
               },
             {
               breakpoint: 1800,
               settings: {
-                slidesToShow: 5,
-                slidesToScroll: 5,
+                slidesToShow: 6,
+                slidesToScroll: 6,
                 infinite: true,
               }
             },

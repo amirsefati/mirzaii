@@ -183,23 +183,24 @@
                                 <li>
                                    
                                     <ul
-                                        
-                                        
-                                        
-            
-                                        
-                                    >
-                                      
-                                        
-                                        
-                                        
-                                       
+                                >
                                        
                                     </ul>
                                 </li>
                                 
                                 
-                               
+                                <li class="app-sidebar__heading">اطلاعیه ها</li>
+                                <li>
+                                    <a href="/teacher/notice_school" >
+                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        افزودن اطلاعیه 
+                                    </a>
+
+                                    <a href="/teacher/notice_class_manage" >
+                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        مدیریت اطلاعیه ها
+                                    </a>
+                                </li>
                                 
                                 
                                 <li class="app-sidebar__heading">استریم</li>

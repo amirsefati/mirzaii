@@ -47,6 +47,10 @@ body{
 .p_course_list{
     margin:6px;
 }
+.img_notice_school{
+    width: 70%;
+    text-align: center;
+}
 @media (max-width:500px){
     .img_profile_user{
         border-radius: 50%;

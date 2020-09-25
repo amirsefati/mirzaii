@@ -73,6 +73,11 @@ Route::prefix('manager')->group(function(){
     
     Route::get('edit_cource',[Manager::class,'edit_cource']);
 
+    Route::get('notice_school',[Manager::class,'notice_school']);
+    Route::post('add_notice_school',[Manager::class,'add_notice_school']);
+    Route::get('notice_school_manage',[Manager::class,'notice_school_manage']);
+
+    
     
 });
 
@@ -97,6 +102,11 @@ Route::prefix('teacher')->group(function(){
     Route::get('select_course_show_assigment/{id_course}',[Teacher::class,'select_course_show_assigment']);
 
     Route::get('add_assigment_to_course/{id_course}',[Teacher::class,'add_assigment_to_course']);
+
+    
+    Route::get('notice_school',[Teacher::class,'notice_class']);
+    Route::post('add_notice_class',[Teacher::class,'add_notice_class']);
+    Route::get('notice_class_manage',[Teacher::class,'notice_class_manage']);
 
     
 });

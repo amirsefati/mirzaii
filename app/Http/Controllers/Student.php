@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Classify;
+use App\Models\Notice_class;
+use App\Models\Notice_school;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,6 +20,7 @@ class Student extends Controller
         $class_list_info = Classify::where('id',$class_id)->first();
         $list_class = $class_list_info->classify_to_class;
         $course_list = $class_list_info->classify_to_course;
-        return view('student.home',compact(['user_info','class_info','list_class','course_list']));
+        $school_notification = Notice_school::where('show',1)->where('gender',$user_info->gender)->orderBy('order')->get();
+        return view('student.home',compact(['user_info','class_info','list_class','course_list','school_notification']));
     }
 }

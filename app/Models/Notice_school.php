@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Notice_school extends Model
 {
     use HasFactory;
+    protected $guarded =[];
+
 }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Classify;
 use App\Models\Course;
+use App\Models\Notice_class;
 use App\Models\User;
 
 
@@ -68,5 +69,42 @@ class Teacher extends Controller
     public function add_assigment_to_course($id_course){
         $course = Course::where('id',$id_course)->first();
         return view('teacher.add_assigment_to_course',compact('course'));
+    }
+
+    public function notice_class(){
+        $user_id = Auth::user()->id;
+        $user = User::where('id',$user_id)->first();
+        $class_list = $user->class_to_classify;
+        return view('teacher.notice_class',compact('class_list'));
+    }
+
+    public function add_notice_class(Request $request){
+        $request->validate([
+            'title' => 'required',
+            'order' => 'required',
+        ]);
+        $img_url = '';
+        if($request->hasFile('img')){
+            $image = $request->file('img');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/images/notification_class/');
+            $image->move($destinationPath, $name);
+            $img_url = '/images/notification_class/' . $name ;
+        }
+
+        Notice_class::create([
+            'title'=>$request->title,
+            'desc'=>$request->desc,
+            'category'=>$request->category,
+            'img'=> $img_url,
+            'order'=>$request->order,
+            'show'=>$request->show,
+        ]);
+        return redirect('teacher/notice_class_manage');
+    }
+
+    public function notice_class_manage(){
+        $notice_class = Notice_class::all();
+        return view('teacher.notice_class_manage',compact('notice_class'));
     }
 }

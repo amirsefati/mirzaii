@@ -24,15 +24,15 @@
     <div class="col-md-12">
         <p class="header_carousel"> : اطلاعیه های مدرسه  </p>
         <div class="carousel_school">
-            <div class="item_in">your content</div>
-            <div class="item_in">your content</div>
-            <div class="item_in">your content</div>
-            <div class="item_in">your content</div>
-            <div class="item_in">your content</div>
-            <div class="item_in">your content</div>
-            <div class="item_in">your content</div>
-            <div class="item_in">your content</div>
-            <div class="item_in">your content</div>
+            @foreach($school_notification as $school)
+            <div class="item_in">
+                <div  >
+                    <img src="{{$school->img}}" class="img_notice_school" alt="">
+                </div>
+                <p>{{$school->title}}</p>
+
+            </div>
+            @endforeach
         </div>
     </div>
 </div>

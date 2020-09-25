@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Classify;
-use App\Models\Course;
 use App\Models\User;
+use App\Models\Course;
+use App\Models\Classify;
+use App\Models\Notice_class;
 use Illuminate\Http\Request;
+use App\Models\Notice_school;
 
 class Manager extends Controller
 {
@@ -392,5 +394,41 @@ class Manager extends Controller
 
     public function edit_cource(){
         return view('manager.edit_cource');
+    }
+
+    public function notice_school(){
+
+        return view('manager.notice_school');
+    }
+
+    public function add_notice_school(Request $request){
+        $request->validate([
+            'title' => 'required',
+            'order' => 'required',
+        ]);
+        $img_url = '';
+        if($request->hasFile('img')){
+            $image = $request->file('img');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/images/notification_school/');
+            $image->move($destinationPath, $name);
+            $img_url = '/images/notification_school/' . $name ;
+        }
+
+        Notice_school::create([
+            'title'=>$request->title,
+            'desc'=>$request->desc,
+            'category'=>$request->category,
+            'img'=> $img_url,
+            'order'=>$request->order,
+            'show'=>$request->show,
+            'gender'=>$request->gender,
+        ]);
+        return redirect('manager/notice_school');
+    }
+
+    public function notice_school_manage(){
+        $notice_school = Notice_school::all();
+        return view('manager.notice_school_manage',compact('notice_school'));
     }
 }

@@ -1,0 +1,77 @@
+.carousel_school{
+    height: 180px;
+    text-align: center;
+}
+.item_in{
+    margin: 5px;
+    background: aqua;
+    height: 200px;
+}
+body{
+    text-align: right!important;
+    font-family: 'Vazir'!important;
+}
+.header_carousel{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 10px 1px 1px;
+}
+.cart_course{
+    height: 300px;
+    padding: 10px;
+}
+.border_cart_course{
+    background: aquamarine;
+    height: 300px;
+    text-align: center;
+}
+.div_cart_course{
+    direction: rtl;
+}
+.header_top_info{
+    height: 220px;
+    background: burlywood;
+    direction: rtl;
+}
+.img_profile_user{
+    border-radius: 50%;
+    margin-top:25px;
+    width:150px;
+}
+.details_user_info{
+    margin-top: 40px;
+}
+.course_img{
+    width: 80%;
+}
+.p_course_list{
+    margin:6px;
+}
+@media (max-width:500px){
+    .img_profile_user{
+        border-radius: 50%;
+        margin-top:10px;
+        width:120px;
+    }
+    .header_top_info{
+        height: 270px;
+        background: burlywood;
+        direction: rtl;
+    }
+    .p_info{
+        margin:5px;
+    }
+    .details_user_info{
+        margin-top: 10px;
+        text-align: center;
+    }
+    .cart_course{
+        height: 270px;
+        padding: 10px;
+    }
+    .border_cart_course{
+        background: aquamarine;
+        height: 270px;
+        text-align: center;
+    }
+}

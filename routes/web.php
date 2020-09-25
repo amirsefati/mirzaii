@@ -3,7 +3,10 @@
 use App\Http\Controllers\Authentication;
 use App\Http\Controllers\Teacher;
 use App\Http\Controllers\Manager;
+use App\Http\Controllers\Student;
+
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -96,4 +99,10 @@ Route::prefix('teacher')->group(function(){
     Route::get('add_assigment_to_course/{id_course}',[Teacher::class,'add_assigment_to_course']);
 
     
+});
+
+Route::prefix('student')->group(function(){
+    Route::get('/',[Student::class,'home']);
+
+
 });

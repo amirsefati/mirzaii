@@ -15,6 +15,7 @@ class Course extends Model
     }
 
     public function course_to_assigment(){
-        
+        return $this->belongsToMany(Assigment::class,'course_assigment');
+
     }
 }

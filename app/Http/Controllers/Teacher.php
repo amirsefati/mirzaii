@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Assigment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Classify;
@@ -63,7 +64,8 @@ class Teacher extends Controller
 
     public function select_course_show_assigment($id_course){
         $course = Course::where('id',$id_course)->first();
-        return view('teacher.select_course_show_assigment',compact('course'));
+        $assigment = $course->course_to_assigment;
+        return view('teacher.select_course_show_assigment',compact(['course','assigment']));
     }
 
     public function add_assigment_to_course($id_course){
@@ -100,11 +102,93 @@ class Teacher extends Controller
             'order'=>$request->order,
             'show'=>$request->show,
         ]);
+        
+        $notice_id = Notice_class::where('title',$request->title)->where('desc',$request->desc)->first()->id;
+        $class_attach = Classify::where('id',$request->class_id)->first();
+        $class_attach->classify_to_notice_class()->attach($notice_id);
         return redirect('teacher/notice_class_manage');
     }
 
     public function notice_class_manage(){
         $notice_class = Notice_class::all();
         return view('teacher.notice_class_manage',compact('notice_class'));
+    }
+
+    public function add_assigment_to_course_post(Request $request){
+        $request->validate([
+            'title'=>'required',
+            'desc'=>'required',
+        ]);
+        
+        $img_url = '';
+        if($request->hasFile('img')){
+            $image = $request->file('img');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/images/course/');
+            $image->move($destinationPath, $name);
+            $img_url = '/images/course/' . $name;
+        }
+
+        $file_video = '';
+        if($request->hasFile('file_video')){
+            $video = $request->file('file_video');
+            $name = time().'.'.$video->getClientOriginalExtension();
+            $destinationPath = public_path('/video/course/');
+            $video->move($destinationPath, $name);
+            $file_video = '/video/course/' . $name;
+        }
+
+        $file_video_2 = '';
+        if($request->hasFile('file_video_2')){
+            $video = $request->file('file_video_2');
+            $name = time().'.'.$video->getClientOriginalExtension();
+            $destinationPath = public_path('/video/course/');
+            $video->move($destinationPath, $name);
+            $file_video_2 = '/video/course/' . $name;
+        }
+
+        $file_doc = '';
+        if($request->hasFile('file_doc')){
+            $doc = $request->file('file_doc');
+            $name = time().'.'.$doc->getClientOriginalExtension();
+            $destinationPath = public_path('/doc/course/');
+            $doc->move($destinationPath, $name);
+            $file_doc = '/doc/course/' . $name;
+        }
+
+        $file_doc_2 = '';
+        if($request->hasFile('file_doc_2')){
+            $doc = $request->file('file_doc_2');
+            $name = time().'.'.$doc->getClientOriginalExtension();
+            $destinationPath = public_path('/doc/course/');
+            $doc->move($destinationPath, $name);
+            $file_doc_2 = '/doc/course/' . $name;
+        }
+
+        Assigment::create([
+            'title'=>$request->title,
+            'desc'=>$request->desc,
+            'desc_2'=>$request->desc_2,
+            'file_video_title'=>$request->file_video_title,
+            'file_video_2_title'=>$request->file_video_2_title,
+            'file_doc_title'=>$request->file_doc_title,
+            'file_doc_2_title'=>$request->file_doc_2_title,
+            'teacher_created'=>$request->teacher_upload_id,
+            'show'=>$request->show,
+
+            'img'=>$img_url,
+            'file_video'=>$file_video,
+            'file_video_2'=>$file_video_2,
+            'file_doc'=>$file_doc,
+            'file_doc_2'=>$file_doc_2,
+            
+        ]);
+
+        $course_id = $request->course_id;
+        $course_attach = Course::where('id',$course_id)->first();
+        $assigment_id = Assigment::where('title',$request->title)->where('desc',$request->desc)->first()->id;
+        $course_attach->course_to_assigment()->attach($assigment_id);
+        return redirect('/teacher/select_course_show_assigment/'.$course_id);
+
     }
 }

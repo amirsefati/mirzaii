@@ -22,6 +22,7 @@ Route::get('/',[Authentication::class,'user_to_page']);
 
 Route::get('/login',[Authentication::class,'login']);
 Route::post('/login',[Authentication::class,'login_post']);
+Route::get('/system/logout',[Authentication::class,'logout']);
 
 Route::prefix('manager')->group(function(){
 
@@ -103,6 +104,9 @@ Route::prefix('teacher')->group(function(){
 
     Route::get('add_assigment_to_course/{id_course}',[Teacher::class,'add_assigment_to_course']);
 
+    Route::post('add_assigment_to_course',[Teacher::class,'add_assigment_to_course_post']);
+
+    
     
     Route::get('notice_school',[Teacher::class,'notice_class']);
     Route::post('add_notice_class',[Teacher::class,'add_notice_class']);
@@ -114,5 +118,6 @@ Route::prefix('teacher')->group(function(){
 Route::prefix('student')->group(function(){
     Route::get('/',[Student::class,'home']);
 
+    Route::get('/course/{id_course}',[Student::class,'course_datail']);
 
 });

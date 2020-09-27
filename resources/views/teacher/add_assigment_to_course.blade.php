@@ -1,7 +1,8 @@
 @extends('teacher.master')
 
 @section('content')
-
+<form action="/teacher/add_assigment_to_course" method="POST" enctype="multipart/form-data">
+@csrf
 <div class="row">
     <div class="col-md-12">
         <div class="card mb-5">
@@ -13,8 +14,8 @@
                         <input type="text" class="form-control" name="title">
                     </div>
                     <div class="col-md-8 mt-3">
-                        <label for="title"> شرح مختصر جلسه :</label>
-                        <input type="text" class="form-control" name="title">
+                        <label for="desc"> شرح مختصر جلسه :</label>
+                        <input type="text" class="form-control" name="desc">
                     </div>
                 </div>
 
@@ -58,7 +59,7 @@
 
                     <div class="col-md-8 mt-2">
                         <label for="file_video_doc">توضیح فایل متنی :</label>
-                        <input type="text" class="form-control" name="file_video_doc">
+                        <input type="text" class="form-control" name="file_doc_title">
                     </div>
                 </div>
 
@@ -77,7 +78,7 @@
                 <div class="row">
                     <div class="col-md-4 mt-4">
                         <label for="img">تصویر این جلسه</label>
-                        <input type="file" class="form-control">
+                        <input type="file" name="img" class="form-control">
                     </div>
 
                     <div class="col-md-8 mt-4">
@@ -88,6 +89,8 @@
                         </select>
                     </div>
                 </div>
+                <input type="text" name="teacher_upload_id" value="{{Auth::user()->id}}" hidden>
+                <input type="text" name="course_id" value="{{$course->id}}" hidden>
 
                 <div class="row">
                     <div class="col-md-12 mt-5" style="text-align: center;">
@@ -101,5 +104,5 @@
 
     </div>
 </div>
-
+</form>
 @endsection

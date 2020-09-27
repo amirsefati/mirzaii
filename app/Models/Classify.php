@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Notice_class;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Classify extends Model
 {
@@ -17,6 +18,10 @@ class Classify extends Model
 
     public function classify_to_course(){
         return $this->belongsToMany(Course::class,'course_classify');
+    }
+    
+    public function classify_to_notice_class(){
+        return $this->belongsToMany(Notice_class::class,'notice_class_classify');
     }
     
 }

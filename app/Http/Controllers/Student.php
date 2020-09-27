@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Classify;
+use App\Models\Course;
 use App\Models\Notice_class;
 use App\Models\Notice_school;
 use App\Models\User;
@@ -21,6 +22,13 @@ class Student extends Controller
         $list_class = $class_list_info->classify_to_class;
         $course_list = $class_list_info->classify_to_course;
         $school_notification = Notice_school::where('show',1)->where('gender',$user_info->gender)->orderBy('order')->get();
-        return view('student.home',compact(['user_info','class_info','list_class','course_list','school_notification']));
+        $class_notification = $class_list_info->classify_to_notice_class;
+        return view('student.home',compact(['user_info','class_info','list_class','course_list','school_notification','class_notification']));
+    }
+
+    public function course_datail($course_id){
+        $course = Course::where('id',$course_id)->first();
+        $assgiment = $course->course_to_assigment;
+        return view('student.assigment',compact(['assgiment','course']));
     }
 }

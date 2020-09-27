@@ -13,9 +13,9 @@
             <div class="row">
                 <div class="col-md-12">
                     <label for="gender">برای کلاس :</label>
-                    <select name="gender" class="form-control" id="">
+                    <select name="class_id" class="form-control" id="">
                         @foreach($class_list as $class)
-                        <option value="{{$class->id}}">{{$class->desc}} - {{$class->name}} - {{$class->kind}}انه</option>
+                            <option value="{{$class->id}}">{{$class->desc}} - {{$class->name}} - {{$class->kind}}انه</option>
                         @endforeach
                     </select>
                 </div>

@@ -149,7 +149,7 @@
                             <ul class="vertical-nav-menu">
                                 <li class="app-sidebar__heading">مدیریت</li>
                                 <li>
-                                    <a href="index.html" >
+                                    <a href="#" >
                                         <i class="metismenu-icon pe-7s-rocket"></i>
                                         میز مدیریت
                                     </a>

@@ -28,24 +28,24 @@
 
                 <div class="row">
                     <div class="col-md-4 mt-4">
-                        <label for="file_video">آپلود ویدیو :</label>
+                        <label for="file_video">آپلود فایل صوتی :</label>
                         <input type="file" name="file_video" class="form-control">
                     </div>
 
                     <div class="col-md-8 mt-4">
-                        <label for="file_video_title">توضیح فایل ویدیویی :</label>
+                        <label for="file_video_title">توضیح فایل صوتی :</label>
                         <input type="text" class="form-control" name="file_video_title">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-4 mt-2">
-                        <label for="file_video_2">آپلود ویدیو دوم :</label>
+                        <label for="file_video_2">آپلود ویدیو  :</label>
                         <input type="file" name="file_video_2" class="form-control">
                     </div>
 
                     <div class="col-md-8 mt-2">
-                        <label for="file_video_2_title">توضیح فایل ویدیویی دوم :</label>
+                        <label for="file_video_2_title">توضیح فایل ویدیویی  :</label>
                         <input type="text" class="form-control" name="file_video_2_title">
                     </div>
                 </div>
@@ -63,14 +63,14 @@
                     </div>
                 </div>
 
-                <div class="row">
+                <div class="row mt-4">
                     <div class="col-md-4 mt-2">
-                        <label for="file_doc_2">آپلود فایل متنی دوم :</label>
+                        <label for="file_doc_2">آپلود تکلیف  :</label>
                         <input type="file" name="file_doc_2" class="form-control">
                     </div>
 
                     <div class="col-md-8 mt-2">
-                        <label for="file_doc_2_title">توضیح فایل متنی دوم :</label>
+                        <label for="file_doc_2_title">توضیح فایل  تکلیف :</label>
                         <input type="text" class="form-control" name="file_doc_2_title">
                     </div>
                 </div>

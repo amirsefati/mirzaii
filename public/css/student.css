@@ -51,31 +51,25 @@ body{
     margin:6px;
 }
 .img_notice_school{
-    width: 80%;
+    width: 95%;
     text-align: center;
     margin: auto;
-    box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.75);
-    border-radius: 20px;
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.25);
+    border-radius: 5px;
 
 }
 .title_in_school{
-    margin: 20px 40px 0px 0px;
-    font-size: 14px;
-    font-weight: bold;
-    position: absolute;
-    z-index: 9999;
-    top: 0;
-    color: white;
-}
-.desc_in_school{
-    margin: 70px 55px 0px 0px;
-    font-size: 12px;
-    position: absolute;
-    z-index: 9999;
-    top: 0;
-    color: black;
-    width: 150px;
     text-align: right;
+    margin: 10px 12px 1px 1px;
+    font-weight: bold; 
+    font-size: 16px;     
+}
+
+.desc_in_school{
+    text-align: right;
+    margin: 5px 8px 1px 1px; 
+    font-size: 10px;
+    color: #32373B;
 }
 
 .box_on_header_top_info{
@@ -106,7 +100,27 @@ body{
     font-size: 11px;
     margin-right: 10px;
 }
+.dar_in_jalase{
+    font-size: 9px;
+    margin-right: 10px;
+    color:#656176;
+}
+.dar_in_jalase_in{
+    font-size: 10px;
+    margin-right: 5px;
+    color: #534D56;
 
+}
+.course_assigment_title{
+    font-size: 20px;
+    font-weight: bold;
+}
+.course_assigment_desc{
+    font-size: 16px;
+}
+.course_assigment_desc_2{
+    font-size: 13px;
+}
 @media (max-width:500px){
     .img_profile_user{
         border-radius: 50%;
@@ -127,7 +141,7 @@ body{
         text-align: center;
     }
     .cart_course{
-        height: 270px;
+        height: 250px;
         padding: 10px;
     }
     .border_cart_course{
@@ -135,7 +149,7 @@ body{
         text-align: center;
     }
     .carousel_school{
-        height: 170px;
+        height: 250px;
         text-align: center;
     }
     .item_in{
@@ -152,23 +166,10 @@ body{
         margin-right: 1%;
     }
     .title_in_school{
-        margin: 12px 20px 0px 0px;
-        font-size: 10px;
-        font-weight: bold;
-        position: absolute;
-        z-index: 9999;
-        top: 0;
-        color: white;
+       
     }
     .desc_in_school{
-        margin: 45px 40px 0px 0px;
-        font-size: 10px;
-        position: absolute;
-        z-index: 9999;
-        top: 0;
-        color: black;
-        width: 90px;
-        text-align: right;
+      
     }
     .img_title_course{
         font-size:16px;
@@ -179,16 +180,5 @@ body{
     }
 }
 @media (max-width:400px){
-    .desc_in_school{
-        margin: 45px 40px 0px 0px;
-        font-size: 10px;
-        position: absolute;
-        z-index: 9999;
-        top: 0;
-        color: black;
-        width: 80px;
-        text-align: right;
-    }
-
-
+    
 }

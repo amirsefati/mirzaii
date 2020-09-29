@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Assigment;
 use App\Models\Classify;
 use App\Models\Course;
 use App\Models\Notice_class;
@@ -30,5 +31,10 @@ class Student extends Controller
         $course = Course::where('id',$course_id)->first();
         $assgiment = $course->course_to_assigment;
         return view('student.assigment',compact(['assgiment','course']));
+    }
+    public function assignment_course_datail($course_id,$assignment_id ){
+        $assignment = Assigment::where('id',$assignment_id)->first();
+        $course = Course::where('id',$course_id)->first();
+        return view('student.assignment_course_datail',compact(['assignment','course']));
     }
 }

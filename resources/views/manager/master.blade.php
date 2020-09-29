@@ -12,8 +12,11 @@
     <meta name="msapplication-tap-highlight" content="no">
 
 <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v26.0.2/dist/font-face.css" rel="stylesheet" type="text/css" />   
-<link href="{{asset('css/main.css')}}" rel="stylesheet"></head>
-<link href="{{asset('css/manager.css')}}" rel="stylesheet"></head>
+<link href="{{asset('css/main.css')}}" rel="stylesheet">
+<link href="{{asset('css/manager.css')}}" rel="stylesheet">
+<link href="{{asset('css/date_jalali/jquery.md.bootstrap.datetimepicker.style.css')}}" rel="stylesheet">
+
+</head>
 
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
@@ -144,12 +147,13 @@
                                 </span>
                             </button>
                         </span>
-                    </div>    <div class="scrollbar-sidebar">
+                    </div>  
+                      <div class="scrollbar-sidebar"  style="overflow-y: auto;">
                         <div class="app-sidebar__inner">
                             <ul class="vertical-nav-menu">
                                 <li class="app-sidebar__heading">مدیریت</li>
                                 <li>
-                                    <a href="#" >
+                                    <a href="/manager/table" >
                                         <i class="metismenu-icon pe-7s-rocket"></i>
                                         میز مدیریت
                                     </a>
@@ -353,9 +357,33 @@
                         </div>
         </div>
     </div>
+
 <script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
-<script type="text/javascript" src="{{asset('js/main.js')}}"></script>
-<script type="text/javascript" src="{{asset('js/manager.js')}}"></script></body>
+<script type="text/javascript" src="{{asset('js/popper.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/manager.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/date_jalali/jquery.md.bootstrap.datetimepicker.js')}}"></script>
+<script>
+$('#date_select').MdPersianDateTimePicker({ 
+    targetTextSelector: '#input_date_select',
+    fromDate: true,
+    enableTimePicker: true,
+    groupId: 'rangeSelector1',
+    dateFormat: 'yyyy-MM-dd',
+    textFormat: 'yyyy-MM-dd',
+    });
+      $("#date_select").MdPersianDateTimePicker({
+        targetDateSelector: "#input_date_select",
+        targetTextSelector: "#showDate_class",
+        textFormat: " dddd dd MMMM yyyy ",
+        isGregorian: false,
+        modalMode: false,
+        englishNumber: false
+      });
+</script>
+</body>
+
+
 
 </body>
 </html>

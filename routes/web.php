@@ -78,7 +78,14 @@ Route::prefix('manager')->group(function(){
     Route::post('add_notice_school',[Manager::class,'add_notice_school']);
     Route::get('notice_school_manage',[Manager::class,'notice_school_manage']);
 
-    
+    Route::get('table',[Manager::class,'table']);
+    Route::get('add_task',[Manager::class,'add_task']);
+    Route::post('add_task',[Manager::class,'add_task_post']);
+
+    Route::get('done_it/{id_to_do_list}',[Manager::class,'done_it']);
+
+    Route::get('to_do_list_delete/{id_to_do_list}',[Manager::class,'to_do_list_delete']);
+
     
 });
 

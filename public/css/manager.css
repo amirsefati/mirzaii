@@ -16,6 +16,21 @@ body{
     padding-left: 0px!important;
     padding-right: 80px!important;
 }
+.todo_list_title{
+    margin: 2px;
+    font-size: 14px;
+    color: cornsilk;
+}
+.todo_list_desc{
+    margin: 1px;
+    font-size: 10px;
+    color: cornsilk;
+
+}
+.todo_list_row{
+    box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.75);
+    border-radius: 5px;
+}
 @media (max-width: 991.98px){
     .app-sidebar{
         transform:translateX(220px)!important;

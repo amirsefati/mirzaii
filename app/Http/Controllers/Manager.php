@@ -8,6 +8,8 @@ use App\Models\Classify;
 use App\Models\Notice_class;
 use Illuminate\Http\Request;
 use App\Models\Notice_school;
+use App\Models\To_do_list;
+use Carbon\Carbon;
 
 class Manager extends Controller
 {
@@ -430,5 +432,44 @@ class Manager extends Controller
     public function notice_school_manage(){
         $notice_school = Notice_school::all();
         return view('manager.notice_school_manage',compact('notice_school'));
+    }
+
+    public function table(){
+        $today = Carbon::now()->format("Y/m/d");
+        $three_day_next = Carbon::now()->addDay(3)->format("Y/m/d");
+        
+        $task_list = To_do_list::whereBetween('for_date',[$today,$three_day_next])->orderBy('for_date','ASC')->take(10)->get();
+        return view('manager.table',compact('task_list'));
+    }
+    public function add_task(){
+        $task_list = To_do_list::orderBy('for_date','ASC')->get();
+
+        return view('manager.add_task',compact('task_list'));
+    }
+
+    public function add_task_post(Request $request){
+        $request->validate([
+            'title' => 'required'
+        ]);
+
+        To_do_list::create([
+            'title' => $request->title ,
+            'desc' => $request->desc ,
+            'for_date' => $request->for_date ,
+            'color' => $request->color ,
+            'del' => $request->del ,
+            'user_id' => 1 #fix Auth::user()-id
+        ]);
+        return redirect('/manager/add_task');
+    }
+
+    public function done_it($id_to_do_list){
+        To_do_list::where('id',$id_to_do_list)->update(['del'=>0]);
+        return redirect('/manager/table');
+    }
+
+    public function to_do_list_delete($id_to_do_list){
+        To_do_list::where('id',$id_to_do_list)->delete();
+        return redirect('/manager/add_task');
     }
 }

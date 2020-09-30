@@ -54,24 +54,26 @@
                 <div class="row">
                     <div class="col-md-4 mt-2">
                         <label for="file_doc">آپلود فایل متنی :</label>
-                        <input type="file" name="file_doc" class="form-control">
+                        <input type="file" name="file_doc_2" class="form-control">
                     </div>
 
                     <div class="col-md-8 mt-2">
                         <label for="file_video_doc">توضیح فایل متنی :</label>
-                        <input type="text" class="form-control" name="file_doc_title">
+                        <input type="text" class="form-control" name="file_doc_2_title">
+
                     </div>
                 </div>
 
                 <div class="row mt-4">
                     <div class="col-md-4 mt-2">
                         <label for="file_doc_2">آپلود تکلیف  :</label>
-                        <input type="file" name="file_doc_2" class="form-control">
+                        <input type="file" name="file_doc" class="form-control">
+
                     </div>
 
                     <div class="col-md-8 mt-2">
                         <label for="file_doc_2_title">توضیح فایل  تکلیف :</label>
-                        <input type="text" class="form-control" name="file_doc_2_title">
+                        <input type="text" class="form-control" name="file_doc_title">
                     </div>
                 </div>
 

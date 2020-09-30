@@ -202,7 +202,20 @@
                                     </a>
                                 </li>
                                 
-                                
+                                <li class="app-sidebar__heading">سوال</li>
+                                <li>
+                                    <a href="/teacher/preview_question" >
+                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        پاسخ دادن
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/teacher/bank_question" >
+                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        بایگانی
+                                    </a>
+                                </li>
+
                                 <li class="app-sidebar__heading">استریم</li>
                                 <li>
                                 <a href="#">

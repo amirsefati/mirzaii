@@ -113,13 +113,17 @@ Route::prefix('teacher')->group(function(){
 
     Route::post('add_assigment_to_course',[Teacher::class,'add_assigment_to_course_post']);
 
+    Route::post('edit_assigment_to_course',[Teacher::class,'edit_assigment_to_course_post']);
+
     
     
     Route::get('notice_school',[Teacher::class,'notice_class']);
     Route::post('add_notice_class',[Teacher::class,'add_notice_class']);
     Route::get('notice_class_manage',[Teacher::class,'notice_class_manage']);
-
     
+    Route::get('edit_assigment/{course_id}/{assignment_id}',[Teacher::class,'edit_assigment']);
+
+     
 });
 
 Route::prefix('student')->group(function(){

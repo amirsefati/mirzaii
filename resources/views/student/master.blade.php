@@ -51,7 +51,7 @@
         @yield('content')
     </div>
 </body>
-<script src="https://cdn.plyr.io/3.6.2/plyr.js"></script>
+<script src="{{asset('js/player/plyr.js')}}"></script>
 
 </html>
 

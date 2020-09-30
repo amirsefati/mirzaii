@@ -191,4 +191,84 @@ class Teacher extends Controller
         return redirect('/teacher/select_course_show_assigment/'.$course_id);
 
     }
+
+    public function edit_assigment($course_id,$assigment_id){
+        $course = Course::where('id',$course_id)->first();
+        $assignment = Assigment::where('id',$assigment_id)->first();
+        return view('teacher.edit_assigment',compact(['course','assignment']));
+    }
+
+    public function edit_assigment_to_course_post(Request $request){
+        $request->validate([
+            'title'=>'required',
+            'desc'=>'required',
+        ]);
+
+        
+        $img_url = Assigment::where('id',$request->assginment_id)->first()->img;
+        if($request->hasFile('img')){
+            $image = $request->file('img');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/images/course/');
+            $image->move($destinationPath, $name);
+            $img_url = '/images/course/' . $name;
+        }
+
+        $file_video = Assigment::where('id',$request->assginment_id)->first()->file_video;
+        if($request->hasFile('file_video')){
+            $video = $request->file('file_video');
+            $name = time().'.'.$video->getClientOriginalExtension();
+            $destinationPath = public_path('/video/course/');
+            $video->move($destinationPath, $name);
+            $file_video = '/video/course/' . $name;
+        }
+
+        $file_video_2 = Assigment::where('id',$request->assginment_id)->first()->file_video_2;
+        if($request->hasFile('file_video_2')){
+            $video = $request->file('file_video_2');
+            $name = time().'.'.$video->getClientOriginalExtension();
+            $destinationPath = public_path('/video/course/');
+            $video->move($destinationPath, $name);
+            $file_video_2 = '/video/course/' . $name;
+        }
+
+        $file_doc = Assigment::where('id',$request->assginment_id)->first()->file_doc;
+        if($request->hasFile('file_doc')){
+            $doc = $request->file('file_doc');
+            $name = time().'.'.$doc->getClientOriginalExtension();
+            $destinationPath = public_path('/doc/course/');
+            $doc->move($destinationPath, $name);
+            $file_doc = '/doc/course/' . $name;
+        }
+
+        $file_doc_2 = Assigment::where('id',$request->assginment_id)->first()->file_doc_2;
+        if($request->hasFile('file_doc_2')){
+            $doc = $request->file('file_doc_2');
+            $name = time().'.'.$doc->getClientOriginalExtension();
+            $destinationPath = public_path('/doc/course/');
+            $doc->move($destinationPath, $name);
+            $file_doc_2 = '/doc/course/' . $name;
+        }
+
+        
+        Assigment::where('id',$request->assginment_id)->update([
+            'title'=>$request->title,
+            'desc'=>$request->desc,
+            'desc_2'=>$request->desc_2,
+            'file_video_title'=>$request->file_video_title,
+            'file_video_2_title'=>$request->file_video_2_title,
+            'file_doc_title'=>$request->file_doc_title,
+            'file_doc_2_title'=>$request->file_doc_2_title,
+            'teacher_created'=>$request->teacher_upload_id,
+            'show'=>$request->show,
+
+            'img'=>$img_url,
+            'file_video'=>$file_video,
+            'file_video_2'=>$file_video_2,
+            'file_doc'=>$file_doc,
+            'file_doc_2'=>$file_doc_2,
+            
+        ]);
+        return redirect('/teacher/select_course_show_assigment/'.$request->course_id);
+    }
 }

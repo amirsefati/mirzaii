@@ -184,14 +184,14 @@
                                         <li>
                                             <a href="/manager/student_boy_to_class">
                                                 <i class="metismenu-icon">
-                                                </i>کلاس بندی پسر
+                                                </i>کلاس بندی پسرانه
                                             </a>
                                         </li>
                                         
                                         <li>
                                             <a href="/manager/student_girl_to_class">
                                                 <i class="metismenu-icon">
-                                                </i>کلاس بندی دختر
+                                                </i>کلاس بندی دخترانه
                                             </a>
                                         </li>
 
@@ -207,13 +207,7 @@
                                 <li
                                     
                                     
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
+            
                                     
                                     
                                 >
@@ -331,6 +325,18 @@
                                         </li>
                                     </ul>
                                 </li>
+
+                                <li class="app-sidebar__heading">پاسخ ها</li>
+                                <li>
+                                    <a href="/manager/notice_school" >
+                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        در انتظار پاسخ  
+                                    </a>
+
+                                    <a href="/manager/notice_school" >
+                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        مخزن پاسخ  
+                                    </a>
                                 
                                 <li class="app-sidebar__heading">اطلاعیه ها</li>
                                 <li>

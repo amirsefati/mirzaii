@@ -121,6 +121,9 @@ body{
 .course_assigment_desc_2{
     font-size: 13px;
 }
+.video_size{
+    width: 60%;
+}
 @media (max-width:500px){
     .img_profile_user{
         border-radius: 50%;
@@ -177,6 +180,9 @@ body{
     }
     .img_desc{
         font-size:10px;
+    }
+    .video_size{
+        width: 90%;
     }
 }
 @media (max-width:400px){

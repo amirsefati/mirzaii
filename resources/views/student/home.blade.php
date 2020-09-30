@@ -52,7 +52,7 @@
                     <div>
                         <img src="{{$school->img}}" class="img_notice_school" alt="">
                         <p class="title_in_school">{{$school->title}}</p>
-                        <p class="desc_in_school">  {{substr($school->desc,0,150)}}</p>
+                        <p class="desc_in_school">  {{$school->desc}}</p>
 
                     </div>
                     

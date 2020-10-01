@@ -25,7 +25,7 @@
                         <input type="text" class="form-control">
                         @foreach($task_list as $task)
                             <div class="row todo_list_row p-2 mr-2 ml-2 mt-2" style="background:{{$task->color}}">
-                                <div class="col-md-10">
+                                <div class="col-md-10 col-8">
                                     @if($task->del == 1)
                                     <p class="todo_list_title">{{$task->title}}</p>
                                     <p class="todo_list_desc">{{$task->desc}}</p>
@@ -34,7 +34,7 @@
                                     <p class="todo_list_desc"><del>{{$task->desc}}</del></p>
                                     @endif
                                 </div>
-                                <div class="col-md-2" style="text-align:left;">
+                                <div class="col-md-2 col-4" style="text-align:left;">
                                     @if($task->del == 1)
                                         <a href="/manager/done_it/{{$task->id}}">
                                             <img src="/images/read_it.png" width="35px" alt="">

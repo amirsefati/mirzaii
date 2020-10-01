@@ -367,6 +367,8 @@
 <script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/popper.min.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/main.js')}}"></script>
+
 <script type="text/javascript" src="{{asset('js/manager.js')}}"></script>
 <script type="text/javascript" src="{{asset('js/date_jalali/jquery.md.bootstrap.datetimepicker.js')}}"></script>
 <script>

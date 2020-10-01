@@ -16,8 +16,35 @@
 <body>
     <div class="container-fluid">
 <div class="row header_top_info">
-    <div class="col-md-1"></div>
+    <div class="col-md-1 hide_in_phone"></div>
     <div class="col-md-10">
+        <div class="row">
+            <div class="col-md-6"></div>
+            <div class="col-md-2 col-4 pt-2">
+                <div style="text-align: center;">
+                <a href="/student/send_question">
+                    <img src="/images/question.png" width="38px" alt=""> &nbsp;
+                    <span class="menu_top">ارسال سوال</span>
+                </a>
+                </div>
+            </div>
+            <div class="col-md-2 col-4 pt-2">
+                <div style="text-align: center;">
+                <a href="">
+                    <img src="/images/profile.png" style="border-radius: 30%;" width="32px" alt="">&nbsp;
+                    <span class="menu_top">تنظیمات پروفایل</span>
+                </a>
+                </div>
+            </div>
+            <div class="col-md-2 col-4 pt-2">
+                <div style="text-align: center;">
+                <a href="/system/logout">
+                    <img src="/images/exit.png" width="38px" alt="">&nbsp;
+                    <span class="menu_top">خروج</span>
+                </a>
+                </div>
+            </div>
+        </div>
         <div class="row box_on_header_top_info" >
             <div class="col-md-2" style="text-align: center;">
                 <img src="{{$user_info->profile_img}}" class="img_profile_user" alt="">
@@ -88,7 +115,7 @@
     </div>
 </div>
 
-<div class="card mt-3">
+<div class="card mt-3  mb-5">
     <div class="card-header" style="text-align:right;direction:rtl"> 
         <p class="header_carousel"> لیست دروس  :</p>
     </div>

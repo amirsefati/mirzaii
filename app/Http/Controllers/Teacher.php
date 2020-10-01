@@ -271,4 +271,8 @@ class Teacher extends Controller
         ]);
         return redirect('/teacher/select_course_show_assigment/'.$request->course_id);
     }
+
+    public function preview_question(){
+        return view('teacher.preview_question');
+    }
 }

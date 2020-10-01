@@ -123,7 +123,9 @@ Route::prefix('teacher')->group(function(){
     
     Route::get('edit_assigment/{course_id}/{assignment_id}',[Teacher::class,'edit_assigment']);
 
-     
+    Route::get('preview_question',[Teacher::class,'preview_question']);
+
+    
 });
 
 Route::prefix('student')->group(function(){
@@ -132,4 +134,9 @@ Route::prefix('student')->group(function(){
     Route::get('/course/{id_course}',[Student::class,'course_datail']);
     Route::get('/course/{id_course}/{id_assignment}',[Student::class,'assignment_course_datail']);
 
+
+    Route::get('/send_question',[Student::class,'send_question']);
+    Route::post('/send_question',[Student::class,'send_question_post']);
+
+    
 });

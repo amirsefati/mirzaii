@@ -23,8 +23,8 @@
         <p>پیام ها</p>
     </div>
     <div class="col-md-1 col-4 pt-3">
-        <a href="/system/logout">
-            <p>خروج</p>
+        <a href="/">
+            <p>خانه</p>
         </a>
     </div>
     <div class="col-md-6 col-0 pt-3"></div>
@@ -35,13 +35,17 @@
    </div>
     <div class="col-md-1 col-0 pt-3"></div>
 </div>
-
+<div class="row">
+    <div class="col-md-12" style="text-align: center;">
+        <a href="/student">
+            <button class="btn btn-danger m-2 pl-4 pr-4">بازگشت</button>
+        </a>
+    </div>
+</div>
 <div class="row m-4">
     <div class="col-md-10 col-8">
         <p class="img_title_course">{{$course->title}} {{$course->grade}} - {{$course->desc}}</p>
-        <a href="/">
             <span class="img_desc">میز کار</span> - <span class="img_desc"> درس های من </span> - <span class="img_desc"> {{$course->title}} </span>
-        </a>
     </div>
     <div class="col-md-1 col-2">
         <img src="{{$course->img}}" width="80px" alt="">

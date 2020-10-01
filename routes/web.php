@@ -124,7 +124,15 @@ Route::prefix('teacher')->group(function(){
     Route::get('edit_assigment/{course_id}/{assignment_id}',[Teacher::class,'edit_assigment']);
 
     Route::get('preview_question',[Teacher::class,'preview_question']);
+    
+    
+    Route::get('send_answer/{question_id}',[Teacher::class,'send_answer']);
 
+    Route::post('send_answer',[Teacher::class,'send_answer_post']);
+
+    Route::get('bank_question',[Teacher::class,'bank_question']);
+
+    
     
 });
 

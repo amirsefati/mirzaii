@@ -10,4 +10,7 @@ class question extends Model
     use HasFactory;
     protected $guarded =[];
 
+    public function question_to_answer(){
+        return $this->belongsToMany(Answer::class,'answer_question');
+    }
 }

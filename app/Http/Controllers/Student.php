@@ -47,7 +47,8 @@ class Student extends Controller
         $class_id = $class_info[0]->id;
         $class_list_info = Classify::where('id',$class_id)->first();
         $list_class = $class_list_info->classify_to_class;
-        return view('student.send_question',compact(['user_info','list_class']));
+        $question = question::where('student_id',$id_user)->get();
+        return view('student.send_question',compact(['user_info','list_class','question']));
     }
 
     public function send_question_post(Request $request){
@@ -73,7 +74,7 @@ class Student extends Controller
         question::create([
             'title' => $request->title,
             'desc' => $request->desc,
-            'techer_id' => $request->techer_id,
+            'teacher_id' => $request->teacher_id,
             'upload_file' => $upload_file,
             'student_id' => $request->student_id
         ]);

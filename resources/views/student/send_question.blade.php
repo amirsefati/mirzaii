@@ -1,6 +1,14 @@
 @extends('student.master2')
 
 @section('content2')
+
+<div class="row">
+    <div class="col-md-12" style="text-align: center;">
+        <a href="/student">
+            <button class="btn btn-danger m-2 pl-4 pr-4">بازگشت</button>
+        </a>
+    </div>
+</div>
 <form action="/student/send_question" method="POST" enctype="multipart/form-data">
 @csrf
 <input type="text" name="student_id" value="{{$user_info->id}}" hidden>
@@ -39,7 +47,7 @@
                     </div>
                     <div class="col-md-4 mt-3">
                         <label for="techer">انتخاب معلم :</label>
-                        <select name="techer_id" class="form-control">
+                        <select name="teacher_id" class="form-control">
                             @foreach($list_class as $teacher)
                                 @if($teacher->level > 1)
                                 <option value="{{$teacher->id}}"> {{$teacher->name}} {{$teacher->family}} </option>
@@ -56,4 +64,37 @@
     </div>
 </div>
 </form>
+
+<div class="row mt-4" style="direction: rtl;">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+        <div class="card">
+            <div class="card-header" style="direction: rtl;">
+                سوالات شما
+            </div>
+            <div class="card-body" >
+                <table class="table table-striped table-inverse table-responsive">
+                    <thead class="thead-inverse">
+                        <tr>
+                            <th style="width: 20%;">سوال شما</th>
+                            <th style="width: 30%;">متن سوال</th>
+                            <th style="width: 30%;">پاسخ</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($question as $question)
+                                <tr>
+                                    <td>{{$question->title}}</td>
+                                    <td>{{$question->desc}}</td>
+                                    <td>{{App\Models\question::where('id',$question->id)->first()->question_to_answer[0]->answer}}</td>
+                                </tr>
+                            @endforeach
+                            
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection

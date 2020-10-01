@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Answer;
 use App\Models\Assigment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Classify;
 use App\Models\Course;
 use App\Models\Notice_class;
+use App\Models\question;
 use App\Models\User;
 
 
@@ -273,6 +275,45 @@ class Teacher extends Controller
     }
 
     public function preview_question(){
-        return view('teacher.preview_question');
+        $teacher_id = Auth::user()->id;
+        $question_list = question::where('status',1)->where('teacher_id',$teacher_id)->get();
+        return view('teacher.preview_question',compact('question_list'));
+    }
+
+    public function send_answer($question_id){
+        $question = question::where('id',$question_id)->first();
+        return view('teacher.send_answer',compact('question'));
+    }
+
+    public function send_answer_post(Request $request){
+        $request->validate([
+            'answer' => 'required'
+        ]);
+
+        $file = '';
+        if($request->hasFile('file')){
+            $doc = $request->file('file');
+            $name = time().'.'.$doc->getClientOriginalExtension();
+            $destinationPath = public_path('/doc/answer/');
+            $doc->move($destinationPath, $name);
+            $file = '/doc/answer/' . $name;
+        }
+
+        $answer_create = Answer::create([
+            'answer' => $request->answer,
+            'teacher_id' => $request->teacher_id,
+            'file' => $file,
+        ]);
+
+        $question = question::where('id',$request->question_id)->first();
+        $question->question_to_answer()->attach($answer_create->id);
+
+        $question = question::where('id',$request->question_id)->update(['status',2]);
+        return redirect('/teacher/preview_question');
+    }
+
+    public function bank_question(){
+        $question = question::where('teacher_id',Auth::user()->id)->get();
+        return view('teacher.bank_question',compact('question'));
     }
 }

@@ -18,7 +18,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('',[Authentication::class,'homepage']);
+
+Route::get('/',[Authentication::class,'boy_or_girl']);
+
+Route::get('/select',[Authentication::class,'select']);
+
+Route::get('/home/{gender}',[Authentication::class,'select_gender']);
+
 
 Route::get('/user',[Authentication::class,'user_to_page']);
 

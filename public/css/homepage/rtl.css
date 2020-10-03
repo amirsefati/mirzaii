@@ -86,3 +86,25 @@ p{
 .single-featured-post .post-content .post-meta a{
     letter-spacing: 0px;
 }
+
+@media only screen and (max-width: 767px){
+    .trending-post-slides .owl-prev{
+        width: 35px;
+        height: 42px;
+    }
+    .trending-post-slides .owl-next{
+        width: 35px;
+        height: 42px;
+    }
+    .sports-videos-slides .owl-prev{
+        width: 35px;
+        height: 42px;
+    }
+    .sports-videos-slides .owl-next{
+        width: 35px;
+        height: 42px;
+    }
+    .header-area .mag-main-menu .submit-video span{
+        padding-top: 20px;
+    }
+}

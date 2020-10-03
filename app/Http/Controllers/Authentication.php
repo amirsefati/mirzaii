@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use PHPUnit\Util\Json;
+
 class Authentication extends Controller
 {
 
@@ -42,7 +44,7 @@ class Authentication extends Controller
             if(User::where('identity_code',$identity_code)->where('password',$password)->count() > 0){
                 $user_id = User::where('identity_code',$identity_code)->where('password',$password)->first()->id;
                 Auth::loginUsingId($user_id);
-                return redirect('/');
+                return redirect('/user');
             }else{
                 $err = 'اطلاعات وارد شده صحیح نمیباشد';
                 return view('login',compact('err'));
@@ -60,7 +62,37 @@ class Authentication extends Controller
         return redirect('login');
     }
 
-    public function homepage(){
-        return view('homepage.index');
+    public function boy_or_girl(){
+        if(session()->has('gender')){
+            if(session('gender') == 'boy'){
+
+                return view('homepage.boy');
+            
+            }else{ 
+
+                return view('homepage.girl');
+            
+            }
+        }else{
+            return redirect('/select');
+        }
+    }
+
+    public function select(){
+
+        return view('/homepage.boy_or_girl');
+
+    }
+
+    public function select_gender($gender){
+        if(session()->has('gender')){
+
+            return redirect('/');
+
+        }else{
+            session(['gender'=>$gender]);
+            return redirect('/');
+        }
+        
     }
 }

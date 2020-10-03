@@ -18,6 +18,7 @@
 
     <link rel="stylesheet" href="{{asset('css/homepage/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/homepage/rtl.css')}}">
+    <link rel="stylesheet" href="{{asset('css/homepage/boy.css')}}">
 
 </head>
 
@@ -90,6 +91,8 @@
                                     <li><a href="contact.html"> آلبوم تصاویر </a></li>
 
                                     <li><a href="contact.html">تماس با ما </a></li>
+                                    <li><a href="/select">تعویض  مدرسه </a></li>
+
                                 </ul>
                             </div>
                             <!-- Nav End -->
@@ -106,7 +109,11 @@
                             <!-- Login -->
                             <a href="login.html" class="login-btn"><i class="fa fa-user" aria-hidden="true"></i></a>
                             <!-- Submit Video -->
-                            <a href="login" class="submit-video"><span><i class="fa fa-cloud-upload"></i></span> <span class="video-text">ورود کاربران</span></a>
+                            @if(Auth::check())
+                            <a href="/user" class="submit-video"><span><i class="fa fa-cloud-upload"></i></span> <span class="video-text">پنل کاربری</span></a>
+                            @else
+                            <a href="/login" class="submit-video"><span><i class="fa fa-cloud-upload"></i></span> <span class="video-text">ورود کاربران</span></a>
+                            @endif
                         </div>
                     </div>
                 </nav>

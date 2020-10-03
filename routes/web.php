@@ -30,7 +30,10 @@ Route::prefix('manager')->group(function(){
     Route::post('add_class',[Manager::class,'add_class_post']);
     Route::get('edit_class/{id}',[Manager::class,'edit_class']);
     Route::post('edit_class',[Manager::class,'edit_class_post']);
+    Route::get('delete_class/{id}',[Manager::class,'delete_class']);
 
+
+    
     Route::get('add_student_boy',[Manager::class,'add_student_boy']);
     Route::get('add_student_girl',[Manager::class,'add_student_girl']);
 
@@ -85,7 +88,15 @@ Route::prefix('manager')->group(function(){
     Route::get('done_it/{id_to_do_list}',[Manager::class,'done_it']);
 
     Route::get('to_do_list_delete/{id_to_do_list}',[Manager::class,'to_do_list_delete']);
+    
+    Route::get('delete_student_boy/{user_id}',[Teacher::class,'delete_student_boy']);
 
+    Route::get('delete_student_girl/{user_id}',[Teacher::class,'delete_student_girl']);
+
+    Route::get('delete_teacher/{user_id}',[Teacher::class,'delete_teacher']);
+
+
+    
     
 });
 

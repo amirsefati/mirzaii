@@ -58,23 +58,12 @@
                     </div>
                     <ul class="header-menu nav">
                         <li class="nav-item">
-                            <a href="javascript:void(0);" class="nav-link">
-                                <i class="nav-link-icon fa fa-database"> </i>
-                                اعتراض ها
+                            <a href="/system/logout" class="nav-link">
+                                 خروج از سیستم
                             </a>
                         </li>
-                        <li class="btn-group nav-item">
-                            <a href="javascript:void(0);" class="nav-link">
-                                <i class="nav-link-icon fa fa-edit"></i>
-                                دسترسی سریع
-                            </a>
-                        </li>
-                        <li class="dropdown nav-item">
-                            <a href="javascript:void(0);" class="nav-link">
-                                <i class="nav-link-icon fa fa-cog"></i>
-                                گزارش گیری
-                            </a>
-                        </li>
+                        
+                        
                     </ul>        </div>
                 <div class="app-header-right">
                     <div class="header-btn-lg pr-0">
@@ -86,14 +75,14 @@
                                             <img width="52" class="rounded-circle" src="{{Auth::user()->profile_img}}" alt="">
                                             <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                         </a>
-                                        <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
+                                        <!-- <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
                                             <button type="button" tabindex="0" class="dropdown-item">User Account</button>
                                             <button type="button" tabindex="0" class="dropdown-item">Settings</button>
                                             <h6 tabindex="-1" class="dropdown-header">Header</h6>
                                             <button type="button" tabindex="0" class="dropdown-item">Actions</button>
                                             <div tabindex="-1" class="dropdown-divider"></div>
                                             <button type="button" tabindex="0" class="dropdown-item">Dividers</button>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                                 <div class="widget-content-left  ml-3 header-user-info">

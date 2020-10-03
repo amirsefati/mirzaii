@@ -13,6 +13,7 @@
                 <th style="width:15%;">تاریخ تولد</th>
                 <th style="width:15%;">کد ملی </th>
                 <th style="width:40%;">تلفن</th>
+                <th style="width:5%;">حذف</th>
 
             </tr>
             @foreach($list_teacher as $student)
@@ -28,7 +29,11 @@
                 <td>{{$student->date_born}}</td>
                 <td>{{$student->identity_code}}</td>
                 <td>تلفن  : {{$student->phone_father}} - تلفن : {{$student->phone_mother}} - تلفن : {{$student->phone}}</td>
-
+                <td>
+                        <a href="/manager/delete_teacher/{{$student->id}}">
+                            <img src="/images/delete.png" width="25px" alt="">
+                        </a>
+                    </td>
             </tr>
             
             @endforeach

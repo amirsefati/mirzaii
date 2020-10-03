@@ -84,7 +84,10 @@
                                 <a href="edit_class/{{$list->id}}">
                                     <img src="/images/edit.png" width="20px" alt="">
                                 </a>
-                                <img src="/images/delete.png" width="20px" alt="">
+                                
+                                <a href="delete_class/{{$list->id}}">
+                                    <img src="/images/delete.png" width="20px" alt="">
+                                </a>
 
                             </td>
                             </tr>

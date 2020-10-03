@@ -13,6 +13,7 @@
                     <th scope="col"> عکس</th>
                     <th scope="col"> نام دانش آموز</th>
                     <th scope="col"> نام پدر</th>
+                    <th scope="col">  شماره تلفن</th>
 
                     </tr>
                 </thead>
@@ -24,6 +25,8 @@
                         <td>{{$std->name}} {{$std->family}}</td>
 
                         <td>{{$std->father_name}}</td>
+                        <td>{{$std->phone}}</td>
+
                         </tr>
                         @endif
                     @endforeach

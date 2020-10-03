@@ -30,6 +30,11 @@ class Manager extends Controller
         ]);
         return redirect('manager/add_class');
     }
+
+    public function delete_class($id){
+        Classify::where('id',$id)->delete();
+        return redirect('/manager/add_class');
+    }
     public function edit_class($id){
         $class_list = Classify::all();
         $class_select = Classify::where('id',$id)->first();

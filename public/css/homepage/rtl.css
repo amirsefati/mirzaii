@@ -86,6 +86,9 @@ p{
 .single-featured-post .post-content .post-meta a{
     letter-spacing: 0px;
 }
+.classynav ul li.megamenu-item > a:after, .classynav ul li.has-down > a:after{
+    padding: 5px!important;
+}
 
 @media only screen and (max-width: 767px){
     .trending-post-slides .owl-prev{

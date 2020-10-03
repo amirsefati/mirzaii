@@ -1,0 +1,37 @@
+.submit-video{
+    background-color:#27A599!important;
+}
+
+.section-heading{
+    border-left: 4px solid #27A599!important;
+}
+.footer-area .footer-widget .widget-title{
+    border-left: 3px solid #27A599!important;
+}
+.preloader{
+    background-color: #27A599!important;
+}
+.single-youtube-channel .youtube-channel-content .subscribe-btn{
+    background-color: #27A599!important;
+}
+.single-featured-post .post-content .post-title:hover, .single-featured-post .post-content .post-title:focus{
+    color: #27A599!important;
+}
+.single-blog-post .post-content .post-title:hover, .single-blog-post .post-content .post-title:focus{
+    color: #27A599!important;
+}
+.single-trending-post .post-content .post-title:hover, .single-trending-post .post-content .post-title:focus{
+    color: #27A599!important;  
+}
+.hero-blog-post .post-content .post-title:hover, .hero-blog-post .post-content .post-title:focus{
+    color: #27A599!important;   
+}
+.footer-area .footer-widget .footer-tags li a:hover, .footer-area .footer-widget .footer-tags li a:focus{
+    color: #27A599!important;   
+}
+.footer-area .footer-widget .footer-widget-nav ul li a:hover, .footer-area .footer-widget .footer-widget-nav ul li a:focus{
+    color: #27A599!important;   
+}
+.header-area .mag-main-menu .classy-navbar .classynav ul li a:hover, .header-area .mag-main-menu .classy-navbar .classynav ul li a:focus{
+    color: #27A599!important;     
+}

@@ -85,14 +85,11 @@ class Authentication extends Controller
     }
 
     public function select_gender($gender){
-        if(session()->has('gender')){
-
-            return redirect('/');
-
-        }else{
+        
             session(['gender'=>$gender]);
             return redirect('/');
-        }
+
+        
         
     }
 }

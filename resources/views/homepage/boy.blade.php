@@ -41,7 +41,7 @@
                 <nav class="classy-navbar justify-content-between" id="magNav">
 
                     <!-- Nav brand -->
-                    <a href="index.html" class="nav-brand"><img src="homepage/img/core-img/logo.png" alt=""></a>
+                    <a href="index.html" class="nav-brand"><img src="images/danesh_logo.png" width="60px" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">

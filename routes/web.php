@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/',[Authentication::class,'user_to_page']);
+Route::get('',[Authentication::class,'homepage']);
+
+Route::get('/user',[Authentication::class,'user_to_page']);
 
 Route::get('/login',[Authentication::class,'login']);
 Route::post('/login',[Authentication::class,'login_post']);

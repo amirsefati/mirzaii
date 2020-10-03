@@ -59,4 +59,8 @@ class Authentication extends Controller
         Auth::logout();
         return redirect('login');
     }
+
+    public function homepage(){
+        return view('homepage.index');
+    }
 }

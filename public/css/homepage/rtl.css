@@ -1,0 +1,88 @@
+.trending-post-slides .owl-prev{
+    left: 10px!important;
+}
+.trending-post-slides .owl-next{
+    left: 52px!important;
+}
+
+.most-viewed-videos-slide .owl-prev{
+    left: 10px!important;
+}
+.most-viewed-videos-slide .owl-next{
+    left: 52px!important;
+}
+
+.sports-videos-slides .owl-prev{
+    left: 10px!important;
+}
+.sports-videos-slides .owl-next{
+    left: 52px!important;
+}
+.breakpoint-off .classynav ul li .megamenu{
+    text-align: right!important;
+}
+.breakpoint-off .classynav ul li .dropdown{
+    text-align: right;
+}
+.header-area .mag-main-menu .top-search-area{
+    display: none!important;
+}
+.section-heading h5{
+    font-size: 17px!important;
+}
+.classy-menu{
+    text-align: right!important;
+    direction: rtl!important;
+}
+.classynav ul li a{
+    letter-spacing: 0px!important;
+}
+.classynav ul li.has-down > a:after{
+    padding: 5px!important;
+}
+.video-text{
+    letter-spacing: 0px!important;
+}
+.reform_rtl{
+    direction: rtl;
+}
+.single-blog-post .post-content .post-title{
+    font-size: 14px!important;
+}
+.single-featured-post .post-content .post-title{
+    font-size: 20px!important;
+}
+p{
+    font-size: 12px;
+}
+.single-trending-post .post-content .post-title{
+    font-size: 16px;
+}
+[class^="ti-"]{
+    line-height: 2.5;
+}
+.fa-play:before{
+    line-height: 3.2;
+}
+.fa-share-alt:before{
+    line-height: 2.4;
+}
+.fa-linkedin:before{
+    line-height: 2.6;
+}
+.fa-twitter:before{
+    line-height: 2.6;
+}.fa-instagram:before{
+    line-height: 2.6;
+}.fa-google-plus:before{
+    line-height: 2.6;
+}
+.fa-facebook:before{
+    line-height: 2.6;
+}
+.fa-user:before {
+    line-height: 4;
+}
+.single-featured-post .post-content .post-meta a{
+    letter-spacing: 0px;
+}

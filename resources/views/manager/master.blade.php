@@ -326,14 +326,21 @@
                                     </ul>
                                 </li>
 
-                                <li class="app-sidebar__heading">پاسخ ها</li>
+                                <li class="app-sidebar__heading">پاسخ ها
+                                    
+                                </li>
                                 <li>
-                                    <a href="/manager/notice_school" >
+                                    <a href="/manager/not_answer_question" >
                                         <i class="metismenu-icon pe-7s-rocket"></i>
                                         در انتظار پاسخ  
+                                        @if(App\Models\question::where('status',1)->count() > 0)
+                                        <span class="badge badge-pill badge-danger">{{App\Models\question::where('status',1)->count()}}</span>
+
+                                            
+                                        @endif
                                     </a>
 
-                                    <a href="/manager/notice_school" >
+                                    <a href="/manager/all_question" >
                                         <i class="metismenu-icon pe-7s-rocket"></i>
                                         مخزن پاسخ  
                                     </a>
@@ -388,6 +395,12 @@ $('#date_select').MdPersianDateTimePicker({
         modalMode: false,
         englishNumber: false
       });
+
+      $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();
+
+        
+        });
 </script>
 </body>
 

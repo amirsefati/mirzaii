@@ -26,8 +26,9 @@
                     <td><p>{{$notice_class->order}}</p></td>
                     <td><p>{{$notice_class->desc}}</p></td>
                     <td>
-                        <img src="/images/edit.png" width="20px" alt="">
-                        <img src="/images/delete.png" width="20px" alt="">
+                        <a href="/manager/delete_notification/{{$notice_class->id}}">
+                            <img src="/images/delete.png" width="20px" alt="">
+                        </a>
 
                     </td>
                 </tr>

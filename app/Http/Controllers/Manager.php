@@ -8,6 +8,7 @@ use App\Models\Classify;
 use App\Models\Notice_class;
 use Illuminate\Http\Request;
 use App\Models\Notice_school;
+use App\Models\question;
 use App\Models\To_do_list;
 use Carbon\Carbon;
 
@@ -476,5 +477,21 @@ class Manager extends Controller
     public function to_do_list_delete($id_to_do_list){
         To_do_list::where('id',$id_to_do_list)->delete();
         return redirect('/manager/add_task');
+    }
+
+    public function not_answer_question(){
+        $not_answer = question::where('status',1)->get();
+        return view("manager.not_answer_question",compact('not_answer'));
+    }
+
+    public function all_question(){
+        $not_answer = question::all();
+        return view('manager.all_question',compact('not_answer'));
+    }
+
+    public function delete_notification($id_noti){
+        notice_school::where('id',$id_noti)->delete();
+        return redirect('/manager/notice_school_manage');
+
     }
 }

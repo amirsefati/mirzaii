@@ -103,8 +103,12 @@ Route::prefix('manager')->group(function(){
 
     Route::get('delete_teacher/{user_id}',[Teacher::class,'delete_teacher']);
 
+    Route::get('not_answer_question',[Manager::class,'not_answer_question']);
 
-    
+    Route::get('all_question',[Manager::class,'all_question']);
+
+    Route::get('delete_notification/{id_noti}',[Manager::class,'delete_notification']);
+
     
 });
 

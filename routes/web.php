@@ -111,7 +111,6 @@ Route::prefix('manager')->group(function(){
 
     Route::get('delete_class_from_teacher/{class_id}/{teacher_id}',[Manager::class,'delete_class_from_teacher']);
 
-    
 });
 
 

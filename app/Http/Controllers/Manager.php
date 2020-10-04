@@ -15,19 +15,35 @@ use Carbon\Carbon;
 class Manager extends Controller
 {
     public function add_class(){
-        $class_list = Classify::all();
+        $class_list = Classify::orderBy('etc_1')->get();
         return view('manager.add_class',compact('class_list'));
     }
     public function add_class_post(Request $request){
+        
         $request->validate([
             'name'=>'required',
             'desc'=>'required',
             'kind'=>'required',
         ]);
+        if($request->desc == 'پایه اول'){
+            $etc = 1;
+        }elseif($request->desc == 'پایه دوم'){
+            $etc = 2;
+        }elseif($request->desc == 'پایه سوم'){
+            $etc = 3;
+        }elseif($request->desc == 'پایه چهارم'){
+            $etc = 4;
+        }elseif($request->desc == 'پایه پنجم'){
+            $etc = 5;
+        }elseif($request->desc == 'پایه ششم'){
+            $etc = 6;
+        }
+
         Classify::create([
             'name' => $request->name,
             'desc' => $request->desc,
             'kind' => $request->kind,
+            'etc_1' => $etc,
         ]);
         return redirect('manager/add_class');
     }
@@ -48,10 +64,25 @@ class Manager extends Controller
             'desc'=>'required',
             'kind'=>'required',
         ]);
+        if($request->desc == 'پایه اول'){
+            $etc = 1;
+        }elseif($request->desc == 'پایه دوم'){
+            $etc = 2;
+        }elseif($request->desc == 'پایه سوم'){
+            $etc = 3;
+        }elseif($request->desc == 'پایه چهارم'){
+            $etc = 4;
+        }elseif($request->desc == 'پایه پنجم'){
+            $etc = 5;
+        }elseif($request->desc == 'پایه ششم'){
+            $etc = 6;
+        }
         Classify::where('id',$request->id)->update([
             'name' => $request->name,
             'desc' => $request->desc,
             'kind' => $request->kind,
+            'etc_1' => $etc,
+
         ]);
         return redirect('manager/add_class');
     }

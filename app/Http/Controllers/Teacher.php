@@ -331,4 +331,9 @@ class Teacher extends Controller
         User::where('id',$user_id)->delete();
         return redirect('/manager/list_teacher'); 
     }
+
+    public function delete_noti($id_noti){
+        notice_class::where('id',$id_noti)->delete();
+        return redirect('/teacher/notice_class_manage');
+    }
 }

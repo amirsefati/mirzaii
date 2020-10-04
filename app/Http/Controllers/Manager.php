@@ -492,6 +492,12 @@ class Manager extends Controller
     public function delete_notification($id_noti){
         notice_school::where('id',$id_noti)->delete();
         return redirect('/manager/notice_school_manage');
+    }
 
+    public function delete_class_from_teacher($class_id,$tecaher_id){
+        $techer = User::find($tecaher_id);
+        $techer->class_to_classify()->detach($class_id);
+        return redirect('manager/teacher_to_class');
+    
     }
 }

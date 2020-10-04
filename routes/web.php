@@ -109,6 +109,8 @@ Route::prefix('manager')->group(function(){
 
     Route::get('delete_notification/{id_noti}',[Manager::class,'delete_notification']);
 
+    Route::get('delete_class_from_teacher/{class_id}/{teacher_id}',[Manager::class,'delete_class_from_teacher']);
+
     
 });
 
@@ -155,7 +157,8 @@ Route::prefix('teacher')->group(function(){
 
     Route::get('bank_question',[Teacher::class,'bank_question']);
 
-    
+    Route::get('delete_noti/{id_moti}',[Teacher::class,'delete_noti']);
+
     
 });
 

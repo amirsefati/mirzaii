@@ -196,6 +196,9 @@
                                     <a href="/teacher/preview_question" >
                                         <i class="metismenu-icon pe-7s-rocket"></i>
                                         پاسخ دادن
+                                        @if(App\Models\question::where('status',1)->where('teacher_id',Auth::user()->id)->count() > 0)
+                                        <span class="badge badge-pill badge-danger">{{App\Models\question::where('status',1)->where('teacher_id',Auth::user()->id)->count()}}</span>                        
+                                        @endif
                                     </a>
                                 </li>
                                 <li>

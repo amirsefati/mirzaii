@@ -86,7 +86,15 @@
                                 <tr>
                                     <td>{{$question->title}}</td>
                                     <td>{{$question->desc}}</td>
-                                    <td>{{App\Models\question::where('id',$question->id)->first()->question_to_answer[0]->answer}}</td>
+                                    <td>
+                                        @if(App\Models\question::where('id',$question->id)->first()->question_to_answer->count() > 0)
+                                            <p style="color:green;">
+                                                {{App\Models\question::where('id',$question->id)->first()->question_to_answer[0]->answer}}
+                                            </p>
+                                        @else
+                                            <p style="color: red;">هنوز پاسخی داده نشده</p>
+                                        @endif
+                                    </td>
                                 </tr>
                             @endforeach
                             

@@ -334,9 +334,7 @@
                                         <i class="metismenu-icon pe-7s-rocket"></i>
                                         در انتظار پاسخ  
                                         @if(App\Models\question::where('status',1)->count() > 0)
-                                        <span class="badge badge-pill badge-danger">{{App\Models\question::where('status',1)->count()}}</span>
-
-                                            
+                                        <span class="badge badge-pill badge-danger">{{App\Models\question::where('status',1)->count()}}</span>                        
                                         @endif
                                     </a>
 

@@ -47,10 +47,11 @@
         <table id="myTable">
             <tr class="header"  style="background:#EEF8FC;">
                 <th style="width:10%;">عکس</th>
-                <th style="width:30%;">نام</th>
+                <th style="width:20%;">نام</th>
                 <th style="width:20%;">کدملی</th>
 
-                <th style="width:60%;">کلاس</th>
+                <th style="width:40%;">کلاس</th>
+                <th style="width:20%;">حذف</th>
 
             </tr>
             @foreach($list_teacher as $teacher)
@@ -75,6 +76,15 @@
                         {{$lst_teacher->kind}} - {{$lst_teacher->name}} - {{$lst_teacher->desc}} |
                     @endforeach
                 </td>
+
+                <td>
+                    @foreach($lst as $lst_teacher)
+                        <a href="/manager/delete_class_from_teacher/{{$lst_teacher->id}}/{{$teacher->id}} " style="font-size: 9px;color:red"> 
+                            {{$lst_teacher->name}} 
+                        </a> -
+                    @endforeach
+                </td>
+
                 
             </tr>
             

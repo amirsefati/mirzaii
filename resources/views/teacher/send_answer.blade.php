@@ -14,7 +14,7 @@
                 <div class="row">
                     <div class="col-md-6 mt-3">
                         <label for="name">نام دانش آموز</label>
-                        <input type="text" class="form-control" value="{{App\Models\User::where('id',$question->id)->first()->name}} {{App\Models\User::where('id',$question->id)->first()->family}}" disabled>
+                        <input type="text" class="form-control" value="{{App\Models\User::where('id',$question->student_id)->first()->name}} {{App\Models\User::where('id',$question->student_id)->first()->family}}" disabled>
                     </div>
                     <div class="col-md-4 mt-3">
                         <label for="date">تاریخ ارسال</label>

@@ -27,7 +27,8 @@
                 </div>
 
                 <div class="row mt-4">
-                   
+                <div style="overflow-x: auto;">
+
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -52,7 +53,8 @@
                                     @endif
                                 @endforeach
                             </tbody>
-                            </table>              
+                            </table> 
+                </div>             
                         
                 </div>
             </div>

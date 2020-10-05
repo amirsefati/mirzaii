@@ -10,8 +10,12 @@
             </div>
             
             <div class="card-body">
-                <table class="table table-striped table-inverse table-responsive">
-                    <thead class="thead-inverse">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="جست و جو بر اساس نام ">
+
+            <div style="overflow-x: auto;">
+
+                <table id="myTable">
+                        <thead class="thead-inverse">
                         <tr>
                             <th style="width:20%;">دانش آموز</th>
                             <th style="width:30%;">سوال</th>
@@ -30,6 +34,7 @@
                             @endforeach
                         </tbody>
                 </table>
+            </div>
             </div>
         </div>
     </div>

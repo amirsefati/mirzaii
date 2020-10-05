@@ -8,6 +8,7 @@
             <div class="card-header">مدیریت اطلاعیه های  مدرسه ها</div>
             <div class="card-body">
             <input type="text" id="myInput" onkeyup="myFunction()" placeholder="جست و جو بر اساس نام ">
+            <div style="overflow-x: auto;">
 
                 <table id="myTable">
                 <tr class="header"  style="background:wheat">
@@ -35,6 +36,7 @@
 
                 @endforeach
                 </table>
+            </div>
             </div>
         </div>
     </div>

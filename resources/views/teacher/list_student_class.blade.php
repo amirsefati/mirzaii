@@ -7,7 +7,10 @@
         <div class="card">
             <div class="card-header">لیست دانش آموزان کلاس ( {{$class_info->kind}} - {{$class_info->name}} - {{$class_info->desc}} )</div>
             <div class="card-body">
-            <table class="table table-striped">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="جست و جو بر اساس نام ">
+            <div style="overflow-x: auto;">
+
+            <table id="myTable">
                 <thead>
                     <tr>
                     <th scope="col"> عکس</th>
@@ -32,6 +35,7 @@
                     @endforeach
                 </tbody>
             </table>
+            </div>
             </div>
         </div>
     </div>

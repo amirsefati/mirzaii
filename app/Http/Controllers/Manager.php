@@ -531,4 +531,9 @@ class Manager extends Controller
         return redirect('manager/teacher_to_class');
     
     }
+
+    public function delte_course_item($course_id){
+        Course::where('id',$course_id)->delete();
+        return redirect('/manager/edit_cource');
+    }
 }

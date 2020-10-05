@@ -43,6 +43,7 @@
             </div>
             </form>
         </div>
+        <div style="overflow-x: auto;">
 
         <table id="myTable">
             <tr class="header"  style="background:#EEF8FC;">
@@ -90,6 +91,7 @@
             
             @endforeach
             </table>
+        </div>
     </div>
 </div>
 

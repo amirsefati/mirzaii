@@ -12,7 +12,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <label for="class">انتخاب کلاس</label>
-                        <select name="class" class="form-control">
+                        <select name="class" class="form-control" required>
                             <option value="">لیست کلاس ها</option>
                             @foreach($class_list as $class)
                                 <option value="{{$class->id}}">{{$class->kind}} - {{$class->name}} {{$class->desc}}</option>

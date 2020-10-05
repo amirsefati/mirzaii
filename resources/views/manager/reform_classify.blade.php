@@ -5,6 +5,7 @@
 <div class="row">
     <div class="col-md-12">
         <input type="text" id="myInput" onkeyup="myFunction()" placeholder="جست و جو بر اساس نام ">
+        <div style="overflow-x: auto;">
 
             <table id="myTable">
             <tr class="header"  style="background:#EEF8FC;">
@@ -41,6 +42,7 @@
                 @endif
             @endforeach
             </table>
+        </div>
     </div>
 </div>
 

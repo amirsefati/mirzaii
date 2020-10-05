@@ -91,7 +91,7 @@
                                     <li><a href="contact.html"> آلبوم تصاویر </a></li>
 
                                     <li><a href="contact.html">تماس با ما </a></li>
-                                    <li><a href="/select">تعویض  مدرسه </a></li>
+                                    <li><a href="/select">  مدرسه دانش </a></li>
 
                                 </ul>
                             </div>

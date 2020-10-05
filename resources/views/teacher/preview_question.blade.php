@@ -7,8 +7,12 @@
         <div class="card">
             <div class="card-header">پاسخ گویی به سوالات</div>
             <div class="card-body">
-                <table class="table table-striped table-inverse table-responsive">
-                    <thead class="thead-inverse">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="جست و جو بر اساس نام ">
+
+                <div style="overflow-x: auto;">
+
+                    <table id="myTable">      
+                      <thead class="thead-inverse">
                         <tr>
                             <th style="width:10%;">نام دانش آموز</th>
                             <th style="width:20%;">عنوان سوال</th>

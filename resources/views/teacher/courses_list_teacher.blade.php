@@ -7,9 +7,11 @@
         <div class="card">
             <div class="card-header">لیست دروس مدرسه و افزودن به کلاس</div>
             <div class="card-body">
-                <div class="row">
+            <input id="myInput" type="text" placeholder="جست جوی درس    ">
+
+                <div class="row" id="myTable">
                     @foreach($course as $course)
-                        <div class="col-md-2">
+                        <div class="col-md-2" >
                             <a href="add_course_to_class/{{$course->id}}">
                             <img src="{{$course->img}}" width="90%" alt=""></a>
                             <p style="margin:8px;font-weight:bold;font-size:16px">{{$course->title}}</p>

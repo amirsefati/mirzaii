@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Assigment;
 use App\Models\Classify;
 use App\Models\Course;
+use App\Models\Exercise;
 use App\Models\Notice_class;
 use App\Models\Notice_school;
 use App\Models\question;
@@ -19,13 +20,17 @@ class Student extends Controller
         $id_user = Auth::user()->id;
         $class = User::find($id_user);
         $class_info = $class->class_to_classify;
-        $class_id = $class_info[0]->id;
-        $class_list_info = Classify::where('id',$class_id)->first();
-        $list_class = $class_list_info->classify_to_class;
-        $course_list = $class_list_info->classify_to_course;
-        $school_notification = Notice_school::where('show',1)->where('gender',$user_info->gender)->orderBy('order')->get();
-        $class_notification = $class_list_info->classify_to_notice_class;
-        return view('student.home',compact(['user_info','class_info','list_class','course_list','school_notification','class_notification']));
+        if(strlen($class_info) > 5){
+            $class_id = $class_info[0]->id;
+            $class_list_info = Classify::where('id',$class_id)->first();
+            $list_class = $class_list_info->classify_to_class;
+            $course_list = $class_list_info->classify_to_course;
+            $school_notification = Notice_school::where('show',1)->where('gender',$user_info->gender)->orderBy('order')->get();
+            $class_notification = $class_list_info->classify_to_notice_class;
+            return view('student.home',compact(['user_info','class_info','list_class','course_list','school_notification','class_notification']));    
+        }
+        return 'کلاس به دانش آموز اختصاص داده نشده است';
+       
     }
 
     public function course_datail($course_id){
@@ -81,4 +86,24 @@ class Student extends Controller
          return redirect('/student/send_question');
 
     }
+
+    public function upload_exercise_post(Request $request){
+        
+        $images = [];
+        foreach($request->file('file') as $img){
+            $name = rand(100000000,90000000000).'.'.$img->getClientOriginalExtension();
+            $destinationPath = public_path('/images/exercise/');
+            $img->move($destinationPath, $name);
+            $upload_file = '/images/exercise/' . $name;
+            array_push($images,$upload_file);
+        }
+        $count_file = count($images);
+        Exercise::create([
+            'user_id' => $request->user_id,
+            'course_id' => $request->course_id,
+            'assigment_id' => $request->assignment_id,
+            'file' => json_encode($images)
+        ]);
+        return response()->json(['success'=>$count_file]);
+        }
 }

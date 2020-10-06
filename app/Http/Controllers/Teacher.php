@@ -122,13 +122,13 @@ class Teacher extends Controller
             'desc'=>'required',
         ]);
         
-        $img_url = '';
-        if($request->hasFile('img')){
-            $image = $request->file('img');
+        $zip_file = '';
+        if($request->hasFile('zip_file')){
+            $image = $request->file('zip_file');
             $name = time().'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('/images/course/');
             $image->move($destinationPath, $name);
-            $img_url = '/images/course/' . $name;
+            $zip_file = '/images/course/' . $name;
         }
 
         $file_video = '';
@@ -178,7 +178,7 @@ class Teacher extends Controller
             'teacher_created'=>$request->teacher_upload_id,
             'show'=>$request->show,
 
-            'img'=>$img_url,
+            'img'=>$zip_file,
             'file_video'=>$file_video,
             'file_video_2'=>$file_video_2,
             'file_doc'=>$file_doc,
@@ -207,13 +207,13 @@ class Teacher extends Controller
         ]);
 
         
-        $img_url = Assigment::where('id',$request->assginment_id)->first()->img;
-        if($request->hasFile('img')){
-            $image = $request->file('img');
+        $zip_file = Assigment::where('id',$request->assginment_id)->first()->img;
+        if($request->hasFile('zip_file')){
+            $image = $request->file('zip_file');
             $name = time().'.'.$image->getClientOriginalExtension();
             $destinationPath = public_path('/images/course/');
             $image->move($destinationPath, $name);
-            $img_url = '/images/course/' . $name;
+            $zip_file = '/images/course/' . $name;
         }
 
         $file_video = Assigment::where('id',$request->assginment_id)->first()->file_video;
@@ -264,7 +264,7 @@ class Teacher extends Controller
             'teacher_created'=>$request->teacher_upload_id,
             'show'=>$request->show,
 
-            'img'=>$img_url,
+            'img'=>$zip_file,
             'file_video'=>$file_video,
             'file_video_2'=>$file_video_2,
             'file_doc'=>$file_doc,

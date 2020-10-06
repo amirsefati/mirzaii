@@ -539,12 +539,20 @@ class Manager extends Controller
     }
 
     public function config_system(){
+        if(Homepage::count() < 3){
+            Homepage::create(['cate'=>'config','gender'=>'پسر','config_name'=>'phone','config_value'=> '']);
+            Homepage::create(['cate'=>'config','gender'=>'پسر','config_name'=>'fax','config_value'=> '']);
+            Homepage::create(['cate'=>'config','gender'=>'پسر','config_name'=>'telegram','config_value'=> '']);
+            Homepage::create(['cate'=>'config','gender'=>'پسر','config_name'=>'email','config_value'=> '']);
+            Homepage::create(['cate'=>'config','gender'=>'پسر','config_name'=>'count_student','config_value'=> '']);
+            Homepage::create(['cate'=>'config','gender'=>'پسر','config_name'=>'count_class','config_value'=> '']);
+            Homepage::create(['cate'=>'config','gender'=>'پسر','config_name'=>'count_teacher','config_value'=> '']);
+        }
         #auth for two manager man or woman
         return view('manager.config_system');
     }
 
     public function homepage_config_system(Request $request){
-        
         if(Homepage::where('config_name','phone')->exists()){
             Homepage::where('config_name','phone')->update(['config_value'=> $request->phone]);
         }else{#auth

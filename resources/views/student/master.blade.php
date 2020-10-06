@@ -15,30 +15,37 @@
 <body>
     <div class="container-fluid">
         
-<div class="row" style="background:#B2DDF7;">   
-    <div class="col-md-1 col-4 pt-3">
+<div class="row" style="background:#B2DDF7;"> 
+    <div class="col-md-2"></div>
+    <div class="col-md-1 col-4 pt-3" style="text-align: center;">
         <p>پروفایل شما</p>
     </div>
-    <div class="col-md-1 col-4 pt-3">
+    <div class="col-md-1 col-4 pt-3" style="text-align: center;">
         <p>پیام ها</p>
     </div>
-    <div class="col-md-1 col-4 pt-3">
-        <a href="/">
-            <p>خانه</p>
+    <div class="col-md-1 col-4 pt-3" style="text-align: center;">
+        <a href="/student">
+            <p>صفحه اصلی</p>
         </a>
     </div>
-    <div class="col-md-6 col-0 pt-3"></div>
-    <div class="col-md-2  pt-3" style="text-align: center;">
+    <div class="col-md-4 col-0 pt-3"></div>
+    <div class="col-md-2  pt-0" style="text-align: center;">
+        @if(Auth::user()->gender == 'پسر')
         <a href="/">
-            لوگو مدرسه  
+            <img src="/images/afarinesh_logo_b.png" width="60px" alt="">  
         </a>
+        @else
+        <a href="/">
+            <img src="/images/danesh_logo_b.png" alt="">  
+        </a>
+        @endif
    </div>
     <div class="col-md-1 col-0 pt-3"></div>
 </div>
 <div class="row">
     <div class="col-md-12" style="text-align: center;">
-        <a href="/student">
-            <button class="btn btn-danger m-2 pl-4 pr-4">بازگشت</button>
+        <a href="/student/course/{{$course->id}}">
+            <button class="btn btn-danger m-2 pl-4 pr-4">{{$course->title}}</button>
         </a>
     </div>
 </div>
@@ -56,7 +63,37 @@
     </div>
 </body>
 <script src="{{asset('js/player/plyr.js')}}"></script>
+<script src="{{asset('js/jquery.min.js')}}"></script>
+<script src="http://malsup.github.com/jquery.form.js"></script> 
+<script>
+$(document).ready(function(){
+$('form').ajaxForm({
+beforeSend:function(){
+$('#success').empty();
+$('.progress-bar').text('0%');
+$('.progress-bar').css('width', '0%');
+},
+uploadProgress:function(event, position, total, percentComplete){
+$('.progress-bar').text(percentComplete + '0%');
+$('.progress-bar').css('width', percentComplete + '0%');
+},
+success:function(data)
+{
+if(data.success)
+{
+$('#success').html('<div class="text-success text-center"><b>'+data.success+"  فایل با موفقیت آپلود شد  "+'</b></div><br /><br />');
+$('#success').append(data.image);
+$('.progress-bar').text('آپلود شده');
+$('.progress-bar').css('width', '100%');
+$('.course_cart').css('disable', 'true');
+$( ".custom-file-input" ).prop( "disabled", true );
+$( ".uppload" ).prop( "disabled", true );
 
+}
+}
+});
+});
+</script>
 </html>
 
 

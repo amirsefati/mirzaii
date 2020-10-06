@@ -195,5 +195,9 @@ Route::prefix('student')->group(function(){
     Route::get('/send_question',[Student::class,'send_question']);
     Route::post('/send_question',[Student::class,'send_question_post']);
 
+    Route::post('/upload_exercise',[Student::class,'upload_exercise_post']);
+
+    
+
     
 });

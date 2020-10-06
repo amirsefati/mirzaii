@@ -1,0 +1,96 @@
+cd $HOME
+git clone https://github.com/arut/nginx-ts-module.git
+wget https://nginx.org/download/nginx-1.13.8.tar.gz
+git clone https://github.com/sergey-dryabzhinsky/nginx-rtmp-module.git
+sudo apt-get install build-essential libpcre3 libpcre3-dev libssl-dev
+tar -xf nginx-1.13.8.tar.gz 
+cd nginx-1.13.8/
+sudo apt update
+sudo apt install autoconf automake build-essential libpcre3 libpcre3-dev libssl-dev
+./configure --with-http_ssl_module --add-module=../nginx-rtmp-module --with-http_stub_status_module --add-module=../nginx-ts-module
+make
+sudo make install
+
+cd /usr/local/nginx/conf/
+sudo nano nginx.conf
+
+
+worker_processes  auto;
+events {
+    worker_connections  1024;
+}
+
+# RTMP configuration
+rtmp {
+    server {
+        listen 1935; # Listen on standard RTMP port
+        chunk_size 4000;
+
+        application show {
+            live on;
+            # Turn on HLS
+            hls on;
+            hls_path /mnt/hls/;
+            hls_fragment 3;
+            hls_playlist_length 60;
+            # disable consuming the stream from nginx as rtmp
+            deny play all;
+    # Instruct clients to adjust resolution according to bandwidth
+            hls_variant _low BANDWIDTH=512000; # Low bitrate, sub-SD resolution
+            hls_variant _mid BANDWIDTH=1024000; # Medium bitrate, SD resolution
+            hls_variant _hd720 BANDWIDTH=2048000; # High bitrate, HD 720p resolution
+        }
+
+    }
+}
+
+http {
+    sendfile off;
+    tcp_nopush on;
+    #aio on;
+    directio 512;
+    default_type application/octet-stream;
+
+    server {
+        listen 8080;
+
+        location / {
+            # Disable cache
+            add_header 'Cache-Control' 'no-cache';
+
+            # CORS setup
+            add_header 'Access-Control-Allow-Origin' '*' always;
+            add_header 'Access-Control-Expose-Headers' 'Content-Length';
+
+            # allow CORS preflight requests
+            if ($request_method = 'OPTIONS') {
+                add_header 'Access-Control-Allow-Origin' '*';
+                add_header 'Access-Control-Max-Age' 1728000;
+                add_header 'Content-Type' 'text/plain charset=UTF-8';
+                add_header 'Content-Length' 0;
+                return 204;
+            }
+
+            types {
+                application/dash+xml mpd;
+                application/vnd.apple.mpegurl m3u8;
+                video/mp2t ts;
+            }
+        location /stats {
+        stub_status;
+        }
+
+
+            root /mnt/;
+        }
+    }
+}
+
+sudo /usr/local/nginx/sbin/nginx -s stop
+
+sudo /usr/local/nginx/sbin/nginx
+
+
+http://<ip_of_your_nginx_server>:8080/stats
+
+http://<ip_of_your_nginx_server>:8080/hls/stream.m3u8

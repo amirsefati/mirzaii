@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Course;
 use App\Models\Classify;
+use App\Models\Homepage;
 use App\Models\Notice_class;
 use Illuminate\Http\Request;
 use App\Models\Notice_school;
@@ -536,4 +537,249 @@ class Manager extends Controller
         Course::where('id',$course_id)->delete();
         return redirect('/manager/edit_cource');
     }
+
+    public function config_system(){
+        #auth for two manager man or woman
+        return view('manager.config_system');
+    }
+
+    public function homepage_config_system(Request $request){
+        
+        if(Homepage::where('config_name','phone')->exists()){
+            Homepage::where('config_name','phone')->update(['config_value'=> $request->phone]);
+        }else{#auth
+            Homepage::create(['cate'=>'config','gender'=>'پسر','config_name'=>'phone','config_value'=> $request->phone]);
+        }
+
+        if(Homepage::where('config_name','fax')->exists()){
+            Homepage::where('config_name','fax')->update(['config_value'=> $request->fax]);
+        }else{#auth
+            Homepage::create(['cate'=>'config','gender'=>'پسر','config_name'=>'fax','config_value'=> $request->fax]);
+        }
+
+        if(Homepage::where('config_name','telegram')->exists()){
+            Homepage::where('config_name','telegram')->update(['config_value'=> $request->telegram]);
+        }else{#auth
+            Homepage::create(['cate'=>'config','gender'=>'پسر','config_name'=>'telegram','config_value'=> $request->telegram]);
+        }
+
+        if(Homepage::where('config_name','email')->exists()){
+            Homepage::where('config_name','email')->update(['config_value'=> $request->email]);
+        }else{#auth
+            Homepage::create(['cate'=>'config','gender'=>'پسر','config_name'=>'email','config_value'=> $request->email]);
+        }
+
+        if(Homepage::where('config_name','count_student')->exists()){
+            Homepage::where('config_name','count_student')->update(['config_value'=> $request->count_student]);
+        }else{#auth
+            Homepage::create(['cate'=>'config','gender'=>'پسر','config_name'=>'count_student','config_value'=> $request->count_student]);
+        }
+
+        if(Homepage::where('config_name','count_class')->exists()){
+            Homepage::where('config_name','count_class')->update(['config_value'=> $request->count_class]);
+        }else{#auth
+            Homepage::create(['cate'=>'config','gender'=>'پسر','config_name'=>'count_class','config_value'=> $request->count_class]);
+        }
+
+        if(Homepage::where('config_name','count_teacher')->exists()){
+            Homepage::where('config_name','count_teacher')->update(['config_value'=> $request->count_teacher]);
+        }else{#auth
+            Homepage::create(['cate'=>'config','gender'=>'پسر','config_name'=>'count_teacher','config_value'=> $request->count_teacher]);
+        }
+
+        return redirect('/manager/config_system');
+    }
+
+    public function schedule_class(){
+        #auth
+        $sche_class = Homepage::where('cate','schedule_class')->where('gender','پسر')->get();
+        return view('manager.schedule_class',compact('sche_class'));
+    }
+
+    public function schedule_class_post(Request $request){
+        $img_1 = '';
+        if($request->hasFile('img')){
+            $image = $request->file('img');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/images/homepage_schedule_class/');
+            $image->move($destinationPath, $name);
+            $img_1 = '/images/homepage_schedule_class/' . $name ;
+        }
+
+        $img_2 = '';
+        if($request->hasFile('etc')){
+            $image = $request->file('etc');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/images/homepage_schedule_class/');
+            $image->move($destinationPath, $name);
+            $img_2 = '/images/homepage_schedule_class/' . $name ;
+        }
+        Homepage::create([
+            'title' => $request->title,
+            'desc' => $request->desc,
+            'cate' => 'schedule_class',
+            'img' => $img_1,
+            'etc' => $img_2,
+            'gender' => 'پسر',#auth
+            'etc_1' => $request->etc_1
+        ]);
+
+        return redirect('/manager/schedule_class');
+    }
+
+    public function home_page_notice(){
+        #auth
+        $notice = Homepage::where('cate','notice')->where('gender','پسر')->get();
+        return view('manager.home_page_notice',compact('notice'));
+
+    }
+
+    public function home_page_notice_post(Request $request){
+        $img_1 = '';
+        if($request->hasFile('img')){
+            $image = $request->file('img');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/images/home_page_notice/');
+            $image->move($destinationPath, $name);
+            $img_1 = '/images/home_page_notice/' . $name ;
+        }
+
+        $img_2 = '';
+        if($request->hasFile('etc')){
+            $image = $request->file('etc');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/images/home_page_notice/');
+            $image->move($destinationPath, $name);
+            $img_2 = '/images/home_page_notice/' . $name ;
+        }
+        Homepage::create([
+            'title' => $request->title,
+            'desc' => $request->desc,
+            'cate' => 'notice',
+            'img' => $img_1,
+            'etc' => $img_2,
+            'gender' => 'پسر',#auth
+            'etc_1' => $request->etc_1,
+            'category' => $request->category
+
+        ]);
+
+        return redirect('/manager/home_page_notice');
+    }
+
+    public function homepage_event(){
+         #auth
+         $event = Homepage::where('cate','event')->where('gender','پسر')->get();
+         return view('manager.homepage_event',compact('event')); 
+    }
+
+    public function homepage_event_post(Request $request){
+        $img_1 = '';
+        if($request->hasFile('img')){
+            $image = $request->file('img');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/images/homepage_event/');
+            $image->move($destinationPath, $name);
+            $img_1 = '/images/homepage_event/' . $name ;
+        }
+
+        $img_2 = '';
+        if($request->hasFile('etc')){
+            $image = $request->file('etc');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/images/homepage_event/');
+            $image->move($destinationPath, $name);
+            $img_2 = '/images/homepage_event/' . $name ;
+        }
+        Homepage::create([
+            'title' => $request->title,
+            'desc' => $request->desc,
+            'cate' => 'event',
+            'img' => $img_1,
+            'etc' => $img_2,
+            'gender' => 'پسر',#auth
+            'etc_1' => $request->etc_1,
+            'category' => $request->category
+
+        ]);
+
+        return redirect('/manager/homepage_event');
+    }
+
+    public function homepage_intro_book(){
+       #auth
+       $intro_book = Homepage::where('cate','intro_book')->where('gender','پسر')->get();
+       return view('manager.homepage_intro_book',compact('intro_book'));
+
+    }
+
+    public function homepage_intro_book_post(Request $request){
+        $img_1 = '';
+        if($request->hasFile('img')){
+            $image = $request->file('img');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/images/homepage_intro_book/');
+            $image->move($destinationPath, $name);
+            $img_1 = '/images/homepage_intro_book/' . $name ;
+        }
+
+        $img_2 = '';
+        if($request->hasFile('etc')){
+            $image = $request->file('etc');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/images/homepage_intro_book/');
+            $image->move($destinationPath, $name);
+            $img_2 = '/images/homepage_intro_book/' . $name ;
+        }
+        Homepage::create([
+            'title' => $request->title,
+            'desc' => $request->desc,
+            'cate' => 'intro_book',
+            'img' => $img_1,
+            'etc' => $img_2,
+            'gender' => 'پسر',#auth
+            'etc_1' => $request->etc_1,
+            'category' => $request->category
+
+        ]);
+
+        return redirect('/manager/homepage_intro_book');
+    }
+
+    public function homepage_slider(){
+        #auth
+       $slider = Homepage::where('cate','slider')->where('gender','پسر')->get();
+       return view('manager.homepage_slider',compact('slider'));
+
+    }
+
+    public function homepage_slider_post(Request $request){
+        $img_1 = '';
+        if($request->hasFile('img')){
+            $image = $request->file('img');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/images/homepage_slider/');
+            $image->move($destinationPath, $name);
+            $img_1 = '/images/homepage_slider/' . $name ;
+        }
+
+        Homepage::create([
+            'title' => $request->title,
+            'desc' => $request->desc,
+            'cate' => 'slider',
+            'img' => $img_1,
+            'gender' => 'پسر',#auth
+            'etc_1' => $request->etc_1,
+            'category' => $request->category
+
+        ]);
+
+        return redirect('/manager/homepage_slider');
+    }
+
+    public function delete_config($item_id){
+        Homepage::where('id',$item_id)->delete();
+        return redirect('/manager/table');
+    }
+
 }

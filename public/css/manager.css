@@ -31,6 +31,21 @@ body{
     box-shadow: 1px 1px 4px -1px rgba(0,0,0,0.75);
     border-radius: 5px;
 }
+
+.input-group>.input-group-prepend>.input-group-text{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.input-group>.form-control:not(:first-child){
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
 @media (max-width: 991.98px){
     .app-sidebar{
         transform:translateX(220px)!important;

@@ -4,12 +4,12 @@
 
 <div class="row">
     <div class="col-md-12">
-        <div class="card">
+        <div class="card ">
             <div class="card-header">لیست دروس مدرسه و افزودن به کلاس</div>
             <div class="card-body">
             <input id="myInput" type="text" placeholder="جست جوی درس    ">
 
-                <div class="row" id="myTable">
+                <div class="row mr-0 ml-0" id="myTable">
                     @foreach($course as $course)
                         <div class="col-md-2" >
                             <a href="add_course_to_class/{{$course->id}}">

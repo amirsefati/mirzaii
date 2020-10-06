@@ -356,7 +356,39 @@
                                     </a>
                                 </li>
 
-                                
+                                <li class="app-sidebar__heading">تنظیمات</li>
+                                <li>
+                                    <a href="/manager/config_system" >
+                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        تنظیمات کلی 
+                                    </a>
+
+                                    <a href="/manager/schedule_class" >
+                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        برنامه تشکیل کلاس ها
+                                    </a>
+
+                                    <a href="/manager/home_page_notice" >
+                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        اطلاعیه ها
+                                    </a>
+
+                                    <a href="/manager/homepage_event" >
+                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        رویداد ها
+                                    </a>
+
+                                    <a href="/manager/homepage_intro_book" >
+                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                         معرفی کتاب
+                                    </a>
+                                   
+                                    <a href="/manager/homepage_slider" >
+                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        اسلایدر
+                                    </a>
+                                </li>
+
                                 
                             </ul>
                         </div>

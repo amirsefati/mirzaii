@@ -113,6 +113,26 @@ Route::prefix('manager')->group(function(){
 
     Route::get('delte_course_item/{course_id}',[Manager::class,'delte_course_item']);
 
+    Route::get('config_system',[Manager::class,'config_system']);
+
+    Route::post('homepage_config_system',[Manager::class,'homepage_config_system']);
+
+    Route::get('schedule_class',[Manager::class,'schedule_class']);
+    Route::post('schedule_class',[Manager::class,'schedule_class_post']);
+
+    Route::get('home_page_notice',[Manager::class,'home_page_notice']);
+    Route::post('home_page_notice',[Manager::class,'home_page_notice_post']);
+
+    Route::get('homepage_event',[Manager::class,'homepage_event']);
+    Route::post('homepage_event',[Manager::class,'homepage_event_post']);
+
+    Route::get('homepage_intro_book',[Manager::class,'homepage_intro_book']);
+    Route::post('homepage_intro_book',[Manager::class,'homepage_intro_book_post']);
+
+    Route::get('homepage_slider',[Manager::class,'homepage_slider']);
+    Route::post('homepage_slider',[Manager::class,'homepage_slider_post']);
+
+    Route::get('delete_config/{item_id}',[Manager::class,'delete_config']);
 
     
 });

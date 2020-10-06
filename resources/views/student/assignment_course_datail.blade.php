@@ -12,15 +12,7 @@
 
             <div class="card-body">
                 <p>
-                این جلسه توسط 
-                @if(App\Models\User::where('id',$assignment->id)->first()->gender == 'پسر')
-                    آقای معلم
-                @else
-                    خانم معلم
-                @endif
-                {{App\Models\User::where('id',$assignment->id)->first()->name}}
-                {{App\Models\User::where('id',$assignment->id)->first()->family}}
-                بارگذاری شده است 
+                
                 </p>
                 <br>
                 <p class="course_assigment_title">{{$assignment->title}}</p>

@@ -1,8 +1,8 @@
 .img_afarinesh{
-    width:190px;
+    width:250px;
 }
 .img_danesh{
-    width: 220px;
+    width: 290px;
 }
 
 @media only screen and (max-width:500px){
@@ -11,5 +11,8 @@
     }
     .img_danesh{
         width: 135px;
+    }
+    .max_height{
+        max-height: 370px;
     }
 }

@@ -21,7 +21,7 @@
                         @foreach($assigment as $assigment_list)
                             <div class="tree_assigment_list" style="margin-top:40px;">
                                 <a href="/teacher/edit_assigment/{{$course->id}}/{{$assigment_list->id}}">
-                                <p style="margin:8px;font-size:16px;font-weight: bold;">{{$assigment_list->title}}</p></a>
+                                <p style="margin:8px;font-size:16px;font-weight: bold;">{{$assigment_list->title}}</p></a> 
                                 <p style="margin:5px;font-size:12px"> -- {{$assigment_list->desc}}</p>
                                 <p style="margin:5px;font-size:12px"> -- {{$assigment_list->desc_2}}</p>
                             </div>

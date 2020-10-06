@@ -4,7 +4,9 @@ use App\Http\Controllers\Authentication;
 use App\Http\Controllers\Teacher;
 use App\Http\Controllers\Manager;
 use App\Http\Controllers\Student;
-
+use App\Http\Middleware\Managermidd;
+use App\Http\Middleware\Studentmidd;
+use App\Http\Middleware\Teachermidd;
 use Illuminate\Support\Facades\Route;
 
 
@@ -32,7 +34,7 @@ Route::get('/login',[Authentication::class,'login']);
 Route::post('/login',[Authentication::class,'login_post']);
 Route::get('/system/logout',[Authentication::class,'logout']);
 
-Route::prefix('manager')->group(function(){
+Route::prefix('manager')->middleware([Managermidd::class])->group(function(){
 
     Route::get('add_class',[Manager::class,'add_class']);
     Route::post('add_class',[Manager::class,'add_class_post']);
@@ -138,7 +140,7 @@ Route::prefix('manager')->group(function(){
 });
 
 
-Route::prefix('teacher')->group(function(){
+Route::prefix('teacher')->middleware([Teachermidd::class])->group(function(){
     Route::get('class_list',[Teacher::class,'class_list']);
  
     Route::get('list_student_class/{id}',[Teacher::class,'list_student_class']);
@@ -182,10 +184,12 @@ Route::prefix('teacher')->group(function(){
 
     Route::get('delete_noti/{id_moti}',[Teacher::class,'delete_noti']);
 
+    Route::get('delete_assignment/{assignmet_id}',[Teacher::class,'delete_assignment']);
+
     
 });
 
-Route::prefix('student')->group(function(){
+Route::prefix('student')->middleware([Studentmidd::class])->group(function(){
     Route::get('/',[Student::class,'home']);
 
     Route::get('/course/{id_course}',[Student::class,'course_datail']);
@@ -196,8 +200,5 @@ Route::prefix('student')->group(function(){
     Route::post('/send_question',[Student::class,'send_question_post']);
 
     Route::post('/upload_exercise',[Student::class,'upload_exercise_post']);
-
-    
-
     
 });

@@ -242,8 +242,13 @@
         </div>
     </div>
 <script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/popper.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
+
 <script type="text/javascript" src="{{asset('js/main.js')}}"></script>
-<script type="text/javascript" src="{{asset('js/manager.js')}}"></script></body>
+<script type="text/javascript" src="{{asset('js/manager.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/date_jalali/jquery.md.bootstrap.datetimepicker.js')}}"></script>
+
 <script>
     $(document).ready(function(){
         $("#myInput").on("keyup", function() {
@@ -253,6 +258,30 @@
             });
         });
     });
+</script>
+<script>
+$('#date_select').MdPersianDateTimePicker({ 
+    targetTextSelector: '#input_date_select',
+    fromDate: true,
+    enableTimePicker: true,
+    groupId: 'rangeSelector1',
+    dateFormat: 'yyyy-MM-dd',
+    textFormat: 'yyyy-MM-dd',
+    });
+      $("#date_select").MdPersianDateTimePicker({
+        targetDateSelector: "#input_date_select",
+        targetTextSelector: "#showDate_class",
+        textFormat: " dddd dd MMMM yyyy ",
+        isGregorian: false,
+        modalMode: false,
+        englishNumber: false
+      });
+
+      $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();
+
+        
+        });
 </script>
 </body>
 </html>

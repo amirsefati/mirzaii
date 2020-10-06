@@ -6,6 +6,7 @@ use App\Models\Assigment;
 use App\Models\Classify;
 use App\Models\Course;
 use App\Models\Exercise;
+use App\Models\Exercisenotice;
 use App\Models\Notice_class;
 use App\Models\Notice_school;
 use App\Models\question;
@@ -25,9 +26,13 @@ class Student extends Controller
             $class_list_info = Classify::where('id',$class_id)->first();
             $list_class = $class_list_info->classify_to_class;
             $course_list = $class_list_info->classify_to_course;
+            $ex = [];
+            foreach($course_list as $course){
+                array_push($ex,Exercisenotice::where('course_id',$course->id)->where('timer' ,'>' , date("Y/m/d"))->get()); 
+            }
             $school_notification = Notice_school::where('show',1)->where('gender',$user_info->gender)->orderBy('order')->get();
             $class_notification = $class_list_info->classify_to_notice_class;
-            return view('student.home',compact(['user_info','class_info','list_class','course_list','school_notification','class_notification']));    
+            return view('student.home',compact(['user_info','class_info','list_class','course_list','school_notification','class_notification','ex']));    
         }
         return 'کلاس به دانش آموز اختصاص داده نشده است';
        

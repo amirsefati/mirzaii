@@ -14,8 +14,11 @@
                 <div class="col-md-12">
                     <label for="gender">برای کلاس :</label>
                     <select name="gender" class="form-control" id="">
+                        @if(Auth::user()->gender == 'پسر')
                         <option value="پسر">پسرانه</option>
+                        @else
                         <option value="دختر">دخترانه</option>
+                        @endif
                     </select>
                 </div>
             </div>

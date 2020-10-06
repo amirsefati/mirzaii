@@ -14,6 +14,19 @@
     <title>Document</title>
 </head>
 <body>
+    @if(strlen(json_encode($ex)) > 200)
+        @foreach($ex[0] as $e)
+            @if(App\Models\Exercise::where('user_id',Auth::user()->id)->where('course_id',$e->course_id)->count() < 1)
+            <a href="/student/course/{{$e->course_id}}/{{$e->assginment_id}}">
+                <div class="sticky_notice">
+                    شما یه تکلیف تحویل نشده دارید
+                </div>
+                </a>
+            @endif
+        @endforeach
+
+    @endif
+    
     <div class="container-fluid">
 <div class="row header_top_info">
     <div class="col-md-1 hide_in_phone"></div>

@@ -139,6 +139,17 @@ body{
     background: #2cc2bc;
     direction: rtl;
 }
+.sticky_notice{
+    width: 100%;
+    height: 70px;
+    background: #FF006E;
+    position: fixed;
+    bottom: 0;
+    z-index: 9999;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
 @media (max-width:500px){
     .img_profile_user{
         border-radius: 50%;

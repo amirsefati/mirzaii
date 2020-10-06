@@ -9,7 +9,17 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card mb-5">
-            <div class="card-header">ویرایش جلسه آموزشی به درس ({{$course->title}}  {{$course->grade}})</div>
+            <div class="card-header">
+                <div class="col-md-4">
+                    ویرایش جلسه آموزشی به درس ({{$course->title}}  {{$course->grade}})
+                </div>
+                <div class="col-md-6"></div>
+                <div class="col-md-2" style="text-align: left;">
+                    <a href="/teacher/delete_assignment/{{$assignment->id}}">
+                        <button class="btn btn-danger">حذف</button>
+                    </a>
+                </div>
+            </div>
                 <div class="card-body">
                 <div class="row">
                     <div class="col-md-4 mt-3">

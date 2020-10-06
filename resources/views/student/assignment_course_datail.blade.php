@@ -2,9 +2,7 @@
 
 @section('content')
 
-
-
-
+@if(strlen($assignment) > 10)
 @if(strlen($assignment->file_doc) > 10)
 @if(App\Models\Exercise::where('user_id',Auth::user()->id)->where('assigment_id',$assignment->id)->count() < 1)
 <form action="/student/upload_exercise" method="post" enctype="multipart/form-data">
@@ -59,6 +57,7 @@
     </div>
 </div>
 </form>
+@endif
 @endif
 @endif
 <div class="row">

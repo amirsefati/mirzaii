@@ -17,7 +17,7 @@ class CreateExercisenoticesTable extends Migration
             $table->id();
             $table->integer('course_id');
             $table->integer('assginment_id');
-            $table->integer('class_id');
+            $table->integer('class_id')->nullable();
 
             $table->string('timer');
             $table->string('title')->nullable();

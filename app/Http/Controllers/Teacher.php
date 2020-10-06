@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Classify;
 use App\Models\Course;
+use App\Models\Exercisenotice;
 use App\Models\Notice_class;
 use App\Models\question;
 use App\Models\User;
@@ -156,6 +157,8 @@ class Teacher extends Controller
             $destinationPath = public_path('/doc/course/');
             $doc->move($destinationPath, $name);
             $file_doc = '/doc/course/' . $name;
+
+            
         }
 
         $file_doc_2 = '';
@@ -167,7 +170,7 @@ class Teacher extends Controller
             $file_doc_2 = '/doc/course/' . $name;
         }
 
-        Assigment::create([
+        $assg = Assigment::create([
             'title'=>$request->title,
             'desc'=>$request->desc,
             'desc_2'=>$request->desc_2,
@@ -190,6 +193,16 @@ class Teacher extends Controller
         $course_attach = Course::where('id',$course_id)->first();
         $assigment_id = Assigment::where('title',$request->title)->where('desc',$request->desc)->first()->id;
         $course_attach->course_to_assigment()->attach($assigment_id);
+
+        if($request->hasFile('file_doc')){
+
+            Exercisenotice::create([
+                'course_id' => $request->course_id,
+                'assginment_id' => $assg->id,
+                'timer'=>$request->for_date
+            ]);
+        }
+        
         return redirect('/teacher/select_course_show_assigment/'.$course_id);
 
     }
@@ -308,7 +321,7 @@ class Teacher extends Controller
         $question = question::where('id',$request->question_id)->first();
         $question->question_to_answer()->attach($answer_create->id);
 
-        $question = question::where('id',$request->question_id)->update(['status',2]);
+        question::where('id',$request->question_id)->update(['status'=>2]);
         return redirect('/teacher/preview_question');
     }
 
@@ -335,5 +348,10 @@ class Teacher extends Controller
     public function delete_noti($id_noti){
         notice_class::where('id',$id_noti)->delete();
         return redirect('/teacher/notice_class_manage');
+    }
+
+    public function delete_assignment($assignmet_id){
+        return $assignmet_id;
+        Assigment::where('id',$assignmet_id)->delete();
     }
 }

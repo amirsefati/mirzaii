@@ -79,18 +79,31 @@
                 </div>
 
                 <div class="row mt-5">
-                    <div class="col-md-4 mt-2">
+                    <div class="col-md-3 mt-2">
                         <label for="file_doc_2">آپلود تکلیف  :</label>
                         <input type="file" name="file_doc" class="form-control">
 
                     </div>
 
-                    <div class="col-md-8 mt-2">
+                    <div class="col-md-6 mt-2">
                         <label for="file_doc_2_title">توضیح فایل  تکلیف :</label>
                         <input type="text" class="form-control" name="file_doc_title">
                     </div>
+
+                    <div class="col-md-3 mt-2">
+                        <label for="file_doc_2_title"> تاریخ پایان تحویل :</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text cursor-pointer" id="date_select" data-mdpersiandatetimepicker="" data-mdpersiandatetimepicker-group="rangeSelector1" data-fromdate="" data-uniqueid="1601319385285" data-original-title="" title="">تقویم</span>
+                                </div>
+                                <input type="text" name="for_date" id="input_date_select" class="form-control" placeholder="مشاهده برای تاریخ" aria-label="date4" aria-describedby="date4" readonly>
+                            </div>
+                            <small id="showDate_class" style="color:#A63D40">دوشنبه ۰۴ شهریور ۱۳۹۸</small>
+
+                    </div>
                 </div>
 
+                <p style="color: #A63D40;font-size:12px;"> در صورت آپلود تکلیف حتما تاریخ تحویل را تعیین کنید </p>
 
                 <input type="text" name="teacher_upload_id" value="{{Auth::user()->id}}" hidden>
                 <input type="text" name="course_id" value="{{$course->id}}" hidden>

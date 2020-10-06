@@ -26,8 +26,9 @@
                         <select class="form-control" name="class">
                             <option value="">لیست کلاس ها </option>
                             @foreach($list_class as $class)
+
                                 <option value="{{$class->id}}">{{$class->kind}}انه -- {{$class->name}} - {{$class->desc}}</option>
-                            @endforeach
+                                @endforeach
                         </select>
                     </div>
                 </div>
@@ -56,6 +57,7 @@
 
             </tr>
             @foreach($list_teacher as $teacher)
+
             <tr>
                 <td style="padding:0px">
                     <img src="{{$teacher->profile_img}}" style="width:65px" alt="">
@@ -88,7 +90,6 @@
 
                 
             </tr>
-            
             @endforeach
             </table>
         </div>

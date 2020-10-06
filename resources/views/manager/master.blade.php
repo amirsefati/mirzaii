@@ -22,7 +22,13 @@
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
         <div class="app-header header-shadow">
             <div class="app-header__logo">
-                <div class="logo-src"></div>
+                @if(Auth::user()->gender == 'پسر')
+                    <img src="/images/danesh_logo_b.png" width="70px" alt="">
+                @else
+                <img src="/images/afarinesh_logo_b.png" width="50px" alt="">
+
+                @endif
+                
                 <div class="header__pane ml-auto">
                     <div>
                         <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
@@ -86,7 +92,7 @@
                                 <div class="widget-content-left">
                                     <div class="btn-group">
                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-                                            <img width="42" class="rounded-circle" src="/images/avatars/1.jpg" alt="">
+                                            <img width="42" class="rounded-circle" src="{{Auth::user()->img}}" alt="">
                                             <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                         </a>
                                         <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
@@ -101,10 +107,10 @@
                                 </div>
                                 <div class="widget-content-left  ml-3 header-user-info">
                                     <div class="widget-heading">
-                                        خانم مدیر
+                                         {{Auth::user()->name}} {{Auth::user()->family}}
                                     </div>
                                     <div class="widget-subheading">
-                                        خانم میرزایی
+                                        پنل مدیریت
                                     </div>
                                 </div>
                                 <div class="widget-content-right header-user-info ml-3">
@@ -119,7 +125,9 @@
         </div>              <div class="app-main">
                 <div class="app-sidebar sidebar-shadow">
                     <div class="app-header__logo">
-                        <div class="logo-src"></div>
+                        <div class="logo-src">
+                            <img src="/images/danesh_logo_b.png" alt="">
+                        </div>
                         <div class="header__pane ml-auto">
                             <div>
                                 <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
@@ -181,19 +189,24 @@
                                                 </i>تخصیص معلم به کلاس
                                             </a>
                                         </li>
+                                        
+
+                                        @if(Auth::user()->gender == 'دختر')
+                                        <li>
+                                            <a href="/manager/student_girl_to_class">
+
+                                                <i class="metismenu-icon">
+                                                </i>کلاس بندی دخترانه
+                                            </a>
+                                        </li>
+                                        @else
                                         <li>
                                             <a href="/manager/student_boy_to_class">
                                                 <i class="metismenu-icon">
                                                 </i>کلاس بندی پسرانه
                                             </a>
                                         </li>
-                                        
-                                        <li>
-                                            <a href="/manager/student_girl_to_class">
-                                                <i class="metismenu-icon">
-                                                </i>کلاس بندی دخترانه
-                                            </a>
-                                        </li>
+                                        @endif
 
                                         <li>
                                             <a href="/manager/reform_classify">
@@ -252,6 +265,7 @@
                                                 افزودن دانش آموز پسر
                                             </a>
                                         </li>
+                                        @if(Auth::user()->gender == 'دختر')
 
                                         <li>
                                             <a href="/manager/add_student_girl">
@@ -259,14 +273,10 @@
                                                 افزودن دانش آموز دختر   
                                             </a>
                                         </li>
+                                        @endif
                                         
                                         
-                                        <li>
-                                            <a href="/manager/list_student_boy">
-                                                <i class="metismenu-icon"></i>
-                                                لیست دانش آموزان پسر
-                                            </a>
-                                        </li>
+                                        @if(Auth::user()->gender == 'دختر')
 
                                         <li>
                                             <a href="/manager/list_student_girl">
@@ -274,7 +284,14 @@
                                                 لیست دانش آموزان دختر
                                             </a>
                                         </li>
-                                        
+                                        @else
+                                        <li>
+                                            <a href="/manager/list_student_boy">
+                                                <i class="metismenu-icon"></i>
+                                                لیست دانش آموزان پسر
+                                            </a>
+                                        </li>
+                                        @endif
                                         
                                        
                                     </ul>

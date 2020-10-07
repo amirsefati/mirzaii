@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Homepage;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +21,7 @@ class Authentication extends Controller
                 return redirect('/teacher/class_list');
             }
             elseif($user_level == 3){
-                return redirect('/manager');
+                return redirect('/manager/table');
             }
             else{
                 return redirect('/login');
@@ -65,8 +66,8 @@ class Authentication extends Controller
     public function boy_or_girl(){
         if(session()->has('gender')){
             if(session('gender') == 'boy'){
-
-                return view('homepage.boy');
+                $config = Homepage::where('gender','پسر')->take(-5)->get();
+                return view('homepage.boy',compact('config'));
             
             }else{ 
 

@@ -35,3 +35,6 @@
 .header-area .mag-main-menu .classy-navbar .classynav ul li a:hover, .header-area .mag-main-menu .classy-navbar .classynav ul li a:focus{
     color: #27A599!important;     
 }
+.social-followers-info a{
+    font-size: 13px;
+}

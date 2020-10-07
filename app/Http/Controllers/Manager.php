@@ -608,12 +608,7 @@ class Manager extends Controller
 
     public function schedule_class(){
         $gender = Auth::user()->gender;
-        if($gender == 1){
-            $gender = 'پسر';
-        }else{
-            $gender = 'دختر';
-
-        }
+        
         $sche_class = Homepage::where('cate','schedule_class')->where('gender',$gender)->get();
         return view('manager.schedule_class',compact('sche_class'));
     }
@@ -651,12 +646,7 @@ class Manager extends Controller
 
     public function home_page_notice(){
         $gender = Auth::user()->gender;
-        if($gender == 1){
-            $gender = 'پسر';
-        }else{
-            $gender = 'دختر';
-
-        }
+        
         $notice = Homepage::where('cate','notice')->where('gender',$gender)->get();
         return view('manager.home_page_notice',compact('notice'));
 
@@ -686,7 +676,7 @@ class Manager extends Controller
             'cate' => 'notice',
             'img' => $img_1,
             'etc' => $img_2,
-            'gender' => Auth::user()->gedner,
+            'gender' => Auth::user()->gender,
             'etc_1' => $request->etc_1,
             'category' => $request->category
 
@@ -697,13 +687,8 @@ class Manager extends Controller
 
     public function homepage_event(){
         $gender = Auth::user()->gender;
-        if($gender == 1){
-            $gender = 'پسر';
-        }else{
-            $gender = 'دختر';
-
-        }
-         $event = Homepage::where('cate','event')->where('gender',$gedner)->get();
+        
+         $event = Homepage::where('cate','event')->where('gender',$gender)->get();
          return view('manager.homepage_event',compact('event')); 
     }
 
@@ -731,7 +716,7 @@ class Manager extends Controller
             'cate' => 'event',
             'img' => $img_1,
             'etc' => $img_2,
-            'gender' => Auth::user()->gedner,
+            'gender' => Auth::user()->gender,
             'etc_1' => $request->etc_1,
             'category' => $request->category
 
@@ -742,13 +727,8 @@ class Manager extends Controller
 
     public function homepage_intro_book(){
         $gender = Auth::user()->gender;
-        if($gender == 1){
-            $gender = 'پسر';
-        }else{
-            $gender = 'دختر';
-
-        }
-       $intro_book = Homepage::where('cate','intro_book')->where('gender',$gedner)->get();
+        
+       $intro_book = Homepage::where('cate','intro_book')->where('gender',$gender)->get();
        return view('manager.homepage_intro_book',compact('intro_book'));
 
     }

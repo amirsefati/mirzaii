@@ -91,7 +91,7 @@
                                     <li><a href="contact.html"> آلبوم تصاویر </a></li>
 
                                     <li><a href="contact.html">تماس با ما </a></li>
-                                    <li><a href="/select">  مدرسه دانش </a></li>
+                                    <li><a href="/select"> مدرسه آفرینش </a></li>
 
                                 </ul>
                             </div>
@@ -124,62 +124,30 @@
 
     <!-- ##### Hero Area Start ##### -->
     <div class="hero-area owl-carousel">
-        <!-- Single Blog Post -->
-        <div class="hero-blog-post bg-img bg-overlay" style="background-image: url(homepage/img/bg-img/1.jpg);">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <!-- Post Contetnt -->
-                        <div class="post-content text-center">
-                            <div class="post-meta" data-animation="fadeInUp" data-delay="100ms">
-                                <a href="#">12 شهریور</a>
-                                <a href="archive.html">lifestyle</a>
-                            </div>
-                            <a href="video-post.html" class="post-title" data-animation="fadeInUp" data-delay="300ms">تکالیف نوروزی</a>
-                            <a href="video-post.html" class="video-play" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
 
+        
         <!-- Single Blog Post -->
-        <div class="hero-blog-post bg-img bg-overlay" style="background-image: url(homepage/img/bg-img/2.jpg);">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <!-- Post Contetnt -->
-                        <div class="post-content text-center">
-                            <div class="post-meta" data-animation="fadeInUp" data-delay="100ms">
-                                <a href="#">4 آبان</a>
-                                <a href="archive.html">lifestyle</a>
+        @foreach($config as $book) 
+            @if($book->cate == 'slider')
+                <div class="hero-blog-post bg-img bg-overlay" style="background-image: url({{$book->img}});">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <div class="col-12">
+                        
+                                    <div class="post-content text-center">
+                                        <div class="post-meta" data-animation="fadeInUp" data-delay="100ms">
+                                            <a href="#">تاریخ</a>
+                                            <a href="archive.html">{{$book->category}}</a>
+                                        </div>
+                                        <a href="video-post.html" class="post-title" data-animation="fadeInUp" data-delay="300ms">{{$book->title}}</a>
+                                    </div>
                             </div>
-                            <a href="video-post.html" class="post-title" data-animation="fadeInUp" data-delay="300ms">برنامه مطالعاتی 13 تا 19 اردیبهشت</a>
-                            <a href="video-post.html" class="video-play" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play"></i></a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Single Blog Post -->
-        <div class="hero-blog-post bg-img bg-overlay" style="background-image: url(homepage/img/bg-img/3.jpg);">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <!-- Post Contetnt -->
-                        <div class="post-content text-center">
-                            <div class="post-meta" data-animation="fadeInUp" data-delay="100ms">
-                                <a href="#">3 مهر</a>
-                                <a href="archive.html">lifestyle</a>
-                            </div>
-                            <a href="video-post.html" class="post-title" data-animation="fadeInUp" data-delay="300ms">برنامه کلاسی هفته سوم ماه مبارک رمضان</a>
-                            <a href="video-post.html" class="video-play" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            @endif
+        @endforeach
     </div>
     <!-- ##### Hero Area End ##### -->
 
@@ -198,84 +166,28 @@
                 </div>
 
                 <!-- Single Blog Post -->
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="homepage/img/bg-img/4.jpg" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">کرم گرسنه گرسنه  ایریک کارل
-                        </a>
-                        <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
+                @foreach($config as $book)
+                    @if($book->cate == 'intro_book')
+                        <div class="single-blog-post d-flex">
+                            <div class="post-thumbnail">
+                                <img src="{{$book->img}}" alt="">
+                            </div>
+                            <div class="post-content" style="width: 95%;">
+                                <a href="/book/{{$book->id}}" class="post-title">{{$book->title}}
+                                </a>
+                                <p style="font-size:11px;">{!!substr($book->desc,0,180) !!}</p>
+                                <div class="post-meta d-flex justify-content-between">
+                                    <!-- <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
+                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
+                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a> -->
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    @endif
+                @endforeach
+              
 
-                <!-- Single Blog Post -->
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="homepage/img/bg-img/5.jpg" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">درخت دورافتاده/ ایند بلایتون
-                        </a>
-                        <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Post -->
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="homepage/img/bg-img/6.jpg" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">بابار  ژان اثر استاد دی برونوف
-                        </a>
-                        <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Post -->
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="homepage/img/bg-img/7.jpg" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">جزیره گنج / آر ال استیونسون
-                        </a>
-                        <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Post -->
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="homepage/img/bg-img/8.jpg" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">بچه های راه آهن / ای نسبیت
-                        </a>
-                        <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                        </div>
-                    </div>
-                </div>
+              
             </div>
 
             
@@ -287,79 +199,21 @@
                 </div>
 
                 <!-- Single Blog Post -->
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="homepage/img/bg-img/9.jpg" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">برنامه مطالعاتی 13 تا 19 اردیبهشت</a>
-                        <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
+                @foreach($config as $book)
+                    @if($book->cate == 'event')
+                        <div class="single-blog-post d-flex">
+                            <div class="post-thumbnail">
+                                <img src="{{$book->img}}" alt="">
+                            </div>
+                            <div class="post-content" style="width: 95%;">
+                                <a href="single-post.html" class="post-title">{{$book->title}}</a>
+                                <p>{{$book->desc}}</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    @endif
+                @endforeach
 
-                <!-- Single Blog Post -->
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="homepage/img/bg-img/10.jpg" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">چگونه ریاضی بخوانیم بدون استرس</a>
-                        <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Post -->
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="homepage/img/bg-img/11.jpg" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">توصیه هایی برای ورود به مدرسه بدون استرس</a>
-                        <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Post -->
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="homepage/img/bg-img/12.jpg" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">نمونه سوالات شبه امتحانی پایه نهم </a>
-                        <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Blog Post -->
-                <div class="single-blog-post d-flex">
-                    <div class="post-thumbnail">
-                        <img src="homepage/img/bg-img/13.jpg" alt="">
-                    </div>
-                    <div class="post-content">
-                        <a href="single-post.html" class="post-title">تدریس 181 ثانیه دانش آموزی جدید</a>
-                        <div class="post-meta d-flex justify-content-between">
-                            <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                            <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                            <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
-                        </div>
-                    </div>
-                </div>
+                
 
             </div>
         </div>
@@ -376,59 +230,20 @@
                 </div>
 
                 <div class="trending-post-slides owl-carousel">
-                    <!-- Single Trending Post -->
-                    <div class="single-trending-post">
-                        <img src="homepage/img/bg-img/19.jpg" alt="">
-                        <div class="post-content">
-                            <a href="#" class="post-cata">کلاس اول</a>
-                            <a href="video-post.html" class="post-title">برنامه هفته سوم مهر کلاس اول</a>
-                        </div>
-                    </div>
 
-                    <!-- Single Trending Post -->
+                @foreach($config as $book)
+                    @if($book->cate == 'schedule_class')
                     <div class="single-trending-post">
-                        <img src="homepage/img/bg-img/20.jpg" alt="">
+                        <img src="{{$book->img}}" alt="">
                         <div class="post-content">
-                            <a href="#" class="post-cata">کلاس دوم</a>
-                            <a href="video-post.html" class="post-title">برنامه هفته اول کلاس دوم</a>
+                            <a href="#" class="post-cata">{{$book->title}}</a>
+                            <a href="video-post.html" class="post-title">{{$book->desc}}</a>
                         </div>
                     </div>
-
-                    <!-- Single Trending Post -->
-                    <div class="single-trending-post">
-                        <img src="homepage/img/bg-img/21.jpg" alt="">
-                        <div class="post-content">
-                            <a href="#" class="post-cata">کلاس ششم</a>
-                            <a href="video-post.html" class="post-title">برنامه هفتگی کلاس ششم</a>
-                        </div>
-                    </div>
-
-                    <!-- Single Trending Post -->
-                    <div class="single-trending-post">
-                        <img src="homepage/img/bg-img/19.jpg" alt="">
-                        <div class="post-content">
-                            <a href="#" class="post-cata">کلاس پنجم</a>
-                            <a href="video-post.html" class="post-title">برنامه مااهانه کلاس پنجم</a>
-                        </div>
-                    </div>
-
-                    <!-- Single Trending Post -->
-                    <div class="single-trending-post">
-                        <img src="homepage/img/bg-img/20.jpg" alt="">
-                        <div class="post-content">
-                            <a href="#" class="post-cata">کلاس آنلاین</a>
-                            <a href="video-post.html" class="post-title">برنامه برگذاری کلاس های آنلاین جبرانی</a>
-                        </div>
-                    </div>
-
-                    <!-- Single Trending Post -->
-                    <div class="single-trending-post">
-                        <img src="homepage/img/bg-img/21.jpg" alt="">
-                        <div class="post-content">
-                            <a href="#" class="post-cata">کلاس اول</a>
-                            <a href="video-post.html" class="post-title">برگذاری کلاس جبرانی </a>
-                        </div>
-                    </div>
+                    @endif
+                @endforeach    
+                    
+                    
                 </div>
             </div>
 
@@ -445,114 +260,28 @@
 
                 <div class="sports-videos-slides owl-carousel mb-30">
                     <!-- Single Featured Post -->
-                    <div class="single-featured-post">
-                        <!-- Thumbnail -->
-                        <div class="post-thumbnail mb-50">
-                            <img src="homepage/img/bg-img/22.jpg" alt="">
-                            <a href="video-post.html" class="video-play"><i class="fa fa-play"></i></a>
-                        </div>
-                        <!-- Post Contetnt -->
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#">5 مرداد </a>
-                                <a href="archive.html">نمونه سوال</a>
-                            </div>
-                            <a href="video-post.html" class="post-title">نمونه سوالات شبه امتحانی پایه نهم - ارسالی آموزش و پرورش</a>
-                            <p>  فایل های قابل دانلود سوالات شبه امتحانی پایه نهم ارسال شده از سوی اداره آموزش و پرورش ناحیه 1 در پایین همین صفحه قرار داده شده است .
-
-                            </p>
-                        </div>
-                        <!-- Post Share Area -->
-                        <div class="post-share-area d-flex align-items-center justify-content-between">
-                            <!-- Post Meta -->
-                            <div class="post-meta pl-3">
-                            </div>
-                            <!-- Share Info -->
-                            <div class="share-info">
-                                <a href="#" class="sharebtn"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                                <!-- All Share Buttons -->
-                                <div class="all-share-btn d-flex">
-                                    <a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                    <a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                    <a href="#" class="google-plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                    <a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    @foreach($config as $book) 
+                        @if($book->cate == 'notice')
+                            <div class="single-featured-post">
+                                <!-- Thumbnail -->
+                                <div class="post-thumbnail mb-50">
+                                    <img src="{{$book->img}}" alt="">
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Featured Post -->
-                    <div class="single-featured-post">
-                        <!-- Thumbnail -->
-                        <div class="post-thumbnail mb-50">
-                            <img src="homepage/img/bg-img/22.jpg" alt="">
-                            <a href="video-post.html" class="video-play"><i class="fa fa-play"></i></a>
-                        </div>
-                        <!-- Post Contetnt -->
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#"> شهریور</a>
-                                <a href="archive.html">سلامت</a>
-                            </div>
-                            <a href="video-post.html" class="post-title">روش باز کردن پرسشنامه سلامت روان</a>
-                            <p>برای باز کردن و پر کردن پرسشنامه سلامت روان ، بعد از وارد شدن به صفحه شخصی از منوی میزکار دربالای صفحه  قسمت پرسشنامه سلامت روان (GHQ) را کلیک کنید و بعد از وارد شدن آن را پر کنید . باتشکر 
-
-                            </p>
-                        </div>
-                        <!-- Post Share Area -->
-                        <div class="post-share-area d-flex align-items-center justify-content-between">
-                            <!-- Post Meta -->
-
-                            <!-- Share Info -->
-                            <div class="share-info">
-                                <a href="#" class="sharebtn"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                                <!-- All Share Buttons -->
-                                <div class="all-share-btn d-flex">
-                                    <a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                    <a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                    <a href="#" class="google-plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                    <a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                                <!-- Post Contetnt -->
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <a href="#">{{$book->category}} </a>
+                                        <a href="archive.html">تاریخ</a>
+                                    </div>
+                                    <a href="video-post.html" class="post-title">{{$book->title}}</a>
+                                    <p> {{$book->desc}} 
+                                    </p>
                                 </div>
+                            
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Single Featured Post -->
-                    <div class="single-featured-post">
-                        <!-- Thumbnail -->
-                        <div class="post-thumbnail mb-50">
-                            <img src="homepage/img/bg-img/22.jpg" alt="">
-                            <a href="video-post.html" class="video-play"><i class="fa fa-play"></i></a>
-                        </div>
-                        <!-- Post Contetnt -->
-                        <div class="post-content">
-                            <div class="post-meta">
-                                <a href="#">4 مهر</a>
-                                <a href="archive.html">ویدیو</a>
-                            </div>
-                            <a href="video-post.html" class="post-title">کلیپ دانش آموزی در خانه بمانیم</a>
-                            <p>فایل ذیل حاوی نکاتی در رابطه با بیماری آنفلوانزا می باشد که مطالعه آن جهت آشنایی شما بزرگواران با این بیماری و ویژگی های آن سودمند می باشد.
-
-                            </p>
-                        </div>
-                        <!-- Post Share Area -->
-                        <div class="post-share-area d-flex align-items-center justify-content-between">
-                            <!-- Post Meta -->
-                            <div class="post-meta pl-3">
-                             </div>
-                            <!-- Share Info -->
-                            <div class="share-info">
-                                <a href="#" class="sharebtn"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                                <!-- All Share Buttons -->
-                                <div class="all-share-btn d-flex">
-                                    <a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                    <a href="#" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                    <a href="#" class="google-plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                    <a href="#" class="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @endif
+                    @endforeach
+                    
                 </div>
 
                 <div class="row">
@@ -598,19 +327,7 @@
                         </div>
                     </div>
 
-                    <!-- Single Blog Post -->
-                    <div class="col-12 col-lg-6">
-                        <div class="single-blog-post d-flex style-3 mb-30">
-                            <div class="post-thumbnail">
-                                <img src="homepage/img/bg-img/34.jpg" alt="">
-                            </div>
-                            <div class="post-content">
-                                <a href="single-post.html" class="post-title">چالش ورزش هوازی در منزل ؛ روز سوم</a>
-                                <div class="post-meta d-flex">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   
                 </div>
 
             </div>
@@ -627,14 +344,41 @@
                 </div>
                 <!-- Social Followers Info -->
                 <div class="social-followers-info">
-                    <!-- Facebook -->
-                    <a href="#" class="facebook-fans">     <span>تلفن</span></a>
-                    <!-- Twitter -->
-                    <a href="#" class="twitter-followers">  <span>فکس</span></a>
-                    <!-- YouTube -->
-                    <a href="#" class="youtube-subscribers">     <span>کانال تلگرام</span></a>
-                    <!-- Google -->
-                    <a href="#" class="google-followers">       <span>ایمیل</span></a>
+                    @foreach($config as $config1)
+
+                        @if($config1->cate == 'config')
+                            @if($config1->config_name == 'phone')
+                            <a href="#" class="facebook-fans"> 
+                                {{$config1->config_value}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span>تلفن</span></a>
+                            @endif
+                        @endif
+
+                        @if($config1->cate == 'config')
+                            @if($config1->config_name == 'fax')
+                            <a href="#" class="twitter-followers">  
+                                {{$config1->config_value}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <span>فکس</span></a>
+                            @endif
+                        @endif
+
+                        @if($config1->cate == 'config')
+                            @if($config1->config_name == 'telegram')
+                            <a href="#" class="youtube-subscribers">     
+                                {{$config1->config_value}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <span>کانال تلگرام</span></a>
+                            @endif
+                        @endif
+
+                        @if($config1->cate == 'config')
+                            @if($config1->config_name == 'email')
+                            <a href="#" class="google-followers">       
+                                {{$config1->config_value}} &nbsp;&nbsp;
+                                <span>ایمیل</span></a>
+                            @endif
+                        @endif
+
+                    @endforeach
                 </div>
             </div>
 
@@ -647,15 +391,31 @@
 
                 <!-- Catagory Widget -->
                 <ul class="catagory-widgets">
-                    <li class="reform_rtl"><a href="#"><span></i> تعداد دانش آموزان</span> <span>35</span></a></li>
-                    <li class="reform_rtl"><a href="#"><span></i> تعداد کلاس ها</span> <span>30</span></a></li>
-                    <li class="reform_rtl"><a href="#"><span></i> تعداد معلمین</span> <span>13</span></a></li>
+                    @foreach($config as $config2)
+                        @if($config2->cate == 'config')
+                            @if($config2->config_name == 'count_student')
+                                <li class="reform_rtl"><a href="#"><span></i> تعداد دانش آموزان</span> <span>{{$config2 ->config_value}}</span></a></li>
+                            @endif
+                        @endif
+
+                        @if($config2->cate == 'config')
+                            @if($config2->config_name == 'count_class')
+                            <li class="reform_rtl"><a href="#"><span></i> تعداد کلاس ها</span> <span>{{$config2 ->config_value}}</span></a></li>
+                            @endif
+                        @endif
+
+                        @if($config2->cate == 'config')
+                            @if($config2->config_name == 'count_teacher')
+                            <li class="reform_rtl"><a href="#"><span></i> تعداد معلمین</span> <span>{{$config2 ->config_value}}</span></a></li>
+                            @endif
+                        @endif
+                    @endforeach
                 </ul>
             </div>
 
             <!-- Sidebar Widget -->
             <div class="single-sidebar-widget">
-                    تقویم
+                    <!-- تقویم   -->
             </div>
 
             <!-- Sidebar Widget -->
@@ -735,8 +495,9 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="footer-widget">
                         <!-- Logo -->
-                        <a href="index.html" class="foo-logo"><img src="homepage/img/core-img/logo2.png" alt=""></a>
-                        <p>متنی در مورد مدرسه </p>
+
+                        <a href="index.html" class="foo-logo"><img src="/images/afarinesh_logo_b.png" width="110px" alt=""></a>
+
                         <div class="footer-social-info">
                             <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
                             <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
@@ -780,9 +541,6 @@
                             <div class="post-content">
                                 <a href="single-post.html" class="post-title">بازگشایی مدارس بعد از تعطیلات</a>
                                 <div class="post-meta d-flex justify-content-between">
-                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
                                 </div>
                             </div>
                         </div>
@@ -794,9 +552,6 @@
                             <div class="post-content">
                                 <a href="single-post.html" class="post-title">تعطیلات نوروزی و تکالیف روزانه</a>
                                 <div class="post-meta d-flex justify-content-between">
-                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
                                 </div>
                             </div>
                         </div>

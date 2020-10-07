@@ -548,59 +548,50 @@ class Manager extends Controller
             Homepage::create(['cate'=>'config','gender'=>'پسر','config_name'=>'count_student','config_value'=> '']);
             Homepage::create(['cate'=>'config','gender'=>'پسر','config_name'=>'count_class','config_value'=> '']);
             Homepage::create(['cate'=>'config','gender'=>'پسر','config_name'=>'count_teacher','config_value'=> '']);
+
+            Homepage::create(['cate'=>'config','gender'=>'دختر','config_name'=>'phone','config_value'=> '']);
+            Homepage::create(['cate'=>'config','gender'=>'دختر','config_name'=>'fax','config_value'=> '']);
+            Homepage::create(['cate'=>'config','gender'=>'دختر','config_name'=>'telegram','config_value'=> '']);
+            Homepage::create(['cate'=>'config','gender'=>'دختر','config_name'=>'email','config_value'=> '']);
+            Homepage::create(['cate'=>'config','gender'=>'دختر','config_name'=>'count_student','config_value'=> '']);
+            Homepage::create(['cate'=>'config','gender'=>'دختر','config_name'=>'count_class','config_value'=> '']);
+            Homepage::create(['cate'=>'config','gender'=>'دختر','config_name'=>'count_teacher','config_value'=> '']);
+        
         }
-        #auth for two manager man or woman
+        
+
         return view('manager.config_system');
     }
 
     public function homepage_config_system(Request $request){
         $gender = Auth::user()->gender;
-        if($gender == 1){
-            $gender = 'پسر';
-        }else{
-            $gender = 'دختر';
-
-        }
-        if(Homepage::where('config_name','phone')->exists()){
+        
+        if(Homepage::where('config_name','phone')->where('gender',$gender)->exists()){
             Homepage::where('config_name','phone')->update(['config_value'=> $request->phone]);
-        }else{#auth
-            Homepage::create(['cate'=>'config','gender'=>$gender,'config_name'=>'phone','config_value'=> $request->phone]);
         }
 
-        if(Homepage::where('config_name','fax')->exists()){
+        if(Homepage::where('config_name','fax')->where('gender',$gender)->exists()){
             Homepage::where('config_name','fax')->update(['config_value'=> $request->fax]);
-        }else{#auth
-            Homepage::create(['cate'=>'config','gender'=>$gender,'config_name'=>'fax','config_value'=> $request->fax]);
         }
 
-        if(Homepage::where('config_name','telegram')->exists()){
+        if(Homepage::where('config_name','telegram')->where('gender',$gender)->exists()){
             Homepage::where('config_name','telegram')->update(['config_value'=> $request->telegram]);
-        }else{#auth
-            Homepage::create(['cate'=>'config','gender'=>$gender,'config_name'=>'telegram','config_value'=> $request->telegram]);
         }
 
-        if(Homepage::where('config_name','email')->exists()){
+        if(Homepage::where('config_name','email')->where('gender',$gender)->exists()){
             Homepage::where('config_name','email')->update(['config_value'=> $request->email]);
-        }else{#auth
-            Homepage::create(['cate'=>'config','gender'=>$gender,'config_name'=>'email','config_value'=> $request->email]);
         }
 
-        if(Homepage::where('config_name','count_student')->exists()){
+        if(Homepage::where('config_name','count_student')->where('gender',$gender)->exists()){
             Homepage::where('config_name','count_student')->update(['config_value'=> $request->count_student]);
-        }else{#auth
-            Homepage::create(['cate'=>'config','gender'=>$gender,'config_name'=>'count_student','config_value'=> $request->count_student]);
         }
 
-        if(Homepage::where('config_name','count_class')->exists()){
+        if(Homepage::where('config_name','count_class')->where('gender',$gender)->exists()){
             Homepage::where('config_name','count_class')->update(['config_value'=> $request->count_class]);
-        }else{#auth
-            Homepage::create(['cate'=>'config','gender'=>$gender,'config_name'=>'count_class','config_value'=> $request->count_class]);
         }
 
-        if(Homepage::where('config_name','count_teacher')->exists()){
+        if(Homepage::where('config_name','count_teacher')->where('gender',$gender)->exists()){
             Homepage::where('config_name','count_teacher')->update(['config_value'=> $request->count_teacher]);
-        }else{#auth
-            Homepage::create(['cate'=>'config','gender'=>$gender,'config_name'=>'count_teacher','config_value'=> $request->count_teacher]);
         }
 
         return redirect('/manager/config_system');
@@ -768,12 +759,7 @@ class Manager extends Controller
 
     public function homepage_slider(){
         $gender = Auth::user()->gender;
-        if($gender == 1){
-            $gender = 'پسر';
-        }else{
-            $gender = 'دختر';
-
-        }
+       
        $slider = Homepage::where('cate','slider')->where('gender',$gender)->get();
        return view('manager.homepage_slider',compact('slider'));
 
@@ -794,7 +780,7 @@ class Manager extends Controller
             'desc' => $request->desc,
             'cate' => 'slider',
             'img' => $img_1,
-            'gender' => Auth::user()->gednder,
+            'gender' => Auth::user()->gender,
             'etc_1' => $request->etc_1,
             'category' => $request->category
 

@@ -18,7 +18,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">شماره تلفن :</span>
                             </div>
-                            <input name="phone" value="{{App\Models\Homepage::where('config_name','phone')->first()->config_value}}" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                            <input name="phone" value="{{App\Models\Homepage::where('config_name','phone')->where('gender',Auth::user()->gender)->first()->config_value}}" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
                         </div>
                     </div>
 
@@ -27,7 +27,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1"> فکس :</span>
                             </div>
-                            <input name="fax" value="{{App\Models\Homepage::where('config_name','fax')->first()->config_value}}" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                            <input name="fax" value="{{App\Models\Homepage::where('config_name','fax')->where('gender',Auth::user()->gender)->first()->config_value}}" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
                         </div>
                     </div>
 
@@ -36,7 +36,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1"> کانال تلگرام :</span>
                             </div>
-                            <input name="telegram" value="{{App\Models\Homepage::where('config_name','telegram')->first()->config_value}}" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                            <input name="telegram" value="{{App\Models\Homepage::where('config_name','telegram')->where('gender',Auth::user()->gender)->first()->config_value}}" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
                         </div>
                     </div>
 
@@ -45,7 +45,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1"> ایمیل :</span>
                             </div>
-                            <input name="email" value="{{App\Models\Homepage::where('config_name','email')->first()->config_value}}" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                            <input name="email" value="{{App\Models\Homepage::where('config_name','email')->where('gender',Auth::user()->gender)->first()->config_value}}" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
                         </div>
                     </div>
 
@@ -54,7 +54,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1"> تعداد دانش آموزان :</span>
                             </div>
-                            <input name="count_student" value="{{App\Models\Homepage::where('config_name','count_student')->first()->config_value}}" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                            <input name="count_student" value="{{App\Models\Homepage::where('config_name','count_student')->where('gender',Auth::user()->gender)->first()->config_value}}" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
                         </div>
                     </div>
 
@@ -63,7 +63,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1"> تعداد کلاس ها :</span>
                             </div>
-                            <input name="count_class" value="{{App\Models\Homepage::where('config_name','count_class')->first()->config_value}}" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                            <input name="count_class" value="{{App\Models\Homepage::where('config_name','count_class')->where('gender',Auth::user()->gender)->first()->config_value}}" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
                         </div>
                     </div>
 
@@ -72,7 +72,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon1">  تعداد معلمین  :</span>
                             </div>
-                            <input name="count_teacher" value="{{App\Models\Homepage::where('config_name','count_teacher')->first()->config_value}}" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                            <input name="count_teacher" value="{{App\Models\Homepage::where('config_name','count_teacher')->where('gender',Auth::user()->gender)->first()->config_value}}" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
                         </div>
                     </div>
 

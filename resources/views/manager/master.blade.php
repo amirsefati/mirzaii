@@ -67,23 +67,11 @@
                     </div>
                     <ul class="header-menu nav">
                         <li class="nav-item">
-                            <a href="javascript:void(0);" class="nav-link">
-                                <i class="nav-link-icon fa fa-database"> </i>
-                                اعتراض ها
+                            <a href="/system/logout" class="nav-link">
+                                خروج
                             </a>
                         </li>
-                        <li class="btn-group nav-item">
-                            <a href="javascript:void(0);" class="nav-link">
-                                <i class="nav-link-icon fa fa-edit"></i>
-                                دسترسی سریع
-                            </a>
-                        </li>
-                        <li class="dropdown nav-item">
-                            <a href="javascript:void(0);" class="nav-link">
-                                <i class="nav-link-icon fa fa-cog"></i>
-                                گزارش گیری
-                            </a>
-                        </li>
+                        
                     </ul>        </div>
                 <div class="app-header-right">
                     <div class="header-btn-lg pr-0">
@@ -114,9 +102,7 @@
                                     </div>
                                 </div>
                                 <div class="widget-content-right header-user-info ml-3">
-                                    <button type="button" class="btn-shadow p-1 btn btn-primary btn-sm">
-                                        <i class="fa text-white fa-calendar pr-1 pl-1"></i>
-                                    </button>
+                                    
                                 </div>
                             </div>
                         </div>

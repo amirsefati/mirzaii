@@ -124,62 +124,30 @@
 
     <!-- ##### Hero Area Start ##### -->
     <div class="hero-area owl-carousel">
-        <!-- Single Blog Post -->
-        <div class="hero-blog-post bg-img bg-overlay" style="background-image: url(homepage/img/bg-img/1.jpg);">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <!-- Post Contetnt -->
-                        <div class="post-content text-center">
-                            <div class="post-meta" data-animation="fadeInUp" data-delay="100ms">
-                                <a href="#">12 شهریور</a>
-                                <a href="archive.html">lifestyle</a>
-                            </div>
-                            <a href="video-post.html" class="post-title" data-animation="fadeInUp" data-delay="300ms">تکالیف نوروزی</a>
-                            <a href="video-post.html" class="video-play" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
 
+        
         <!-- Single Blog Post -->
-        <div class="hero-blog-post bg-img bg-overlay" style="background-image: url(homepage/img/bg-img/2.jpg);">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <!-- Post Contetnt -->
-                        <div class="post-content text-center">
-                            <div class="post-meta" data-animation="fadeInUp" data-delay="100ms">
-                                <a href="#">4 آبان</a>
-                                <a href="archive.html">lifestyle</a>
+        @foreach($config as $book) 
+            @if($book->cate == 'slider')
+                <div class="hero-blog-post bg-img bg-overlay" style="background-image: url({{$book->img}});">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <div class="col-12">
+                        
+                                    <div class="post-content text-center">
+                                        <div class="post-meta" data-animation="fadeInUp" data-delay="100ms">
+                                            <a href="#">تاریخ</a>
+                                            <a href="archive.html">{{$book->category}}</a>
+                                        </div>
+                                        <a href="video-post.html" class="post-title" data-animation="fadeInUp" data-delay="300ms">{{$book->title}}</a>
+                                    </div>
                             </div>
-                            <a href="video-post.html" class="post-title" data-animation="fadeInUp" data-delay="300ms">برنامه مطالعاتی 13 تا 19 اردیبهشت</a>
-                            <a href="video-post.html" class="video-play" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play"></i></a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Single Blog Post -->
-        <div class="hero-blog-post bg-img bg-overlay" style="background-image: url(homepage/img/bg-img/3.jpg);">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12">
-                        <!-- Post Contetnt -->
-                        <div class="post-content text-center">
-                            <div class="post-meta" data-animation="fadeInUp" data-delay="100ms">
-                                <a href="#">3 مهر</a>
-                                <a href="archive.html">lifestyle</a>
-                            </div>
-                            <a href="video-post.html" class="post-title" data-animation="fadeInUp" data-delay="300ms">برنامه کلاسی هفته سوم ماه مبارک رمضان</a>
-                            <a href="video-post.html" class="video-play" data-animation="bounceIn" data-delay="500ms"><i class="fa fa-play"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            @endif
+        @endforeach
     </div>
     <!-- ##### Hero Area End ##### -->
 
@@ -359,19 +327,7 @@
                         </div>
                     </div>
 
-                    <!-- Single Blog Post -->
-                    <div class="col-12 col-lg-6">
-                        <div class="single-blog-post d-flex style-3 mb-30">
-                            <div class="post-thumbnail">
-                                <img src="homepage/img/bg-img/34.jpg" alt="">
-                            </div>
-                            <div class="post-content">
-                                <a href="single-post.html" class="post-title">چالش ورزش هوازی در منزل ؛ روز سوم</a>
-                                <div class="post-meta d-flex">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   
                 </div>
 
             </div>
@@ -539,8 +495,9 @@
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="footer-widget">
                         <!-- Logo -->
-                        <a href="index.html" class="foo-logo"><img src="homepage/img/core-img/logo2.png" alt=""></a>
-                        <p>متنی در مورد مدرسه </p>
+
+                        <a href="index.html" class="foo-logo"><img src="/images/danesh_logo_b.png" width="110px" alt=""></a>
+
                         <div class="footer-social-info">
                             <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
                             <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
@@ -584,9 +541,6 @@
                             <div class="post-content">
                                 <a href="single-post.html" class="post-title">بازگشایی مدارس بعد از تعطیلات</a>
                                 <div class="post-meta d-flex justify-content-between">
-                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
                                 </div>
                             </div>
                         </div>
@@ -598,9 +552,6 @@
                             <div class="post-content">
                                 <a href="single-post.html" class="post-title">تعطیلات نوروزی و تکالیف روزانه</a>
                                 <div class="post-meta d-flex justify-content-between">
-                                    <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
-                                    <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
-                                    <a href="#"><i class="fa fa-comments-o" aria-hidden="true"></i> 14</a>
                                 </div>
                             </div>
                         </div>

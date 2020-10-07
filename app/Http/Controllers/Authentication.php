@@ -70,8 +70,8 @@ class Authentication extends Controller
                 return view('homepage.boy',compact('config'));
             
             }else{ 
-
-                return view('homepage.girl');
+                $config = Homepage::where('gender','دختر')->take(-5)->get();
+                return view('homepage.girl',compact('config'));
             
             }
         }else{

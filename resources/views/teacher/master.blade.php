@@ -149,6 +149,13 @@
                                     </a>
                                 </li>
 
+                                <li>
+                                    <a href="/teacher/show_all_exercise" >
+                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        تکلیف ها
+                                    </a>
+                                </li>
+
                                 <li>    
                                     <a href="#">
                                         <i class="metismenu-icon pe-7s-diamond"></i>

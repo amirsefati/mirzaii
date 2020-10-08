@@ -2,12 +2,17 @@
 
 @section('content')
 <div style="display:none">
-    {{$list_course_1 = App\Models\Course::where('grade','پایه اول')->get()}}
-    {{$list_course_2 = App\Models\Course::where('grade','پایه دوم')->get()}}
-    {{$list_course_3 = App\Models\Course::where('grade','پایه سوم')->get()}}
-    {{$list_course_4 = App\Models\Course::where('grade','پایه چهارم')->get()}}
-    {{$list_course_5 = App\Models\Course::where('grade','پایه پنجم')->get()}}
-    {{$list_course_6 = App\Models\Course::where('grade','پایه ششم')->get()}}
+    @if(Auth::user()->gender == 'پسر')
+        {{$gender = 1}}
+    @else
+        {{$gender = 2}}   
+    @endif 
+    {{$list_course_1 = App\Models\Course::where('grade','پایه اول')->where('show',$gender)->get()}}
+    {{$list_course_2 = App\Models\Course::where('grade','پایه دوم')->where('show',$gender)->get()}}
+    {{$list_course_3 = App\Models\Course::where('grade','پایه سوم')->where('show',$gender)->get()}}
+    {{$list_course_4 = App\Models\Course::where('grade','پایه چهارم')->where('show',$gender)->get()}}
+    {{$list_course_5 = App\Models\Course::where('grade','پایه پنجم')->where('show',$gender)->get()}}
+    {{$list_course_6 = App\Models\Course::where('grade','پایه ششم')->where('show',$gender)->get()}}
 
 </div>
 

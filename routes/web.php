@@ -186,7 +186,12 @@ Route::prefix('teacher')->middleware([Teachermidd::class])->group(function(){
 
     Route::get('delete_assignment/{assignmet_id}',[Teacher::class,'delete_assignment']);
 
+    Route::get('delete_course_from_class/{course_id}/{class_id}',[Teacher::class,'delete_course_from_class']);
     
+    Route::get('show_all_exercise',[Teacher::class,'show_all_exercise']);
+    
+    Route::post('add_mark_to_student_ok',[Teacher::class,'add_mark_to_student_ok']);
+
 });
 
 Route::prefix('student')->middleware([Studentmidd::class])->group(function(){

@@ -32,11 +32,11 @@
     <div class="col-md-2  pt-0" style="text-align: center;">
         @if(Auth::user()->gender == 'پسر')
         <a href="/">
-            <img src="/images/afarinesh_logo_b.png" width="60px" alt="">  
+            <img src="/images/danesh_logo_b.png" width="60px" alt="">  
         </a>
         @else
         <a href="/">
-            <img src="/images/danesh_logo_b.png" alt="">  
+            <img src="/images/afarinesh_logo_b.png" width="60px" alt="">  
         </a>
         @endif
    </div>

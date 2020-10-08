@@ -8,11 +8,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Classify;
 use App\Models\Course;
+use App\Models\Exercise;
 use App\Models\Exercisenotice;
 use App\Models\Notice_class;
 use App\Models\question;
 use App\Models\User;
-
+use Exception;
 
 class Teacher extends Controller
 {
@@ -30,7 +31,25 @@ class Teacher extends Controller
     }
 
     public function courses_list_teacher(){
-        $course = Course::all();
+        if(Auth::user()->gender == 'پسر'){
+            $gender = 1;
+        }else{
+            $gender = 2;
+        }
+        $courses = Course::all();
+        $course = [];
+        foreach($courses as $course_item){
+             if(strlen(Course::where('id',$course_item->id)->first()->course_to_classify) > 100){
+                
+             }else{
+                 if(Course::where('id',$course_item->id)->where('show',$gender)->first()){
+                    $item = Course::where('id',$course_item->id)->where('show',$gender)->first();
+                    array_push($course,$item);
+                 }
+                
+             }
+        }
+
         return view('teacher.courses_list_teacher',compact('course'));
     }
 
@@ -51,6 +70,12 @@ class Teacher extends Controller
             $class->classify_to_course()->attach($request->course);
         }
         return redirect('/teacher/courses_list_teacher');
+    }
+
+    public function delete_course_from_class($course_id,$class_id){
+        $class = Classify::where('id',$class_id)->first();
+        $class->classify_to_course()->detach($course_id);
+        return redirect('/teacher/select_class_to_add_course');
     }
 
     public function select_class_to_add_course(){
@@ -353,5 +378,29 @@ class Teacher extends Controller
     public function delete_assignment($assignmet_id){
         return $assignmet_id;
         Assigment::where('id',$assignmet_id)->delete();
+    }
+
+    public function show_all_exercise(){
+        $list_assginment = Assigment::where('teacher_created',Auth::user()->id)->whereNotNull('file_doc')->get();
+        $assigment_ids = [];
+        foreach($list_assginment as $assigment){
+            array_push($assigment_ids,$assigment->id);
+        }
+        $exercise = [];
+        foreach($assigment_ids as $id){
+            $exercise_item = Exercise::where('assigment_id',$id)->whereNull('mark')->first();
+            array_push($exercise,$exercise_item);
+        }
+
+        return view('teacher.show_all_exercise',compact('exercise'));
+    }
+
+    public function add_mark_to_student_ok(Request $request){
+        $request->validate([
+            'mark_send' => 'required'
+        ]);
+
+        Exercise::where('id',$request->exercise_id)->update(['mark'=>$request->mark_send]);
+        return redirect('/teacher/show_all_exercise');
     }
 }

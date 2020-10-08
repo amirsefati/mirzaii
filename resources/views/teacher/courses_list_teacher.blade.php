@@ -11,7 +11,7 @@
 
                 <div class="row mr-0 ml-0" id="myTable">
                     @foreach($course as $course)
-                        <div class="col-md-2" >
+                        <div class="col-md-2 mt-1" >
                             <a href="add_course_to_class/{{$course->id}}">
                             <img src="{{$course->img}}" width="90%" alt=""></a>
                             <p style="margin:8px;font-weight:bold;font-size:16px">{{$course->title}}</p>

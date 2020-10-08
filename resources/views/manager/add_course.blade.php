@@ -42,10 +42,13 @@
                     </div>
 
                     <div class="col-md-3 mt-3">
-                        <label for="show"> قابلیت نمایش :</label>
+                        <label for="show">  جنیست :</label>
                         <select name="show" class="form-control">
-                            <option value="1">نمایش</option>
-                            <option value="2">پنهان ساختن</option>
+                            @if(Auth::user()->gender == 'پسر')
+                                <option value="1">پسرانه</option>
+                            @else
+                                <option value="2">دخترانه</option>
+                            @endif
 
                         </select>
                     </div>

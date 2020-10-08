@@ -350,10 +350,10 @@
                             @if($config1->config_name == 'phone')
                             <a href="#" class="facebook-fans"> 
                                 <div class="row">
-                                    <div class="col-md-8" style="text-align: left;">
+                                    <div class="col-md-8 col-8" style="text-align: left;">
                                         {{$config1->config_value}} 
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 col-4">
                                         <span>تلفن</span>
                                     </div>
                                 </div>
@@ -365,10 +365,10 @@
                             @if($config1->config_name == 'fax')
                             <a href="#" class="twitter-followers">  
                             <div class="row">
-                                    <div class="col-md-8" style="text-align: left;">
+                                    <div class="col-md-8 col-8" style="text-align: left;">
                                     {{$config1->config_value}} 
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 col-4">
                                     <span>فکس</span>
                                     </div>
                                 </div>
@@ -380,10 +380,10 @@
                             @if($config1->config_name == 'telegram')
                             <a href="#" class="youtube-subscribers">   
                             <div class="row">
-                                    <div class="col-md-6" style="text-align: left;">
+                                    <div class="col-md-6 col-6" style="text-align: left;">
                                     {{$config1->config_value}}
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-6 col-6">
                                     <span>کانال تلگرام</span>
                                     </div>
                                 </div>  
@@ -395,10 +395,10 @@
                             @if($config1->config_name == 'email')
                             <a href="#" class="google-followers">  
                             <div class="row">
-                                    <div class="col-md-8" style="text-align: left;">
+                                    <div class="col-md-8 col-8" style="text-align: left;">
                                         {{$config1->config_value}} 
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 col-4">
                                         <span>ایمیل</span>
                                     </div>
                                 </div>     

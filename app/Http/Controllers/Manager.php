@@ -567,31 +567,31 @@ class Manager extends Controller
         $gender = Auth::user()->gender;
         
         if(Homepage::where('config_name','phone')->where('gender',$gender)->exists()){
-            Homepage::where('config_name','phone')->update(['config_value'=> $request->phone]);
+            Homepage::where('config_name','phone')->where('gender',$gender)->update(['config_value'=> $request->phone]);
         }
 
         if(Homepage::where('config_name','fax')->where('gender',$gender)->exists()){
-            Homepage::where('config_name','fax')->update(['config_value'=> $request->fax]);
+            Homepage::where('config_name','fax')->where('gender',$gender)->update(['config_value'=> $request->fax]);
         }
 
         if(Homepage::where('config_name','telegram')->where('gender',$gender)->exists()){
-            Homepage::where('config_name','telegram')->update(['config_value'=> $request->telegram]);
+            Homepage::where('config_name','telegram')->where('gender',$gender)->update(['config_value'=> $request->telegram]);
         }
 
         if(Homepage::where('config_name','email')->where('gender',$gender)->exists()){
-            Homepage::where('config_name','email')->update(['config_value'=> $request->email]);
+            Homepage::where('config_name','email')->where('gender',$gender)->update(['config_value'=> $request->email]);
         }
 
         if(Homepage::where('config_name','count_student')->where('gender',$gender)->exists()){
-            Homepage::where('config_name','count_student')->update(['config_value'=> $request->count_student]);
+            Homepage::where('config_name','count_student')->where('gender',$gender)->update(['config_value'=> $request->count_student]);
         }
 
         if(Homepage::where('config_name','count_class')->where('gender',$gender)->exists()){
-            Homepage::where('config_name','count_class')->update(['config_value'=> $request->count_class]);
+            Homepage::where('config_name','count_class')->where('gender',$gender)->update(['config_value'=> $request->count_class]);
         }
 
         if(Homepage::where('config_name','count_teacher')->where('gender',$gender)->exists()){
-            Homepage::where('config_name','count_teacher')->update(['config_value'=> $request->count_teacher]);
+            Homepage::where('config_name','count_teacher')->where('gender',$gender)->update(['config_value'=> $request->count_teacher]);
         }
 
         return redirect('/manager/config_system');

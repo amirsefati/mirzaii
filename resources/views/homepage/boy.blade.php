@@ -349,32 +349,60 @@
                         @if($config1->cate == 'config')
                             @if($config1->config_name == 'phone')
                             <a href="#" class="facebook-fans"> 
-                                {{$config1->config_value}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <span>تلفن</span></a>
+                                <div class="row">
+                                    <div class="col-md-8" style="text-align: left;">
+                                        {{$config1->config_value}} 
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span>تلفن</span>
+                                    </div>
+                                </div>
+                            </a>
                             @endif
                         @endif
 
                         @if($config1->cate == 'config')
                             @if($config1->config_name == 'fax')
                             <a href="#" class="twitter-followers">  
-                                {{$config1->config_value}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <span>فکس</span></a>
+                            <div class="row">
+                                    <div class="col-md-8" style="text-align: left;">
+                                    {{$config1->config_value}} 
+                                    </div>
+                                    <div class="col-md-4">
+                                    <span>فکس</span>
+                                    </div>
+                                </div>
+                            </a>
                             @endif
                         @endif
 
                         @if($config1->cate == 'config')
                             @if($config1->config_name == 'telegram')
-                            <a href="#" class="youtube-subscribers">     
-                                {{$config1->config_value}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <span>کانال تلگرام</span></a>
+                            <a href="#" class="youtube-subscribers">   
+                            <div class="row">
+                                    <div class="col-md-6" style="text-align: left;">
+                                    {{$config1->config_value}}
+                                    </div>
+                                    <div class="col-md-6">
+                                    <span>کانال تلگرام</span>
+                                    </div>
+                                </div>  
+                                </a>
                             @endif
                         @endif
 
                         @if($config1->cate == 'config')
                             @if($config1->config_name == 'email')
-                            <a href="#" class="google-followers">       
-                                {{$config1->config_value}} &nbsp;&nbsp;
-                                <span>ایمیل</span></a>
+                            <a href="#" class="google-followers">  
+                            <div class="row">
+                                    <div class="col-md-8" style="text-align: left;">
+                                        {{$config1->config_value}} 
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span>ایمیل</span>
+                                    </div>
+                                </div>     
+                                </a>
                             @endif
                         @endif
 

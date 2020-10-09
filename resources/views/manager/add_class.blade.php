@@ -29,9 +29,11 @@
                                 <div class="col-md-4 mt-4">
                                     <label for="kind"> جنسیت کلاس : </label>
                                     <select name="kind" class="form-control">
-                                        <option value="">انتخاب کنید ... </option>
+                                        @if(Auth::user()->gender == 'پسر')
                                         <option value="پسر">پسر</option>
+                                        @else
                                         <option value="دختر">دختر</option>
+                                        @endif
                                     </select>
                                 </div>
 

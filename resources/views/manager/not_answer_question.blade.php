@@ -23,6 +23,7 @@
                             <th style="width:30%;">عنوان </th>
                         </tr>
                         @foreach($not_answer as $question)
+                        @if(App\Models\User::where('id',$question->student_id)->first()->gender == Auth::user()->gender)
                         <tr>
                             
                         <td>{{App\Models\User::where('id',$question->student_id)->first()->name}} {{App\Models\User::where('id',$question->student_id)->first()->family}}</td>
@@ -31,7 +32,7 @@
                             <td>{{$question->title}}</td>
 
                         </tr>
-                        
+                        @endif
                         @endforeach
                         </table>
                         </div>

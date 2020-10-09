@@ -241,22 +241,24 @@
                                 <li>
                                 <a href="#">
                                         <i class="metismenu-icon pe-7s-diamond"></i>
-                                        مدیریت دانش آموزان ها 
+                                        مدیریت دانش آموزان  
                                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                     </a>
                                     <ul>
-                                        <li>
-                                            <a href="/manager/add_student_boy">
-                                                <i class="metismenu-icon"></i>
-                                                افزودن دانش آموز پسر
-                                            </a>
-                                        </li>
+                                        
                                         @if(Auth::user()->gender == 'دختر')
 
                                         <li>
                                             <a href="/manager/add_student_girl">
                                                 <i class="metismenu-icon"></i>
                                                 افزودن دانش آموز دختر   
+                                            </a>
+                                        </li>
+                                        @else
+                                        <li>
+                                            <a href="/manager/add_student_boy">
+                                                <i class="metismenu-icon"></i>
+                                                افزودن دانش آموز پسر
                                             </a>
                                         </li>
                                         @endif
@@ -336,9 +338,7 @@
                                     <a href="/manager/not_answer_question" >
                                         <i class="metismenu-icon pe-7s-rocket"></i>
                                         در انتظار پاسخ  
-                                        @if(App\Models\question::where('status',1)->count() > 0)
-                                        <span class="badge badge-pill badge-danger">{{App\Models\question::where('status',1)->count()}}</span>                        
-                                        @endif
+                                        
                                     </a>
 
                                     <a href="/manager/all_question" >
@@ -420,14 +420,14 @@ $('#date_select').MdPersianDateTimePicker({
     dateFormat: 'yyyy-MM-dd',
     textFormat: 'yyyy-MM-dd',
     });
-      $("#date_select").MdPersianDateTimePicker({
-        targetDateSelector: "#input_date_select",
-        targetTextSelector: "#showDate_class",
-        textFormat: " dddd dd MMMM yyyy ",
-        isGregorian: false,
-        modalMode: false,
-        englishNumber: false
-      });
+$("#date_select").MdPersianDateTimePicker({
+    targetDateSelector: "#input_date_select",
+    targetTextSelector: "#showDate_class",
+    textFormat: " dddd dd MMMM yyyy ",
+    isGregorian: false,
+    modalMode: false,
+    englishNumber: false
+    });
 
       $(document).ready(function(){
         $('[data-toggle="popover"]').popover();

@@ -184,7 +184,7 @@ Route::prefix('teacher')->middleware([Teachermidd::class])->group(function(){
 
     Route::get('delete_noti/{id_moti}',[Teacher::class,'delete_noti']);
 
-    Route::get('delete_assignment/{assignmet_id}',[Teacher::class,'delete_assignment']);
+    Route::get('delete_assignment_byid/{assignmet_id}',[Teacher::class,'delete_assignment_byid']);
 
     Route::get('delete_course_from_class/{course_id}/{class_id}',[Teacher::class,'delete_course_from_class']);
     

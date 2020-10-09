@@ -19,8 +19,13 @@
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
         <div class="app-header header-shadow">
             <div class="app-header__logo">
-                <div class="logo-src"></div>
-                <div class="header__pane ml-auto">
+                @if(Auth::user()->sadere == 1)
+                    <img src="/images/danesh_logo_b.png" width="70px" alt="">
+                @elseif((Auth::user()->sadere == 2))
+                <img src="/images/afarinesh_logo_b.png" width="50px" alt="">
+
+                @endif
+            <div class="header__pane ml-auto">
                     <div>
                         <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
                             <span class="hamburger-box">
@@ -152,7 +157,7 @@
                                 <li>
                                     <a href="/teacher/show_all_exercise" >
                                         <i class="metismenu-icon pe-7s-rocket"></i>
-                                        تکلیف ها
+                                         تکالیف
                                     </a>
                                 </li>
 

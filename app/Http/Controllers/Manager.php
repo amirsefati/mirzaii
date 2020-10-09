@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Auth;
 class Manager extends Controller
 {
     public function add_class(){
-        $class_list = Classify::orderBy('etc_1')->get();
+        $class_list = Classify::where('kind',Auth::user()->gender)->orderBy('etc_1')->get();
         return view('manager.add_class',compact('class_list'));
     }
     public function add_class_post(Request $request){
@@ -236,6 +236,7 @@ class Manager extends Controller
             'family' => 'required',
             'gender' => 'required',
             'identity' => 'required',
+            'sadere' => 'required'
         ]);
         $img_url = '';
         if($request->hasFile('img')){
@@ -280,7 +281,13 @@ class Manager extends Controller
     }
 
     public function list_teacher(){
-        $list_teacher = User::where('level',2)->get();
+        if(Auth::user()->gender == 'پسر'){
+            $school = 1;
+        }
+        else{
+            $school = 2;
+        }
+        $list_teacher = User::where('level',2)->where('sadere',$school)->get();
         return view('manager.list_teacher',compact('list_teacher'));
     }
 
@@ -333,8 +340,16 @@ class Manager extends Controller
     }
 
     public function teacher_to_class(){
-        $list_teacher = User::where('level',2)->get();
-        $list_class = Classify::all();
+        #درخواست گرفتن معلم های مدرسه
+        if(Auth::user()->gedner == 'پسر'){
+            #اگر معلم پسر باید یعنی در مدرسه دانش هستیم 
+            #پس شماره مدرسه 1 میباشد
+            $school = 1;
+        }else{
+            $school = 2;
+        }
+        $list_teacher = User::where('level',2)->where('sadere',$school)->get();
+        $list_class = Classify::where('kind',Auth::user()->gender)->get();
         return view('manager.teacher_to_class',compact(['list_teacher','list_class']));
     }
 
@@ -381,7 +396,7 @@ class Manager extends Controller
     }
 
     public function class_list_student_teacher(){
-        $class_list = Classify::all();
+        $class_list = Classify::where('kind',Auth::user()->gender)->get();
         return view('manager.class_list_student_teacher',compact('class_list'));
     }
 

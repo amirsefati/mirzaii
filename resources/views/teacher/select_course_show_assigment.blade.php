@@ -6,7 +6,8 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card">
-            <div class="card-header">جلسات درس ( {{$course->title}} {{$course->grade}} )</div>
+            <div class="card-header">
+                <a href="{{url()->previous()}}">   جلسات درس ( {{$course->title}} {{$course->grade}} )</a>   </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-12" style="text-align: left;">

@@ -147,6 +147,14 @@ class Teacher extends Controller
             'title'=>'required',
             'desc'=>'required',
         ]);
+
+        if($request->hasFile('file_doc')){
+
+            $request->validate([
+                'timer'=>'required',
+            ]);
+            
+        }
         
         $zip_file = '';
         if($request->hasFile('zip_file')){
@@ -224,7 +232,7 @@ class Teacher extends Controller
             Exercisenotice::create([
                 'course_id' => $request->course_id,
                 'assginment_id' => $assg->id,
-                'timer'=>$request->for_date
+                'timer'=>$request->timer
             ]);
         }
         
@@ -309,6 +317,9 @@ class Teacher extends Controller
             'file_doc_2'=>$file_doc_2,
             
         ]);
+        
+
+
         return redirect('/teacher/select_course_show_assigment/'.$request->course_id);
     }
 
@@ -375,9 +386,10 @@ class Teacher extends Controller
         return redirect('/teacher/notice_class_manage');
     }
 
-    public function delete_assignment($assignmet_id){
-        return $assignmet_id;
-        Assigment::where('id',$assignmet_id)->delete();
+    public function delete_assignment_byid($assignmet_id){
+        Assigment::find($assignmet_id)->delete();
+        Exercisenotice::where('assginment_id',$assignmet_id)->delete();
+        return redirect('/teacher/select_class_to_add_course');
     }
 
     public function show_all_exercise(){

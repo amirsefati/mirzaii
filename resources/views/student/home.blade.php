@@ -14,13 +14,19 @@
     <title>Document</title>
 </head>
 <body>
+    <div style="display: none;">{{$i = 0}}</div>
     @if(strlen(json_encode($ex)) > 200)
         @foreach($ex[0] as $e)
             @if(App\Models\Exercise::where('user_id',Auth::user()->id)->where('course_id',$e->course_id)->count() < 1)
-            <a href="/student/course/{{$e->course_id}}/{{$e->assginment_id}}">
-                <div class="sticky_notice">
-                    شما یه تکلیف تحویل نشده دارید
-                </div>
+                <div style="display: none;">
+                @if($i < 4 )
+                {{$i= $i + 1}}
+                @endif
+            </div>
+                <a href="/student/course/{{$e->course_id}}/{{$e->assginment_id}}">
+                    <div class="sticky_notice{{$i}}">
+                    شما  تکلیف تحویل نشده دارید ({{App\Models\Course::where('id',$e->course_id)->first()->title}})
+                    </div>
                 </a>
             @endif
         @endforeach

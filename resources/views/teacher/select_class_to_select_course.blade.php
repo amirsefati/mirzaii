@@ -8,7 +8,10 @@
         <div class="card">
             <div class="card-header">
                 <div class="col-md-10">
-                    دروس کلاس ({{$class->kind}}انه - {{$class->name}} - {{$class->desc}})
+                <a href="/teacher/select_class_to_add_course">
+                دروس کلاس ({{$class->kind}}انه - {{$class->name}} - {{$class->desc}})
+                </a>
+
                 </div>
 
                         

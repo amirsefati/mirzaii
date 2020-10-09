@@ -43,7 +43,7 @@
                 <div style="text-align: center;">
                 <a href="/student/send_question">
                     <img src="/images/question.png" width="38px" alt=""> &nbsp;
-                    <span class="menu_top">ارسال سوال</span>
+                    <span class="menu_top"> سوال</span>
                 </a>
                 </div>
             </div>
@@ -108,7 +108,7 @@
         </div>
     </div>
 </div>
-
+                  
 <div class="row mt-3">
     <div class="col-md-12">
         <div class="card">
@@ -121,10 +121,10 @@
                     <div class="item_in">
                         <div>
                             <img src="{{$class->img}}" class="img_notice_school" alt="">
-                        </div>
                         <p class="title_in_school">{{$class->title}}</p>
                         <p class="desc_in_school"> ... {{substr($class->desc,0,55)}}</p>
-
+                        </div>
+                        
                     </div>
                     @endforeach
                 

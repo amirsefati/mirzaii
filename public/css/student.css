@@ -183,6 +183,16 @@ body{
     padding: 10px;
     text-align: center;
 }
+
+.popup {
+    position: absolute;  
+    width: 0;
+    height: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 10;
+    opacity: 0;
+  }
+  
 @media (max-width:500px){
     .img_profile_user{
         border-radius: 50%;

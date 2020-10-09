@@ -341,7 +341,7 @@ class Manager extends Controller
 
     public function teacher_to_class(){
         #درخواست گرفتن معلم های مدرسه
-        if(Auth::user()->gedner == 'پسر'){
+        if(Auth::user()->gender == 'پسر'){
             #اگر معلم پسر باید یعنی در مدرسه دانش هستیم 
             #پس شماره مدرسه 1 میباشد
             $school = 1;

@@ -810,7 +810,7 @@ class Manager extends Controller
     }
 
 
-    public function bulk_importerr($name,$family,$identity_code,$gender,$father_name){
+    public function bulk_importerr($name,$family,$identity_code,$gender,$father_name,$mother_phone){
         
         if(User::where('identity_code',$identity_code)->count() < 1 ){
             User::create([
@@ -819,6 +819,7 @@ class Manager extends Controller
                 'identity_code' => $identity_code,
                 'gender' => $gender,
                 'father_name' => $father_name,
+                'mother_phone' => $mother_phone,
                 'password' => $identity_code
             ]);
         }

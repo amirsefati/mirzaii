@@ -809,4 +809,20 @@ class Manager extends Controller
         return redirect('/manager/table');
     }
 
+
+    public function bulk_importerr($name,$family,$identity_code,$gender,$father_name){
+        
+        if(User::where('identity_code',$identity_code)->count() < 1 ){
+            User::create([
+                'name' => $name,
+                'family' => $family,
+                'identity_code' => $identity_code,
+                'gender' => $gender,
+                'father_name' => $father_name,
+                'password' => $identity_code
+            ]);
+        }
+        
+    }
+
 }

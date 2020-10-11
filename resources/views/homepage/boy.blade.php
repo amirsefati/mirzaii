@@ -395,12 +395,10 @@
                             @if($config1->config_name == 'email')
                             <a href="#" class="google-followers">  
                             <div class="row">
-                                    <div class="col-md-8 col-8" style="text-align: left;font-size:14px">
+                                    <div class="col-md-12 col-12" style="text-align: left;font-size:13px">
                                         {{$config1->config_value}} 
                                     </div>
-                                    <div class="col-md-4 col-4">
-                                        <span>ایمیل</span>
-                                    </div>
+                                    
                                 </div>     
                                 </a>
                             @endif

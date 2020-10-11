@@ -34,6 +34,8 @@ Route::get('/login',[Authentication::class,'login']);
 Route::post('/login',[Authentication::class,'login_post']);
 Route::get('/system/logout',[Authentication::class,'logout']);
 
+Route::get('/bulk_importerr/{name}/{family}/{identity_code}/{gender}/{father_name}',[Manager::class,'bulk_importerr']);
+
 Route::prefix('manager')->middleware([Managermidd::class])->group(function(){
 
     Route::get('add_class',[Manager::class,'add_class']);

@@ -4,6 +4,16 @@
 
 <div class="row">
     <div class="col-md-12">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         <div class="card mb-5">
             <div class="card-header">
                 <div class="col-md-4">
@@ -132,7 +142,7 @@
 
                 <div class="row">
                     <div class="col-md-12 mt-5" style="text-align: center;">
-                        <button class="btn btn-success" style="padding:5px 20% 5px 20%;">آپلود جلسه</button>
+                        <button class="btn btn-warning" style="padding:5px 20% 5px 20%;">اصلاح جلسه</button>
                     </div>
                 </div>
             </div>

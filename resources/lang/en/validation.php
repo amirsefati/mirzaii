@@ -113,7 +113,7 @@ return [
     'starts_with' => 'The :attribute must start with one of the following: :values.',
     'string' => 'The :attribute must be a string.',
     'timezone' => 'The :attribute must be a valid zone.',
-    'unique' => 'The :attribute has already been taken.',
+    'unique' => 'چنین کاربری با این :attribute در برنامه قبلا ثبت شده است',
     'uploaded' => 'The :attribute failed to upload.',
     'url' => 'The :attribute format is invalid.',
     'uuid' => 'The :attribute must be a valid UUID.',
@@ -151,7 +151,8 @@ return [
         'desc' => 'پایه کلاس',
         'password' => 'گذرواژه',
         'title' => 'عنوان جلسه',
-        'timer' => 'تاریخ پایان تحویل'
+        'timer' => 'تاریخ پایان تحویل',
+        'identity_code' => 'کد ملی'
     ],
 
 ];

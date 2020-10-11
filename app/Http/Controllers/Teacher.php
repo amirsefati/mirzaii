@@ -251,7 +251,13 @@ class Teacher extends Controller
             'title'=>'required',
             'desc'=>'required',
         ]);
+        if($request->hasFile('file_doc')){
 
+            $request->validate([
+                'timer'=>'required',
+            ]);
+            
+        }
         
         $zip_file = Assigment::where('id',$request->assginment_id)->first()->img;
         if($request->hasFile('zip_file')){

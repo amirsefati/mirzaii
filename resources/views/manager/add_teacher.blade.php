@@ -37,7 +37,7 @@
                             <div class="row">
                                 <div class="col-md-12 mt-3">
                                     <label for="identiry">کد ملی</label>
-                                    <input type="text" class="form-control" name="identity">
+                                    <input type="text" class="form-control" name="identity_code">
                                 </div>
 
                                

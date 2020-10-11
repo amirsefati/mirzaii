@@ -235,7 +235,7 @@ class Manager extends Controller
             'name' => 'required',
             'family' => 'required',
             'gender' => 'required',
-            'identity' => 'required',
+            'identity_code' => 'required|unique:users',
             'sadere' => 'required'
         ]);
         $img_url = '';
@@ -258,7 +258,7 @@ class Manager extends Controller
         User::create([
             'name' => $request->name,
             'family' => $request->family,
-            'identity_code' => $request->identity,
+            'identity_code' => $request->identity_code,
             'address' => $request->address,
             'phone' => $request->phone,
             'phone_father' => $request->father_phone,

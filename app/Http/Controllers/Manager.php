@@ -819,7 +819,7 @@ class Manager extends Controller
                 'identity_code' => $identity_code,
                 'gender' => $gender,
                 'father_name' => $father_name,
-                'mother_phone' => $mother_phone,
+                'phone_mother' => $mother_phone,
                 'password' => $identity_code
             ]);
         }

@@ -111,4 +111,22 @@ class Student extends Controller
         ]);
         return response()->json(['success'=>$count_file]);
         }
+
+
+        public function settings_profile(){
+            return view('.student.settings_profile');
+        }
+
+        public function update_user_settings_profile(Request $request){
+            
+            $request->validate([
+                'password' => 'required|confirmed|min:6',
+            ]);
+
+            User::where('id',Auth::user()->id)->update([
+                'password' => $request->password
+            ]);
+
+            return redirect('/student');
+        }
 }

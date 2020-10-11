@@ -15,27 +15,34 @@
 <body>
     <div class="container-fluid">
         
-<div class="row" style="background:#B2DDF7;"> 
+<div class="row" style="background:#5AABAF;"> 
     <div class="col-md-2"></div>
-    <div class="col-md-1 col-4 pt-3" style="text-align: center;">
-        <p>پروفایل شما</p>
+    <div class="col-md-1 col-4 pt-2" style="text-align: center;">
+        <a href="/student/settings_profile">
+            <img src="/images/exit.png" width="38px" alt=""> &nbsp;
+            <span class="menu_top">پروفایل</span>
+        </a>
     </div>
-    <div class="col-md-1 col-4 pt-3" style="text-align: center;">
-        <p>پیام ها</p>
+    <div class="col-md-1 col-4 pt-2" style="text-align: center;">
+        <a href="/student/send_question">
+        <img src="/images/question.png" width="38px" alt=""> &nbsp;
+        <span class="menu_top">سوال</span>
+        </a>
     </div>
-    <div class="col-md-1 col-4 pt-3" style="text-align: center;">
+    <div class="col-md-1 col-4 pt-2" style="text-align: center;">
         <a href="/student">
-            <p>صفحه اصلی</p>
+            <img src="/images/home.png" width="38px" alt=""> &nbsp;
+            <span class="menu_top">خانه</span>
         </a>
     </div>
     <div class="col-md-4 col-0 pt-3"></div>
     <div class="col-md-2  pt-0" style="text-align: center;">
         @if(Auth::user()->gender == 'پسر')
-        <a href="/">
+        <a href="/student">
             <img src="/images/danesh_logo_b.png" width="60px" alt="">  
         </a>
         @else
-        <a href="/">
+        <a href="/student">
             <img src="/images/afarinesh_logo_b.png" width="60px" alt="">  
         </a>
         @endif

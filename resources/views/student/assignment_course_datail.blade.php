@@ -64,8 +64,9 @@
     <div class="col-md-1"></div>
     <div class="col-md-10">
         <div class="card mb-5">
-            <div class="card-header" style="text-align: right;direction:rtl;">
-                {{$course->title}} - {{$course->grade}} -{{$course->desc}} - {{$assignment->title}}
+            <div class="card-header" style="text-align: right;direction:rtl;background:#53917E;">
+            <span style="color: white;">
+                {{$course->title}} - {{$course->grade}} - {{$course->desc}} - {{$assignment->title}}</span>
             </div>
 
             <div class="card-body">

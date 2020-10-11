@@ -19,7 +19,17 @@
     <div class="col-md-1 hide_in_phone"></div>
     <div class="col-md-10">
         <div class="row">
-            <div class="col-md-6"></div>
+            <div class="col-md-6 hide_in_phone">
+            @if(Auth::user()->gender == 'پسر')
+                <a href="/student">
+                    <img src="/images/danesh_logo_b.png" width="60px" alt="">  
+                </a>
+                @else
+                <a href="/student">
+                    <img src="/images/afarinesh_logo_b.png" width="60px" alt="">  
+                </a>
+            @endif
+            </div>
             <div class="col-md-2 col-4 pt-2">
                 <div style="text-align: center;">
                 <a href="/student/send_question">

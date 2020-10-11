@@ -266,9 +266,11 @@ body{
         background: #2cc2bc;
         direction: rtl;
     }
+    
 }
 @media (max-width:400px){
     .hide_in_phone{
         display: none;
     }
+    
 }

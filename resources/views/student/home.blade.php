@@ -49,7 +49,7 @@
             </div>
             <div class="col-md-2 col-4 pt-2">
                 <div style="text-align: center;">
-                <a href="">
+                <a href="/student/settings_profile">
                     <img src="/images/profile.png" style="border-radius: 30%;" width="32px" alt="">&nbsp;
                     <span class="menu_top">تنظیمات پروفایل</span>
                 </a>

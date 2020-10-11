@@ -7,8 +7,8 @@
     <div class="col-md-1"></div>
     <div class="col-md-10">
         <div class="card mb-5">
-            <div class="card-header" style="text-align:right;direction:rtl">
-                <p class="pt-3">آرشیو فایل ها و کلاس های درس {{$course->title}}</p>
+            <div class="card-header" style="text-align:right;direction:rtl;background:#ED9B40">
+                <p class="pt-3" style="color:black">آرشیو فایل ها و کلاس های درس {{$course->title}}</p>
             </div>
             <div class="card-body">
                 @foreach($assgiment as $assgiment)

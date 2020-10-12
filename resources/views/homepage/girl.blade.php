@@ -137,7 +137,8 @@
                         
                                     <div class="post-content text-center">
                                         <div class="post-meta" data-animation="fadeInUp" data-delay="100ms">
-                                            <a href="#">تاریخ</a>
+                                            <a href="#">
+                                            </a>
                                             <a href="archive.html">{{$book->category}}</a>
                                         </div>
                                         <a href="video-post.html" class="post-title" data-animation="fadeInUp" data-delay="300ms">{{$book->title}}</a>
@@ -166,8 +167,13 @@
                 </div>
 
                 <!-- Single Blog Post -->
+                <div style="display: none;">{{$bi = 0}}</div>
                 @foreach($config as $book)
                     @if($book->cate == 'intro_book')
+                        <div style="display: none;">
+                        {{$bi = $bi + 1 }}
+                        </div>
+                        @if($bi < 6)
                         <div class="single-blog-post d-flex">
                             <div class="post-thumbnail">
                                 <img src="{{$book->img}}" alt="">
@@ -183,6 +189,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
                     @endif
                 @endforeach
               
@@ -190,7 +197,9 @@
               
             </div>
 
-            
+            <div style="text-align:center">
+                <a href="/book_intro"><p>ادامه معرفی کتاب</p></a>
+            </div>
             <!-- Sidebar Widget -->
             <div class="single-sidebar-widget p-30">
                 <!-- Section Title -->

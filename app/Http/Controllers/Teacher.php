@@ -75,6 +75,8 @@ class Teacher extends Controller
     public function delete_course_from_class($course_id,$class_id){
         $class = Classify::where('id',$class_id)->first();
         $class->classify_to_course()->detach($course_id);
+        Exercise::where('course_id',$course_id)->delete();
+        Exercisenotice::where('course_id',$course_id)->delete();
         return redirect('/teacher/select_class_to_add_course');
     }
 
@@ -370,21 +372,6 @@ class Teacher extends Controller
     public function bank_question(){
         $question = question::where('teacher_id',Auth::user()->id)->get();
         return view('teacher.bank_question',compact('question'));
-    }
-
-    public function delete_student_boy($user_id){
-        User::where('id',$user_id)->delete();
-        return redirect('/manager/list_student_boy');
-    }
-
-    public function delete_student_girl($user_id){
-        User::where('id',$user_id)->delete();
-        return redirect('/manager/list_student_girl'); 
-    }
-
-    public function delete_teacher($user_id){
-        User::where('id',$user_id)->delete();
-        return redirect('/manager/list_teacher'); 
     }
 
     public function delete_noti($id_noti){

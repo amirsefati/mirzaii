@@ -101,11 +101,11 @@ Route::prefix('manager')->middleware([Managermidd::class])->group(function(){
 
     Route::get('to_do_list_delete/{id_to_do_list}',[Manager::class,'to_do_list_delete']);
     
-    Route::get('delete_student_boy/{user_id}',[Teacher::class,'delete_student_boy']);
+    Route::get('delete_student_boy/{user_id}',[Manager::class,'delete_student_boy']);
 
-    Route::get('delete_student_girl/{user_id}',[Teacher::class,'delete_student_girl']);
+    Route::get('delete_student_girl/{user_id}',[Manager::class,'delete_student_girl']);
 
-    Route::get('delete_teacher/{user_id}',[Teacher::class,'delete_teacher']);
+    Route::get('delete_teacher/{user_id}',[Manager::class,'delete_teacher']);
 
     Route::get('not_answer_question',[Manager::class,'not_answer_question']);
 

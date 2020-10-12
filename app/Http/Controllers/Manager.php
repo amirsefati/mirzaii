@@ -6,6 +6,8 @@ use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Course;
 use App\Models\Classify;
+use App\Models\Exercise;
+use App\Models\Exercisenotice;
 use App\Models\Homepage;
 use App\Models\question;
 use App\Models\To_do_list;
@@ -394,6 +396,20 @@ class Manager extends Controller
         return view('manager.student_girl_to_class',compact(['class_list','boy_list']));
     
     }
+    public function delete_student_boy($user_id){
+        User::where('id',$user_id)->delete();
+        return redirect('/manager/list_student_boy');
+    }
+
+    public function delete_student_girl($user_id){
+        User::where('id',$user_id)->delete();
+        return redirect('/manager/list_student_girl'); 
+    }
+
+    public function delete_teacher($user_id){
+        User::where('id',$user_id)->delete();
+        return redirect('/manager/list_teacher'); 
+    }
 
     public function class_list_student_teacher(){
         $class_list = Classify::where('kind',Auth::user()->gender)->get();
@@ -409,7 +425,7 @@ class Manager extends Controller
     }
 
     public function reform_classify(){
-        $list_student = User::where('level',1)->get();
+        $list_student = User::where('level',1)->where('gender',Auth::user()->gender)->get();
         return view('manager.reform_classify',compact('list_student'));
     }
 
@@ -551,6 +567,8 @@ class Manager extends Controller
 
     public function delte_course_item($course_id){
         Course::where('id',$course_id)->delete();
+        Exercise::where('course_id',$course_id)->delete();
+        Exercisenotice::where('course_id',$course_id)->delete();
         return redirect('/manager/edit_cource');
     }
 

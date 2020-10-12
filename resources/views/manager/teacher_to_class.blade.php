@@ -76,15 +76,17 @@
                     </div>
                     
                     @foreach($lst as $lst_teacher)
-                        {{$lst_teacher->kind}} - {{$lst_teacher->name}} - {{$lst_teacher->desc}} |
+                        {{$lst_teacher->kind}} - {{$lst_teacher->name}} - {{$lst_teacher->desc}} 
                     @endforeach
                 </td>
 
                 <td>
                     @foreach($lst as $lst_teacher)
-                        <a href="/manager/delete_class_from_teacher/{{$lst_teacher->id}}/{{$teacher->id}} " style="font-size: 9px;color:red"> 
-                            {{$lst_teacher->name}} 
-                        </a> -
+                        <a href="/manager/delete_class_from_teacher/{{$lst_teacher->id}}/{{$teacher->id}} " style="font-size:12px"> 
+                            
+                            <span class="badge badge-pill badge-danger">{{$lst_teacher->name}} </span>
+
+                        </a> 
                     @endforeach
                 </td>
 

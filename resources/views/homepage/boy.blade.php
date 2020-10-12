@@ -41,7 +41,7 @@
                 <nav class="classy-navbar justify-content-between" id="magNav">
 
                     <!-- Nav brand -->
-                    <a href="index.html" class="nav-brand"><img src="images/danesh_logo.png" width="60px" alt=""></a>
+                    <a href="#" class="nav-brand"><img src="images/danesh_logo.png" width="60px" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -60,7 +60,7 @@
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>
-                                    <li class="active"><a href="index.html">خانه</a></li>
+                                    <li class="active"><a href="#">خانه</a></li>
                                     <li><a href="#">مدرسه</a>
                                         <ul class="dropdown">
                                             <li><a href="archive.html"> افتخارات مدرسه</a></li>
@@ -101,7 +101,7 @@
                         <div class="top-meta-data d-flex align-items-center">
                             <!-- Top Search Area -->
                             <div class="top-search-area">
-                                <form action="index.html" method="post">
+                                <form action="#" method="post">
                                     <input type="search" name="top-search" id="topSearch" placeholder="Search and hit enter...">
                                     <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i></button>
                                 </form>
@@ -348,7 +348,7 @@
 
                         @if($config1->cate == 'config')
                             @if($config1->config_name == 'phone')
-                            <a href="#" class="facebook-fans"> 
+                            <a href="tel::{{$config1->config_value}}" class="facebook-fans"> 
                                 <div class="row">
                                     <div class="col-md-8 col-8" style="text-align: left;">
                                         {{$config1->config_value}} 
@@ -378,13 +378,14 @@
 
                         @if($config1->cate == 'config')
                             @if($config1->config_name == 'telegram')
-                            <a href="#" class="youtube-subscribers">   
+                            <a href="https://t.me/{{$config1->config_value}}" class="youtube-subscribers">   
                             <div class="row">
-                                    <div class="col-md-6 col-6" style="text-align: left;">
+                                    <div class="col-md-8 col-8 pl-0" style="text-align: left;font-size:12px">
+
                                     {{$config1->config_value}}
-                                    </div> 
-                                    <div class="col-md-6 col-6">
-                                    <span>کانال تلگرام</span>
+                                    </div>
+                                    <div class="col-md-4 col-4">
+                                        <span> تلگرام</span>
                                     </div>
                                 </div>  
                                 </a>
@@ -395,8 +396,11 @@
                             @if($config1->config_name == 'email')
                             <a href="#" class="google-followers">  
                             <div class="row">
-                                    <div class="col-md-12 col-12" style="text-align: left;font-size:13px">
+                                    <div class="col-md-8 col-8 pl-0" style="text-align: left;font-size:11px">
                                         {{$config1->config_value}} 
+                                    </div>
+                                    <div class="col-md-4 col-4">
+                                        <span> ایمیل</span>
                                     </div>
                                     
                                 </div>     
@@ -522,7 +526,7 @@
                     <div class="footer-widget">
                         <!-- Logo -->
 
-                        <a href="index.html" class="foo-logo"><img src="/images/danesh_logo_b.png" width="110px" alt=""></a>
+                        <a href="#" class="foo-logo"><img src="/images/danesh_logo_b.png" width="110px" alt=""></a>
 
                         <div class="footer-social-info">
                             <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>

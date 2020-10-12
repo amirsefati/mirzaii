@@ -22,7 +22,7 @@
                         <th style="width:20%;">  نام درس</th>
                         <th style="width:20%;">  عنوان جلسه </th>
                         <th style="width:20%;">  تکیلف </th>
-                        <th style="width:20%;">  نمره  </th>
+                        <th style="width:20%;">  ارزشیابی توصیفی  </th>
 
                         </tr>
                     </thead>
@@ -43,7 +43,13 @@
                                 <input type="text" name="exercise_id" value="{{$ex->id}}" hidden>
                                 <div class="row">
                                     <div class="col-md-8">
-                                        <input type="text" name="mark_send" class="form-control">
+                                        <select name="mark_send" class="form-control" id="">
+                                            <option value="خیلی خوب">خیلی خوب</option>
+                                            <option value="خوب">خوب</option>
+                                            <option value="قابل قبول">قابل قبول</option>
+                                            <option value="نیاز به تلاش بیشتر">نیاز به تلاش بیشتر</option>
+
+                                        </select>
                                     </div>
 
                                     <div class="col-md-4">

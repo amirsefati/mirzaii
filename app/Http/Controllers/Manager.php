@@ -385,7 +385,7 @@ class Manager extends Controller
         $class = Classify::find($request->class);
         $student = $request->student;
         $class->classify_to_class()->attach($student);
-        return redirect('manager/student_boy_to_class');
+        return redirect('manager/student_girl_to_class');
     }
 
     public function student_girl_to_class(){

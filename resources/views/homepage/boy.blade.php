@@ -175,7 +175,7 @@
                             <div class="post-content" style="width: 95%;">
                                 <a href="/book/{{$book->id}}" class="post-title">{{$book->title}}
                                 </a>
-                                <p style="font-size:11px;">{!!substr($book->desc,0,180) !!}</p>
+                                <p style="font-size:11px;">{!!mb_substr($book->desc,0,180) !!}</p>
                                 <div class="post-meta d-flex justify-content-between">
                                     <!-- <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
                                     <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>

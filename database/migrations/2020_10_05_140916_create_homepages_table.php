@@ -28,7 +28,7 @@ class CreateHomepagesTable extends Migration
             $table->string('config_value')->nullable();
 
             $table->string('etc')->nullable();
-            $table->string('etc_1')->nullable();
+            $table->text('etc_1')->nullable();
 
             $table->integer('show')->nullable();
 

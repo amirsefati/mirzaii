@@ -27,6 +27,8 @@ Route::get('/select',[Authentication::class,'select']);
 
 Route::get('/home/{gender}',[Authentication::class,'select_gender']);
 
+Route::get('/book/{id}',[Authentication::class,'book_detail']);
+
 
 Route::get('/user',[Authentication::class,'user_to_page']);
 

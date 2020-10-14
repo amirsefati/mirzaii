@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>مجموعه مدارس دانش و آفرینش</title>
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v26.0.2/dist/font-face.css" rel="stylesheet" type="text/css" />   
     <link href="{{asset('css/main.css')}}" rel="stylesheet"></head>
     <link href="{{asset('css/boy_girl.css')}}" rel="stylesheet"></head>

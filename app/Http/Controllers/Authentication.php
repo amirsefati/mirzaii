@@ -66,11 +66,11 @@ class Authentication extends Controller
     public function boy_or_girl(){
         if(session()->has('gender')){
             if(session('gender') == 'boy'){
-                $config = Homepage::where('gender','پسر')->get();
+                $config = Homepage::where('gender','پسر')->orderby('created_at','desc')->get();
                 return view('homepage.boy',compact('config'));
             
             }else{ 
-                $config = Homepage::where('gender','دختر')->get();
+                $config = Homepage::where('gender','دختر')->orderby('created_at','desc')->get();
                 return view('homepage.girl',compact('config'));
             
             }
@@ -88,9 +88,10 @@ class Authentication extends Controller
     public function select_gender($gender){
         
             session(['gender'=>$gender]);
-            return redirect('/');
+            return redirect('/');   
+    }
 
-        
-        
+    public function book_detail($id){
+        return view('homepage.book_details');
     }
 }

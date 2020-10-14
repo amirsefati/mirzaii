@@ -20,7 +20,7 @@
             <div class="col-md-6 col-xs-12 input_right_padding">
                 <div class="row mt-5">
                     <div class="col-md-12" style="text-align: center;">
-                        <p>به مدرسه میرزایی خوش آمدید</p>
+                        <p>مجموعه مدارس دانش و آفرینش</p>
                         <p>برای ورود به سایت لطفا از کد ملی خود استفاده کنید</p>
 
                         <p style="color:red">{{$err}}</p>

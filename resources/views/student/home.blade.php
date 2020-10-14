@@ -21,7 +21,7 @@
         {{$pt = count($ex)}}
         </div>
         @for($p = 0;$p<$pt;$p++)
-            @foreach($ex[0] as $e)
+            @foreach($ex[$p] as $e)
                 @if(strlen(App\Models\Exercise::where('user_id',Auth::user()->id)->where('assigment_id',$e->assginment_id)->first()) < 10)
                     <div style="display: none;">
                         @if($i < 4 )

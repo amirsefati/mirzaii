@@ -140,6 +140,12 @@ Route::prefix('manager')->middleware([Managermidd::class])->group(function(){
 
     Route::get('delete_config/{item_id}',[Manager::class,'delete_config']);
 
+    Route::get('add_online_schedule',[Manager::class,'add_online_schedule']);
+    Route::post('add_time_data_to_class',[Manager::class,'add_time_data_to_class']);
+
+    Route::get('manage_online_schedule',[Manager::class,'manage_online_schedule']);
+
+        
     
 });
 
@@ -196,6 +202,14 @@ Route::prefix('teacher')->middleware([Teachermidd::class])->group(function(){
     
     Route::post('add_mark_to_student_ok',[Teacher::class,'add_mark_to_student_ok']);
 
+
+    Route::get('online_video',[Teacher::class,'online_video']);
+
+
+    Route::get('edit_online_video/{id}',[Teacher::class,'edit_online_video']);
+    Route::post('edit_online_video',[Teacher::class,'edit_online_video_post']);
+
+    
 });
 
 Route::prefix('student')->middleware([Studentmidd::class])->group(function(){

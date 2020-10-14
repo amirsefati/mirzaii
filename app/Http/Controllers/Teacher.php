@@ -11,8 +11,10 @@ use App\Models\Course;
 use App\Models\Exercise;
 use App\Models\Exercisenotice;
 use App\Models\Notice_class;
+use App\Models\Onlineschedule;
 use App\Models\question;
 use App\Models\User;
+use DateTime;
 use Exception;
 
 class Teacher extends Controller
@@ -407,5 +409,29 @@ class Teacher extends Controller
 
         Exercise::where('id',$request->exercise_id)->update(['mark'=>$request->mark_send]);
         return redirect('/teacher/show_all_exercise');
+    }
+
+    public function online_video(){
+        $my_class = User::find(Auth::user()->id);
+        $class_list = $my_class->class_to_classify;
+        #if assign two class not show
+        $list_online_vidoe = Onlineschedule::where('class_id',$class_list[0]->id)->where('date_time','>',date('Y-m-d'))->get();
+        return view('teacher.online_video',compact('list_online_vidoe'));
+    }
+
+    public function edit_online_video($id){
+        $video = Onlineschedule::find($id);
+        return view('teacher.edit_online_video',compact('video'));
+    }
+
+    public function edit_online_video_post(Request $request){
+
+        Onlineschedule::where('id',$request->video_id)->update([
+            'title' => $request->title,
+            'desc' => $request->desc,
+            'date_time' => $request->date_time,
+        ]);
+
+        return redirect('/teacher/online_video');
     }
 }

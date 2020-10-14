@@ -14,6 +14,7 @@ use App\Models\To_do_list;
 use App\Models\Notice_class;
 use Illuminate\Http\Request;
 use App\Models\Notice_school;
+use App\Models\Onlineschedule;
 use Illuminate\Support\Facades\Auth;
 
 class Manager extends Controller
@@ -846,6 +847,27 @@ class Manager extends Controller
             ]);
         }
         
+    }
+
+    public function add_online_schedule(){
+        $class_list = Classify::where('kind',Auth::user()->gender)->get();
+        $sch_list = Onlineschedule::where('gender',Auth::user()->gender)->where('date_time','>',date("Y-m-d HH:MM::SS"))->orderby('class_id')->get();
+        return view('manager.add_online_schedule',compact(['class_list','sch_list']));
+    }
+
+    public function add_time_data_to_class(Request $request){
+        Onlineschedule::create([
+            'class_id' => $request->class_id,
+            'link' => $request->link,
+            'date_time' => $request->date_time,
+            'gender' => $request->gender,
+        ]);
+        return redirect('/manager/add_online_schedule');
+    }
+
+    public function manage_online_schedule(){
+        $sch_list = Onlineschedule::where('gender',Auth::user()->gender)->get();
+        return view('manager.manage_online_schedule',compact('sch_list'));
     }
 
 }

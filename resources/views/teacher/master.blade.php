@@ -14,6 +14,7 @@
 <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v26.0.2/dist/font-face.css" rel="stylesheet" type="text/css" />   
 <link href="{{asset('css/main.css')}}" rel="stylesheet"></head>
 <link href="{{asset('css/manager.css')}}" rel="stylesheet"></head>
+<link href="{{asset('css/date_jalali/jquery.md.bootstrap.datetimepicker.style.css')}}" rel="stylesheet">
 
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
@@ -158,6 +159,15 @@
                                         <i class="metismenu-icon pe-7s-note2"></i>
                                          تکالیف
                                     </a>
+                                </li>   
+
+                                <li>
+                                    <a href="/teacher/online_video" >
+                                        <i class="metismenu-icon pe-7s-headphones"></i>
+                                         برنامه کلاس آنلاین
+
+                                         
+                                    </a>
                                 </li>
 
                                 <li>    
@@ -166,6 +176,8 @@
                                         مدیریت  دروس 
                                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                     </a>
+
+                                    
                                     <ul>
                                         
                                         <li>
@@ -287,6 +299,17 @@ $('#date_select').MdPersianDateTimePicker({
         modalMode: false,
         englishNumber: false
       });
+
+$('#date3-1').MdPersianDateTimePicker({
+    targetDateSelector: '#inputDate3-1',
+    targetTextSelector: '#inputDate3-1text',
+    fromDate: true,
+    enableTimePicker: true,
+    groupId: 'rangeSelector1',
+    dateFormat: 'yyyy-MM-dd HH:mm:ss',
+    textFormat: 'dddd dd MMMM yyyy HH:mm:ss',
+    isGregorian: false,
+});
 
       $(document).ready(function(){
         $('[data-toggle="popover"]').popover();

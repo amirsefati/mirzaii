@@ -60,16 +60,15 @@
                 <div class="app-header-left">
                     <div class="search-wrapper">
                         <div class="input-holder">
-                            <input type="text" class="search-input" placeholder="Type to search">
-                            <button class="search-icon"><span></span></button>
+                            <a href="/system/logout" class="nav-link">
+                                 خروج از سیستم
+                            </a>
                         </div>
                         <button class="close"></button>
                     </div>
                     <ul class="header-menu nav">
                         <li class="nav-item">
-                            <a href="/system/logout" class="nav-link">
-                                خروج
-                            </a>
+                           
                         </li>
                         
                     </ul>        </div>
@@ -152,6 +151,20 @@
                                         میز مدیریت
                                     </a>
                                 </li>
+
+                                <li class="app-sidebar__heading">کلاس آنلاین</li>
+                                <li>
+                                    <a href="/manager/add_online_schedule" >
+                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        زمان بندی
+                                    </a>
+                                    <a href="/manager/manage_online_schedule" >
+                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        مدیریت
+                                    </a>
+                                </li>
+
+
                                 <li class="app-sidebar__heading">کلاس ها</li>
                                 <li
          
@@ -427,7 +440,19 @@ $("#date_select").MdPersianDateTimePicker({
     isGregorian: false,
     modalMode: false,
     englishNumber: false
-    });
+});
+
+
+$('#date3-1').MdPersianDateTimePicker({
+    targetDateSelector: '#inputDate3-1',
+    targetTextSelector: '#inputDate3-1text',
+    fromDate: true,
+    enableTimePicker: true,
+    groupId: 'rangeSelector1',
+    dateFormat: 'yyyy-MM-dd HH:mm:ss',
+    textFormat: 'dddd dd MMMM yyyy HH:mm:ss',
+    isGregorian: false,
+});
 
       $(document).ready(function(){
         $('[data-toggle="popover"]').popover();

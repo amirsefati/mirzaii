@@ -336,8 +336,12 @@ class Manager extends Controller
             'profile_img' => $img_url,
             'doc_img' => $doc_url
         ]);
+        if($request->gender == 'پسر'){
+            return redirect('manager/list_student_boy');
+        }else{
+            return redirect('manager/list_student_girl');
 
-        return redirect('manager/list_student_boy');
+        }
 
     }
 

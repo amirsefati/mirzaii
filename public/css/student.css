@@ -152,7 +152,7 @@ body{
 }
 .sticky_notice2{
     width: 100%;
-    height: 95px;
+    height: 100px;
     background: #77BA99;
     position: fixed;
     bottom: 0;
@@ -163,7 +163,7 @@ body{
 }
 .sticky_notice3{
     width: 100%;
-    height: 120px;
+    height: 130px;
     background: #A846A0;
     position: fixed;
     bottom: 0;
@@ -174,7 +174,7 @@ body{
 }
 .sticky_notice4{
     width: 100%;
-    height: 145px;
+    height: 160px;
     background: #ECA400;
     position: fixed;
     bottom: 0;

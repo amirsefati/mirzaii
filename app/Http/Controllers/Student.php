@@ -26,10 +26,13 @@ class Student extends Controller
             $class_list_info = Classify::where('id',$class_id)->first();
             $list_class = $class_list_info->classify_to_class;
             $course_list = $class_list_info->classify_to_course;
+
             $ex = [];
             foreach($course_list as $course){
-                array_push($ex,Exercisenotice::where('course_id',$course->id)->where('timer' ,'>' , date("Y/m/d"))->get()); 
-            }
+                array_push($ex,Exercisenotice::where('course_id',$course->id)->where('timer','>',date("Y/m/d"))->get());     
+            } 
+
+                
             $school_notification = Notice_school::where('show',1)->where('gender',$user_info->gender)->orderBy('order')->get();
             $class_notification = $class_list_info->classify_to_notice_class;
             return view('student.home',compact(['user_info','class_info','list_class','course_list','school_notification','class_notification','ex']));    

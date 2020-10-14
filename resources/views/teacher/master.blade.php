@@ -56,22 +56,21 @@
                 <div class="app-header-left">
                     <div class="search-wrapper">
                         <div class="input-holder">
-                            <input type="text" class="search-input" placeholder="جست و جو">
-                            <button class="search-icon"><span></span></button>
+                            <a href="/system/logout" class="nav-link">
+                                 خروج از سیستم
+                            </a>                            
                         </div>
-                        <button class="close"></button>
+
                     </div>
                     <ul class="header-menu nav">
                         <li class="nav-item">
-                            <a href="/system/logout" class="nav-link">
-                                 خروج از سیستم
-                            </a>
+                            
                         </li>
                         
                         
                     </ul>        </div>
                 <div class="app-header-right">
-                    <div class="header-btn-lg pr-0">
+                    <div class="header-btn-lg pr-4">
                         <div class="widget-content p-0">
                             <div class="widget-content-wrapper">
                                 <div class="widget-content-left">
@@ -142,28 +141,28 @@
                                 <li class="app-sidebar__heading">کلاس ها</li>
                                 <li>
                                     <a href="/teacher/class_list" >
-                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        <i class="metismenu-icon pe-7s-airplay"></i>
                                         مدیریت کلاس ها
                                     </a>
                                 </li>
                                 <li class="app-sidebar__heading">دروس</li>
                                 <li>
                                     <a href="/teacher/select_class_to_add_course" >
-                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        <i class="metismenu-icon pe-7s-display1"></i>
                                         افزودن درس به کلاس
                                     </a>
                                 </li>
 
                                 <li>
                                     <a href="/teacher/show_all_exercise" >
-                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        <i class="metismenu-icon pe-7s-note2"></i>
                                          تکالیف
                                     </a>
                                 </li>
 
                                 <li>    
                                     <a href="#">
-                                        <i class="metismenu-icon pe-7s-diamond"></i>
+                                        <i class="metismenu-icon pe-7s-notebook"></i>
                                         مدیریت  دروس 
                                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                     </a>
@@ -191,12 +190,12 @@
                                 <li class="app-sidebar__heading">اطلاعیه ها</li>
                                 <li>
                                     <a href="/teacher/notice_school" >
-                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        <i class="metismenu-icon pe-7s-news-paper"></i>
                                         افزودن اطلاعیه 
                                     </a>
 
                                     <a href="/teacher/notice_class_manage" >
-                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        <i class="metismenu-icon pe-7s-diskette"></i>
                                         مدیریت اطلاعیه ها
                                     </a>
                                 </li>
@@ -204,7 +203,7 @@
                                 <li class="app-sidebar__heading">سوال</li>
                                 <li>
                                     <a href="/teacher/preview_question" >
-                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        <i class="metismenu-icon pe-7s-info"></i>
                                         پاسخ دادن
                                         @if(App\Models\question::where('status',1)->where('teacher_id',Auth::user()->id)->count() > 0)
                                         <span class="badge badge-pill badge-danger">{{App\Models\question::where('status',1)->where('teacher_id',Auth::user()->id)->count()}}</span>                        
@@ -213,7 +212,7 @@
                                 </li>
                                 <li>
                                     <a href="/teacher/bank_question" >
-                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                        <i class="metismenu-icon pe-7s-help1"></i>
                                         بایگانی
                                     </a>
                                 </li>

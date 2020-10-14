@@ -50,12 +50,22 @@ body{
     width: 80px;
     height: 0px;
 }
+.app-header-left{
+    width: 30%;
+    min-width: 350px;
+}
+.search-wrapper{
+    width: 300px;
+}
+.search-wrapper .input-holder{
+    width: 300px;
+}
 @media (max-width: 991.98px){
     .app-sidebar{
-        transform:translateX(220px)!important;
+        transform:translateX(265px)!important;
     }
     .closed-sidebar.fixed-sidebar .app-main__outer{
-        padding-right:60px!important
+        padding-right:15px!important
     }
     .sidebar-mobile-open .app-sidebar{
         transform:translateX(10px)!important;

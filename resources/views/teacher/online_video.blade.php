@@ -38,8 +38,7 @@
                         </a>
                     </td>
                     
-                    
-                    
+                           
                 </tr>
                 
                 @endforeach

@@ -272,7 +272,7 @@ class Manager extends Controller
             'date_born' => $request->born_date,
             'sadere' => $request->sadere,
 
-            'password' => $request->identity,
+            'password' => $request->identity_code,
 
             'profile_img' => $img_url,
             'doc_img' => $doc_url

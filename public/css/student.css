@@ -193,6 +193,18 @@ body{
     opacity: 0;
   }
   
+.noti_video_conferense{
+    width: 110px;
+    height: 60px;
+    background: #FF006E;
+    position: fixed;
+    top: 240px;
+    z-index: 9999;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 0px 15px 15px 0px;
+}  
 @media (max-width:500px){
     .img_profile_user{
         border-radius: 50%;

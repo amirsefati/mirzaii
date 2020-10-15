@@ -17,6 +17,11 @@
 <link href="{{asset('css/date_jalali/jquery.md.bootstrap.datetimepicker.style.css')}}" rel="stylesheet">
 <link href="{{asset('full_calender/main.css')}}" rel="stylesheet">
 
+<style>
+    .fc .fc-list-event:hover td{
+        background: #3F6AE2;
+    }
+</style>
 
 
 </head>
@@ -446,6 +451,7 @@
                                             <th style="width:30%;">کلاس</th>
                                             <th style="width:35%;">تاریخ شروع</th>
                                             <th style="width:20%;">لینک</th>
+                                            <th style="width:20%;">حذف</th>
 
                                         </tr>
                                         @foreach($sch_list as $list)
@@ -464,7 +470,11 @@
                                                     لینک کلاس
                                                 </a>
                                             </td>
-                                            
+                                            <td>
+                                                <a href="/manager/delete_video_conf/{{$list->id}}">
+                                                    <img src="/images/delete.png" width="25px" alt="">
+                                                </a>
+                                            </td>
                                             
                                         </tr>
                                         
@@ -507,6 +517,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       initialView: 'dayGridMonth',
       nowIndicator: true,
+      contentHeight:'auto',
       locale: "fa",
       headerToolbar: {
         left: 'prev,next today',
@@ -518,7 +529,8 @@ document.addEventListener('DOMContentLoaded', function() {
       selectable: true,
       selectMirror: true,
       dayMaxEvents: true, // allow "more" link when too many events
-      events: dd_data
+      events: dd_data,
+      scrollTime :"15:00:00"
         
     });
 

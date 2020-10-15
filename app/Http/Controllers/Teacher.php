@@ -2,20 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Answer;
-use App\Models\Assigment;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Models\Classify;
-use App\Models\Course;
-use App\Models\Exercise;
-use App\Models\Exercisenotice;
-use App\Models\Notice_class;
-use App\Models\Onlineschedule;
-use App\Models\question;
-use App\Models\User;
 use DateTime;
 use Exception;
+use App\Models\User;
+use App\Models\Answer;
+use App\Models\Course;
+use App\Models\Classify;
+use App\Models\Exercise;
+use App\Models\question;
+use App\Models\Assigment;
+use App\Models\Notice_class;
+use Illuminate\Http\Request;
+use App\Models\Exercisenotice;
+use App\Models\Onlineschedule;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Redirect;
 
 class Teacher extends Controller
 {
@@ -434,4 +436,7 @@ class Teacher extends Controller
 
         return redirect('/teacher/online_video');
     }
+
+    
+
 }

@@ -113,9 +113,7 @@
         </div>              <div class="app-main">
                 <div class="app-sidebar sidebar-shadow">
                     <div class="app-header__logo">
-                        <div class="logo-src">
-                            <img src="/images/danesh_logo_b.png" alt="">
-                        </div>
+                        
                         <div class="header__pane ml-auto">
                             <div>
                                 <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">

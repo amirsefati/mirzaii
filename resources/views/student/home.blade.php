@@ -14,7 +14,21 @@
     <title>Document</title>
 </head>
 <body>
+    <div style="display: none;">
+    {{$now = Date('Y-m-d H:m:s')}}
+    {{$next = Date('Y-m-d H:m:s',strtotime("+2 hour"))}}
+    </div>
     
+    @if(App\Models\Onlineschedule::where('class_id',$class_info[0]->id)->whereBetween('date_time',[$now,$next])->exists())
+    <div class="noti_video_conferense">
+        <a href="{{App\Models\Onlineschedule::where('class_id',$class_info[0]->id)->whereBetween('date_time',[$now,$next])->first()->link}}" style="color: white;">
+        کلاس آنلاین
+        ورود
+        </a>
+    </div>
+    @endif
+
+
     <div style="display: none;">{{$i = 0}}</div>
     @if(strlen(json_encode($ex)) > 100)
         <div style="display: none;">

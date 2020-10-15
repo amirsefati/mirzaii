@@ -870,4 +870,9 @@ class Manager extends Controller
         return view('manager.manage_online_schedule',compact('sch_list'));
     }
 
+    public function delete_video_conf($id){
+        Onlineschedule::where('id',$id)->delete();
+        return redirect('/manager/manage_online_schedule');
+    }
+
 }

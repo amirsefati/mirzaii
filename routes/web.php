@@ -145,7 +145,10 @@ Route::prefix('manager')->middleware([Managermidd::class])->group(function(){
 
     Route::get('manage_online_schedule',[Manager::class,'manage_online_schedule']);
 
-        
+    Route::get('delete_video_conf/{id}',[Manager::class,'delete_video_conf']);
+
+    
+
     
 });
 
@@ -208,6 +211,7 @@ Route::prefix('teacher')->middleware([Teachermidd::class])->group(function(){
 
     Route::get('edit_online_video/{id}',[Teacher::class,'edit_online_video']);
     Route::post('edit_online_video',[Teacher::class,'edit_online_video_post']);
+
 
     
 });

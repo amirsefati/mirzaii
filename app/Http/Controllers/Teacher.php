@@ -252,11 +252,13 @@ class Teacher extends Controller
         return view('teacher.edit_assigment',compact(['course','assignment']));
     }
 
+
     public function edit_assigment_to_course_post(Request $request){
         $request->validate([
             'title'=>'required',
             'desc'=>'required',
         ]);
+
         if($request->hasFile('file_doc')){
 
             $request->validate([
@@ -265,6 +267,7 @@ class Teacher extends Controller
             
         }
         
+        #فایل زیپ
         $zip_file = Assigment::where('id',$request->assginment_id)->first()->img;
         if($request->hasFile('zip_file')){
             $image = $request->file('zip_file');
@@ -273,7 +276,11 @@ class Teacher extends Controller
             $image->move($destinationPath, $name);
             $zip_file = '/images/course/' . $name;
         }
+        if($request->show == 'حذف'){
+            $zip_file = "";
+        }
 
+        #فایل صوتی
         $file_video = Assigment::where('id',$request->assginment_id)->first()->file_video;
         if($request->hasFile('file_video')){
             $video = $request->file('file_video');
@@ -282,7 +289,11 @@ class Teacher extends Controller
             $video->move($destinationPath, $name);
             $file_video = '/video/course/' . $name;
         }
+        if($request->file_video_title == 'حذف'){
+            $file_video = "";
+        }
 
+        #فایل ویدیویی
         $file_video_2 = Assigment::where('id',$request->assginment_id)->first()->file_video_2;
         if($request->hasFile('file_video_2')){
             $video = $request->file('file_video_2');
@@ -291,7 +302,12 @@ class Teacher extends Controller
             $video->move($destinationPath, $name);
             $file_video_2 = '/video/course/' . $name;
         }
+        if($request->file_video_2_title == 'حذف'){
+            $file_video_2 = "";
+        }
 
+
+        #تکلیف 
         $file_doc = Assigment::where('id',$request->assginment_id)->first()->file_doc;
         if($request->hasFile('file_doc')){
             $doc = $request->file('file_doc');
@@ -300,7 +316,11 @@ class Teacher extends Controller
             $doc->move($destinationPath, $name);
             $file_doc = '/doc/course/' . $name;
         }
+        if($request->file_doc_title == 'حذف'){
+            $file_doc = "";
+        }
 
+        #فایل متنی یا سند
         $file_doc_2 = Assigment::where('id',$request->assginment_id)->first()->file_doc_2;
         if($request->hasFile('file_doc_2')){
             $doc = $request->file('file_doc_2');
@@ -309,7 +329,10 @@ class Teacher extends Controller
             $doc->move($destinationPath, $name);
             $file_doc_2 = '/doc/course/' . $name;
         }
-
+        if($request->file_doc_2_title == 'حذف'){
+            $file_doc_2 = "";
+        }
+        
         
         Assigment::where('id',$request->assginment_id)->update([
             'title'=>$request->title,
@@ -326,9 +349,24 @@ class Teacher extends Controller
             'file_video'=>$file_video,
             'file_video_2'=>$file_video_2,
             'file_doc'=>$file_doc,
-            'file_doc_2'=>$file_doc_2,
-            
+            'file_doc_2'=>$file_doc_2, 
         ]);
+        
+        if(Exercisenotice::where('assginment_id',$request->assginment_id)->exists()){
+
+            Exercisenotice::where('assginment_id',$request->assginment_id)->update([
+                'timer' => $request->timer
+            ]);
+
+        }else{
+            if($request->hasFile('file_doc')){
+                Exercisenotice::create([
+                    'course_id' => $request->course_id,
+                    'assginment_id' => $request->assginment_id,
+                    'timer'=>$request->timer
+                ]);
+            }
+        }
         
 
 

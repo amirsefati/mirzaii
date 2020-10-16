@@ -82,7 +82,7 @@
                 @if(strlen($assignment->file_doc) > 10)
                     <hr style="border: 0;height: 0;border-top: 1px solid rgba(0, 0, 0, 0.1);border-bottom: 1px solid rgba(255, 255, 255, 0.3);">
                     <p id="exercise" style="font-size: 17px;font-weight: bold;"> : دانلود فایل تمرین  </p>
-                    <a href="/student/download_file/{{$assignment->id}}/doc">
+                    <a href="{{$assignment->file_doc}}">
                         {{$assignment->file_doc_title}}
                     </a>
                     <div class="p-2"></div>
@@ -91,7 +91,7 @@
                 @if(strlen($assignment->file_doc_2) > 10)
                     <hr style="border: 0;height: 0;border-top: 1px solid rgba(0, 0, 0, 0.1);border-bottom: 1px solid rgba(255, 255, 255, 0.3);">
                     <p style="font-size: 17px;font-weight: bold;"> : دانلود فایل متنی  </p>
-                    <a href="/student/download_file/{{$assignment->id}}/doc">
+                    <a href="{{$assignment->file_doc_2}}">
                         {{$assignment->file_doc_2_title}}
                     </a>
                     <div class="p-2"></div>
@@ -102,7 +102,7 @@
                     <hr style="border: 0;height: 0;border-top: 1px solid rgba(0, 0, 0, 0.1);border-bottom: 1px solid rgba(255, 255, 255, 0.3);">
                     <p style="font-size: 17px;font-weight: bold;">   : دانلود مجموعه فایل  </p>
                     <p style="color: red;font-size:12px">برای مشاهده این فایل نیامند برنامه فشرده سازی هستید</p>
-                    <a href="/student/download_file/{{$assignment->id}}/doc">
+                    <a href="{{$assignment->img}}">
                         {{$assignment->show}}
                     </a>
                     <div class="p-2"></div>
@@ -113,7 +113,9 @@
                     <hr style="border: 0;height: 0;border-top: 1px solid rgba(0, 0, 0, 0.1);border-bottom: 1px solid rgba(255, 255, 255, 0.3);">
                     <p style="font-size: 17px;font-weight: bold;"> : دانلود فایل صوتی    </p>
 
+                    <a href="{{$assignment->file_video}}">
                     <p>{{$assignment->file_video_title}}</p>
+                    </a>
                     <audio id="player"  controls style="width: 100%;">
                         <source src="{{$assignment->file_video}}" type="audio/mp3"  class="js-player"/>
                     </audio>
@@ -124,12 +126,14 @@
 
                 @if(strlen($assignment->file_video_2) > 10)
                 <p style="font-size: 17px;font-weight: bold;"> : دانلود فایل تصویری    </p>
-
-                    {{$assignment->file_video_2_title}}
-                            
+                    
+                    <a href="{{$assignment->file_video_2}}">
+                        {{$assignment->file_video_2_title}}
+                    </a>
+          
                     <div class="mt-3" style="text-align: center;">
                         
-                        <video id="player" playsinline controls data-poster="" class="video_size">
+                        <video id="player" playsinline controls class="video_size">
                                 <source src="{{$assignment->file_video_2}}" type="video/mp4" />
                         </video>
                     </div>

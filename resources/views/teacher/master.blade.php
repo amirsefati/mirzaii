@@ -283,21 +283,17 @@
     });
 </script>
 <script>
-$('#date_select').MdPersianDateTimePicker({ 
-    targetTextSelector: '#input_date_select',
-    fromDate: true,
-    enableTimePicker: true,
-    groupId: 'rangeSelector1',
-    dateFormat: 'yyyy-MM-dd',
-    textFormat: 'yyyy-MM-dd',
-    });
+
       $("#date_select").MdPersianDateTimePicker({
         targetDateSelector: "#input_date_select",
         targetTextSelector: "#showDate_class",
-        textFormat: " dddd dd MMMM yyyy ",
+        dateFormat: 'yyyy-MM-dd HH:mm:ss',
+        textFormat: 'dddd dd MMMM yyyy HH:mm:ss',
         isGregorian: false,
         modalMode: false,
-        englishNumber: false
+        englishNumber: false,
+        enableTimePicker: true,
+
       });
 
 $('#date3-1').MdPersianDateTimePicker({

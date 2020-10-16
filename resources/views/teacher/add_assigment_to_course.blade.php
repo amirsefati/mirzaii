@@ -110,18 +110,18 @@
 
                     <div class="row mt-5">
                         <div class="col-md-3 mt-2">
-                            <label for="file_doc_2">آپلود تکلیف  :</label>
+                            <label for="file_doc">آپلود تکلیف  :</label>
                             <input type="file" name="file_doc" class="form-control">
 
                         </div>
 
                         <div class="col-md-7 mt-2">
-                            <label for="file_doc_2_title">توضیح فایل  تکلیف :</label>
+                            <label for="file_doc_title">توضیح فایل  تکلیف :</label>
                             <input type="text" class="form-control" name="file_doc_title">
                         </div>
 
                         <div class="col-md-2 mt-2">
-                            <label for="file_doc_2_title"> تاریخ پایان تحویل :</label>
+                            <label for="timer"> تاریخ پایان تحویل :</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text cursor-pointer" id="date_select" data-mdpersiandatetimepicker="" data-mdpersiandatetimepicker-group="rangeSelector1" data-fromdate="" data-uniqueid="1601319385285" data-original-title="" title="">تقویم</span>

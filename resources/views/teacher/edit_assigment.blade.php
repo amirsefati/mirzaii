@@ -29,7 +29,6 @@
 <form action="/teacher/edit_assigment_to_course" method="POST" enctype="multipart/form-data">
 @csrf
 <input type="text" name="assginment_id" value="{{$assignment->id}}" hidden>
-<input type="text" name="course_id" value="{{$course->id}}" hidden>
 
                 <div class="card-body">
 
@@ -63,6 +62,7 @@
                 <div style="padding:20px;border:.4px solid #0892A5;border-radius:15px;margin-top:20px">
                     <p style="font-size:11px;color:#A63D40;margin-bottom:3px;">در صورتی که فایلی آپلود شده باشد از بخش اول هر ردیف قابل "دانلود" است</p>
                     <p style="font-size:11px;color:#A63D40;margin-bottom:3px;">در صورتی که فایلی آپلود نشده باشد بخش دانلود "غیرفعال" است</p>
+                    <p style="font-size:11px;color:#A63D40;margin-bottom:3px;">در صورت تغییر هر فایل فقط فایل مورد جدید رو آپلود کنید فایل جدید جایگزین میگردد</p>
                     <p style="font-size:11px;color:#A63D40">در صورتی که میخاهید فایلی حذف شود در توضیحات همان فایل کلمه "حذف" را بنویسید</p>
 
                     <div class="row">
@@ -70,7 +70,7 @@
                         <div class="col-md-1 col-3 mt-5">
                             @if(strlen($assignment->file_video) > 5)
                                 <a href="{{$assignment->file_video}}">
-                                <button class="btn btn-success" style="margin-top:6px;">دانلود</button>
+                                <button type="button" class="btn btn-success" style="margin-top:6px;">دانلود</button>
                                 </a>
                             @else
                                 <button class="btn btn-secondary" style="margin-top:6px;" disabled>غیرفعال</button>
@@ -94,7 +94,7 @@
                         <div class="col-md-1 col-3 mt-4">
                                 @if(strlen($assignment->file_video_2) > 5)
                                     <a href="{{$assignment->file_video_2}}">
-                                    <button class="btn btn-success" style="margin-top:12px;">دانلود</button>
+                                    <button type="button" class="btn btn-success" style="margin-top:12px;">دانلود</button>
                                     </a>
                                 @else
                                     <button class="btn btn-secondary" style="margin-top:12px;" disabled>غیرفعال</button>
@@ -117,7 +117,7 @@
                         <div class="col-md-1 col-3 mt-4">
                                 @if(strlen($assignment->file_doc_2) > 5)
                                     <a href="{{$assignment->file_doc_2}}">
-                                    <button class="btn btn-success" style="margin-top:12px;">دانلود</button>
+                                    <button type="button" class="btn btn-success" style="margin-top:12px;">دانلود</button>
                                     </a>
                                 @else
                                     <button class="btn btn-secondary" style="margin-top:12px;" disabled>غیرفعال</button>
@@ -133,16 +133,16 @@
 
                         <div class="col-md-8 mt-2">
                             <label for="file_video_doc">توضیح فایل متنی :</label>
-                            <input type="text" class="form-control" value="{{$assignment->file_video_doc}}" name="file_doc_2_title">
+                            <input type="text" class="form-control" value="{{$assignment->file_doc_2_title}}" name="file_doc_2_title">
 
                         </div>
                     </div>
 
                     <div class="row mt-4">
                         <div class="col-md-1 col-3 mt-4">
-                                @if(strlen($assignment->show) > 5)
+                                @if(strlen($assignment->img) > 5)
                                     <a href="{{$assignment->show}}">
-                                    <button class="btn btn-success" style="margin-top:12px;">دانلود</button>
+                                    <button type="button" class="btn btn-success" style="margin-top:12px;">دانلود</button>
                                     </a>
                                 @else
                                     <button class="btn btn-secondary" style="margin-top:12px;" disabled>غیرفعال</button>
@@ -166,34 +166,41 @@
 
                 <div style="padding:20px;border:.4px solid #0892A5;border-radius:15px;margin-top:20px">
                     @if(App\Models\Exercisenotice::where('assginment_id',$assignment->id)->exists())
-                    <p style="font-size:14px;color:#0C8346;margin-bottom:5px;">برای دانلود تکلیف اینجا کلیک کنید</p>
-
+                        <a href="{{$assignment->file_doc}}">
+                        <p style="font-size:15px;color:#0C8346;margin-bottom:5px;">برای دانلود تکلیف اینجا کلیک کنید</p>
+                        </a>
                     <p style="font-size:11px;color:#A63D40;margin-bottom:3px;">در صورت ویرایش کردن تکلیف حتما تاریخ تحویل تکلیف را وارد چک کنید</p>
                     @else
+                    <p style="font-size:13px;color:#A63D40;margin-bottom:3px;">در این جلسه فایل تکلیف وجود ندارد</p>
                     <p style="font-size:11px;color:#A63D40;margin-bottom:3px;">در صورت اضافه کردن تکلیف حتما تاریخ تحویل تکلیف را وارد کنید</p>
+                    <p style="font-size:13px;color:#A63D40;margin-bottom:3px;">برای حذف تکلیف از جلسه در توضیح فایل کلمه "حذف" را وارد کنید</p>
+
                     @endif
                     <div class="row mt-5">
                         <div class="col-md-3 mt-2">
                             <label for="file_doc">آپلود تکلیف  :</label>
                             <input type="file" name="file_doc" class="form-control">
-                            <small><a href="{{$assignment->file_doc}}">دانلود</a></small>
-
                         </div>
 
                         <div class="col-md-6 mt-2">
-                            <label for="file_doc_2_title">توضیح فایل  تکلیف :</label>
-                            <input type="text" class="form-control" value="{{$assignment->file_doc_2_title}}" name="file_doc_title">
+                            <label for="file_doc_title">توضیح فایل  تکلیف :</label>
+                            <input type="text" class="form-control" value="{{$assignment->file_doc_title}}" name="file_doc_title">
                         </div>
 
                         <div class="col-md-3 mt-2">
-                            <label for="file_doc_2_title"> تاریخ پایان تحویل :</label>
+                            <label for="timer"> تاریخ پایان تحویل :</label>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text cursor-pointer" id="date_select" data-mdpersiandatetimepicker="" data-mdpersiandatetimepicker-group="rangeSelector1" data-fromdate="" data-uniqueid="1601319385285" data-original-title="" title="">تقویم</span>
                                     </div>
-                                    <input type="text" value="{{$assignment->file_doc_2_title}}"  name="timer" id="input_date_select" class="form-control" placeholder="مشاهده برای تاریخ" aria-label="date4" aria-describedby="date4" readonly>
+                                    @if(App\Models\Exercisenotice::where('assginment_id',$assignment->id)->exists())
+                                        <input type="text" value="{{App\Models\Exercisenotice::where('assginment_id',$assignment->id)->first()->timer}}"   name="timer" id="input_date_select" class="form-control" placeholder="مشاهده برای تاریخ" aria-label="date4" aria-describedby="date4" readonly>
+                                    @else
+                                    <input type="text" name="timer" id="input_date_select" class="form-control" placeholder="مشاهده برای تاریخ" aria-label="date4" aria-describedby="date4" readonly>
+
+                                    @endif
                                 </div>
-                                <small id="showDate_class" style="color:#A63D40">دوشنبه ۰۴ شهریور ۱۳۹۸</small>
+                                <small style="font-size: 16px;color:#A63D40" id="showDate_class">دوشنبه ۰۴ شهریور ۱۳۹۸</small>
 
                         </div>
                     </div>

@@ -29,7 +29,7 @@ class Student extends Controller
 
             $ex = [];
             foreach($course_list as $course){
-                array_push($ex,Exercisenotice::where('course_id',$course->id)->where('timer','>',date("Y/m/d"))->get());     
+                array_push($ex,Exercisenotice::where('course_id',$course->id)->where('timer','>',date("Y-m-d H:m:s"))->get());     
             } 
 
                 

@@ -38,3 +38,9 @@
 .social-followers-info a{
     font-size: 13px;
 }
+@media only screen and (max-width: 767px){
+    .header-area .mag-main-menu .submit-video{
+        width: 70px;
+    }
+}
+

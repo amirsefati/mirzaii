@@ -212,6 +212,7 @@
                 <!-- Single Blog Post -->
                 @foreach($config as $book)
                     @if($book->cate == 'event')
+                    @if($book->show == 1)
                         <div class="single-blog-post d-flex">
                             <div class="post-thumbnail">
                                 <img src="{{$book->img}}" alt="">
@@ -221,6 +222,7 @@
                                 <p>{{$book->desc}}</p>
                             </div>
                         </div>
+                    @endif
                     @endif
                 @endforeach
 

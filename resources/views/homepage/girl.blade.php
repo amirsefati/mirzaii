@@ -107,12 +107,12 @@
                                 </form>
                             </div>
                             <!-- Login -->
-                            <a href="login.html" class="login-btn"><i class="fa fa-user" aria-hidden="true"></i></a>
+
                             <!-- Submit Video -->
                             @if(Auth::check())
-                            <a href="/user" class="submit-video"><span><i class="fa fa-cloud-upload"></i></span> <span class="video-text">پنل کاربری</span></a>
+                            <a href="/user" class="submit-video"><span><i class="fa fa-user-o"></i></span> <span class="video-text">پنل کاربری</span></a>
                             @else
-                            <a href="/login" class="submit-video"><span><i class="fa fa-cloud-upload"></i></span> <span class="video-text">ورود کاربران</span></a>
+                            <a href="/login" class="submit-video"><span><i class="fa fa-user-o"></i></span> <span class="video-text">ورود کاربران</span></a>
                             @endif
                         </div>
                     </div>
@@ -212,6 +212,7 @@
                 <!-- Single Blog Post -->
                 @foreach($config as $book)
                     @if($book->cate == 'event')
+                    @if($book->show == 1)
                         <div class="single-blog-post d-flex">
                             <div class="post-thumbnail">
                                 <img src="{{$book->img}}" alt="">
@@ -221,6 +222,7 @@
                                 <p>{{$book->desc}}</p>
                             </div>
                         </div>
+                    @endif
                     @endif
                 @endforeach
 

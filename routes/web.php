@@ -138,7 +138,7 @@ Route::prefix('manager')->middleware([Managermidd::class])->group(function(){
     Route::get('homepage_slider',[Manager::class,'homepage_slider']);
     Route::post('homepage_slider',[Manager::class,'homepage_slider_post']);
 
-    Route::get('delete_config/{item_id}',[Manager::class,'delete_config']);
+    Route::get('delete_config/{page}/{item_id}',[Manager::class,'delete_config']);
 
     Route::get('add_online_schedule',[Manager::class,'add_online_schedule']);
     Route::post('add_time_data_to_class',[Manager::class,'add_time_data_to_class']);

@@ -88,7 +88,7 @@
                                 <td>{{$notice->desc}}</td>
                                 <td>{{$notice->etc_1}}</td>
                                 <td>
-                                    <a href="/manager/delete_config/{{$notice->id}}">
+                                    <a href="/manager/delete_config/home_page_notice/{{$notice->id}}">
                                         <img src="/images/delete.png" width="25px" alt="">
                                     </a>
                                 </td>

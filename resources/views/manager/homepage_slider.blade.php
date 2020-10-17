@@ -97,7 +97,7 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="/manager/delete_config/{{$slider->id}}">
+                                    <a href="/manager/delete_config/homepage_slider/{{$slider->id}}">
                                         <img src="/images/delete.png" width="25px" alt="">
                                     </a>
                                 </td>

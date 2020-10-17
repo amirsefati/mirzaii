@@ -81,7 +81,7 @@
                                 <td>{{$sche->desc}}</td>
                                 <td>{{$sche->etc_1}}</td>
                                 <td>
-                                    <a href="/manager/delete_config/{{$sche->id}}">
+                                    <a href="/manager/delete_config/schedule_class/{{$sche->id}}">
                                         <img src="/images/delete.png" width="25px" alt="">
                                     </a>
                                 </td>

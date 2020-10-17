@@ -94,7 +94,7 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="/manager/delete_config/{{$event->id}}">
+                                    <a href="/manager/delete_config/homepage_event/{{$event->id}}">
                                         <img src="/images/delete.png" width="25px" alt="">
                                     </a>
                                 </td>

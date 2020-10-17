@@ -829,9 +829,9 @@ class Manager extends Controller
         return redirect('/manager/homepage_slider');
     }
 
-    public function delete_config($item_id){
+    public function delete_config($page,$item_id){
         Homepage::where('id',$item_id)->delete();
-        return redirect('/manager/table');
+        return redirect('/manager/'.$page);
     }
 
 

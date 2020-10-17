@@ -86,7 +86,7 @@
                                 <td>{{$intro_book->desc}}</td>
                                 <td>{{$intro_book->etc_1}}</td>
                                 <td>
-                                    <a href="/manager/delete_config/{{$intro_book->id}}">
+                                    <a href="/manager/delete_config/homepage_intro_book/{{$intro_book->id}}">
                                         <img src="/images/delete.png" width="25px" alt="">
                                     </a>
                                 </td>

@@ -71,6 +71,8 @@
                                 <th style="width:10%;">رویداد</th>
                                 <th style="width:20%;">متن رویداد</th>
                                 <th style="width:30%;">توضیح کامل</th>
+                                <th style="width:10%;">نمایش</th>
+
                                 <th style="width:10%;">حذف</th>
 
                             </tr>
@@ -80,6 +82,17 @@
                                 <td>{{$event->title}}</td>
                                 <td>{{$event->desc}}</td>
                                 <td>{{$event->etc_1}}</td>
+                                <td>
+                                    @if($event->show == 1)
+                                    <a href="/manager/show_event/{{$event->id}}">
+                                        <img src="/images/show.png" width="45px" alt="نمایش">
+                                    </a>
+                                    @else
+                                    <a href="/manager/hide_event/{{$event->id}}">
+                                        <img src="/images/hide.png" width="45px" alt="مخفی کردن">
+                                    </a>
+                                    @endif
+                                </td>
                                 <td>
                                     <a href="/manager/delete_config/{{$event->id}}">
                                         <img src="/images/delete.png" width="25px" alt="">

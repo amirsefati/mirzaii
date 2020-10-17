@@ -147,6 +147,16 @@ Route::prefix('manager')->middleware([Managermidd::class])->group(function(){
 
     Route::get('delete_video_conf/{id}',[Manager::class,'delete_video_conf']);
 
+    Route::get('show_slider/{id}',[Manager::class,'show_slider']);
+    Route::get('hide_slider/{id}',[Manager::class,'hide_slider']);
+
+    Route::get('show_event/{id}',[Manager::class,'show_event']);
+    Route::get('hide_event/{id}',[Manager::class,'hide_event']);
+
+
+    
+
+
     
 
     

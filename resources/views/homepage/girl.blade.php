@@ -130,6 +130,7 @@
         <!-- Single Blog Post -->
         @foreach($config as $book) 
             @if($book->cate == 'slider')
+            @if($book->show == 1)
                 <div class="hero-blog-post bg-img bg-overlay" style="background-image: url({{$book->img}});">
                     <div class="container h-100">
                         <div class="row h-100 align-items-center">
@@ -147,6 +148,7 @@
                         </div>
                     </div>
                 </div>
+            @endif    
             @endif
         @endforeach
     </div>

@@ -69,8 +69,10 @@
                             <table id="myTable">
                             <tr class="header"  style="background:#00A6A6">
                                 <th style="width:20%;">عکس اسلایدر</th>
+                                <th style="width:20%;">عنوان</th>
                                 <th style="width:30%;">متن اسلایدر</th>
-                                <th style="width:40%;"> متن انتهایی</th>
+                                <th style="width:10%;">نمایش</th>
+
                                 <th style="width:10%;">حذف</th>
 
                             </tr>
@@ -83,7 +85,17 @@
 
                                 <td>{{$slider->title}}</td>
                                 <td>{{$slider->desc}}</td>
-                                <td>{{$slider->etc_1}}</td>
+                                <td>
+                                    @if($slider->show == 1)
+                                    <a href="/manager/show_slider/{{$slider->id}}">
+                                        <img src="/images/show.png" width="45px" alt="نمایش">
+                                    </a>
+                                    @else
+                                    <a href="/manager/hide_slider/{{$slider->id}}">
+                                        <img src="/images/hide.png" width="45px" alt="مخفی کردن">
+                                    </a>
+                                    @endif
+                                </td>
                                 <td>
                                     <a href="/manager/delete_config/{{$slider->id}}">
                                         <img src="/images/delete.png" width="25px" alt="">

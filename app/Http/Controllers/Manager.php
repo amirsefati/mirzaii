@@ -747,7 +747,8 @@ class Manager extends Controller
             'etc' => $img_2,
             'gender' => Auth::user()->gender,
             'etc_1' => $request->etc_1,
-            'category' => $request->category
+            'category' => $request->category,
+            'show' => 1
 
         ]);
 
@@ -820,7 +821,8 @@ class Manager extends Controller
             'img' => $img_1,
             'gender' => Auth::user()->gender,
             'etc_1' => $request->etc_1,
-            'category' => $request->category
+            'category' => $request->category,
+            'show' => 1
 
         ]);
 
@@ -873,6 +875,34 @@ class Manager extends Controller
     public function delete_video_conf($id){
         Onlineschedule::where('id',$id)->delete();
         return redirect('/manager/manage_online_schedule');
+    }
+
+    public function show_slider($id){
+        Homepage::where('id',$id)->update([
+            'show' => 0
+        ]);
+        return redirect('/manager/homepage_slider');
+    }
+
+    public function hide_slider($id){
+        Homepage::where('id',$id)->update([
+            'show' => 1
+        ]);
+        return redirect('/manager/homepage_slider');
+    }
+
+    public function show_event($id){
+        Homepage::where('id',$id)->update([
+            'show' => 0
+        ]);
+        return redirect('/manager/homepage_event');
+    }
+
+    public function hide_event($id){
+        Homepage::where('id',$id)->update([
+            'show' => 1
+        ]);
+        return redirect('/manager/homepage_event');
     }
 
 }

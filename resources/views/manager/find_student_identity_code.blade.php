@@ -107,17 +107,19 @@
 
                                 <div class="col-md-3 mt-3">
                                     <label for="sadere">مدرسه :</label>
-                                    <select name="sadere" class="form-control" id="">
-                                        <option value="">انتخاب کنید</option>
+                                    <select name="sadere" class="form-control" id="" required>
+                                        <option value="{{$student->sadere}}">
+                                            @if($student->sadere == 1)
+                                            دانش
+                                            @else
+                                            آفرینش
+                                            @endif
+                                        </option>
                                         <option value="1">دانش</option>
                                         <option value="2">آفرینش</option>
                                     </select>  
                                     <small>
-                                        @if($student->sadere == 1)
-                                        دانش
-                                        @else
-                                        آفرینش
-                                        @endif
+                                        
                                     </small> 
                                 
                                 </div>

@@ -1,7 +1,7 @@
 @extends('manager.master')
 
 @section('content')
-
+{{Date("Y-m-d H:i:s")}}
 <form action="/manager/add_time_data_to_class" method="POST">
 @csrf
 <div>

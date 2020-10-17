@@ -63,14 +63,14 @@
                                     <li class="active"><a href="#">خانه</a></li>
                                     <li><a href="#">مدرسه</a>
                                         <ul class="dropdown">
-                                            <li><a href="archive.html"> افتخارات مدرسه</a></li>
-                                            <li><a href="archive.html">برنامه هفتگی</a></li>
-                                            <li><a href="video-post.html">معرفی پرسنل</a></li>
-                                            <li><a href="single-post.html">معرفی مدرسین</a></li>
+                                            <li><a href="#"> افتخارات مدرسه</a></li>
+                                            <li><a href="#">برنامه هفتگی</a></li>
+                                            <li><a href="#">معرفی پرسنل</a></li>
+                                            <li><a href="#">معرفی مدرسین</a></li>
                                             
                                         </ul>
                                     </li>
-                                    <li><a href="#">محتوای آموزشی</a>
+                                    <!-- <li><a href="#">محتوای آموزشی</a>
                                         <div class="megamenu">
                                             <ul class="single-mega cn-col-4"></ul>
                                             <ul class="single-mega cn-col-4"></ul>
@@ -81,16 +81,16 @@
                                             </ul>
                                             <ul class="single-mega cn-col-4">
                                                 <li>کلیپ های آموزشی</li>
-                                                <!-- <li><a href="archive.html">Archive</a></li> -->
+
                                                 
                                             </ul>
                                             <ul class="single-mega cn-col-4"></ul>
                                         </div>
-                                    </li>
-                                    <li><a href="about.html">اخبار و رویداد ها</a></li>
-                                    <li><a href="contact.html"> آلبوم تصاویر </a></li>
+                                    </li> -->
 
-                                    <li><a href="contact.html">تماس با ما </a></li>
+                                    <li><a href="#"> آلبوم تصاویر </a></li>
+
+                                    <li><a href="#">تماس با ما </a></li>
                                     <li><a href="/select"> مدرسه دانش </a></li>
 
                                 </ul>
@@ -181,8 +181,8 @@
                                 <img src="{{$book->img}}" alt="">
                             </div>
                             <div class="post-content" style="width: 95%;">
-                                <a href="/book/{{$book->id}}" class="post-title">{{$book->title}}
-                                </a>
+                                {{$book->title}}
+                                
                                 <p style="font-size:11px;">{!!mb_substr($book->desc,0,180) !!}</p>
                                 <div class="post-meta d-flex justify-content-between">
                                     <!-- <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
@@ -218,7 +218,7 @@
                                 <img src="{{$book->img}}" alt="">
                             </div>
                             <div class="post-content" style="width: 95%;">
-                                <a href="single-post.html" class="post-title">{{$book->title}}</a>
+                                {{$book->title}}
                                 <p>{{$book->desc}}</p>
                             </div>
                         </div>
@@ -250,7 +250,8 @@
                         <img src="{{$book->img}}" alt="">
                         <div class="post-content">
                             <a href="#" class="post-cata">{{$book->title}}</a>
-                            <a href="video-post.html" class="post-title">{{$book->desc}}</a>
+                            <a href="" style="color:white">
+                            {{$book->desc}}</a>
                         </div>
                     </div>
                     @endif
@@ -298,8 +299,8 @@
                 </div>
 
                 <div class="row">
-                    <!-- Single Blog Post -->
-                    <div class="col-12 col-lg-6">
+
+                <!-- <div class="col-12 col-lg-6">
                         <div class="single-blog-post d-flex style-3 mb-30">
                             <div class="post-thumbnail">
                                 <img src="homepage/img/bg-img/31.jpg" alt="">
@@ -310,35 +311,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
-                    <!-- Single Blog Post -->
-                    <div class="col-12 col-lg-6">
-                        <div class="single-blog-post d-flex style-3 mb-30">
-                            <div class="post-thumbnail">
-                                <img src="homepage/img/bg-img/32.jpg" alt="">
-                            </div>
-                            <div class="post-content">
-                                <a href="single-post.html" class="post-title">رمضان ماه خدا از راه رسید</a>
-                                <div class="post-meta d-flex">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   
 
-                    <!-- Single Blog Post -->
-                    <div class="col-12 col-lg-6">
-                        <div class="single-blog-post d-flex style-3 mb-30">
-                            <div class="post-thumbnail">
-                                <img src="homepage/img/bg-img/33.jpg" alt="">
-                            </div>
-                            <div class="post-content">
-                                <a href="single-post.html" class="post-title">تکالیف نوروزی</a>
-                                <div class="post-meta d-flex">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                   
 
                    
                 </div>
@@ -468,8 +445,7 @@
                     <h5>متولدین امروز</h5>
                 </div>
 
-                <!-- Single YouTube Channel -->
-                <div class="single-youtube-channel d-flex">
+                <!-- <div class="single-youtube-channel d-flex">
                     <div class="youtube-channel-thumbnail">
                         <img src="homepage/img/bg-img/14.jpg" alt="">
                     </div>
@@ -477,51 +453,9 @@
                         <a href="single-post.html" class="channel-title">علیرضا میرزایی</a>
                         <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o" aria-hidden="true"></i> تبریک گفتن</a>
                     </div>
-                </div>
+                </div> -->
 
-                <!-- Single YouTube Channel -->
-                <div class="single-youtube-channel d-flex">
-                    <div class="youtube-channel-thumbnail">
-                        <img src="homepage/img/bg-img/15.jpg" alt="">
-                    </div>
-                    <div class="youtube-channel-content">
-                        <a href="single-post.html" class="channel-title">میرزایی</a>
-                        <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o" aria-hidden="true"></i> تبریک گفتن</a>
-                    </div>
-                </div>
-
-                <!-- Single YouTube Channel -->
-                <div class="single-youtube-channel d-flex">
-                    <div class="youtube-channel-thumbnail">
-                        <img src="homepage/img/bg-img/16.jpg" alt="">
-                    </div>
-                    <div class="youtube-channel-content">
-                        <a href="single-post.html" class="channel-title">میرزایی</a>
-                        <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o" aria-hidden="true"></i> تبریک گفتن</a>
-                    </div>
-                </div>
-
-                <!-- Single YouTube Channel -->
-                <div class="single-youtube-channel d-flex">
-                    <div class="youtube-channel-thumbnail">
-                        <img src="homepage/img/bg-img/17.jpg" alt="">
-                    </div>
-                    <div class="youtube-channel-content">
-                        <a href="single-post.html" class="channel-title">میرزایی</a>
-                        <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o" aria-hidden="true"></i> تبریک گفتن</a>
-                    </div>
-                </div>
-
-                <!-- Single YouTube Channel -->
-                <div class="single-youtube-channel d-flex">
-                    <div class="youtube-channel-thumbnail">
-                        <img src="homepage/img/bg-img/18.jpg" alt="">
-                    </div>
-                    <div class="youtube-channel-content">
-                        <a href="single-post.html" class="channel-title">میرزایی</a>
-                        <a href="#" class="btn subscribe-btn"><i class="fa fa-play-circle-o" aria-hidden="true"></i> تبریک گفتن</a>
-                    </div>
-                </div>
+                
 
             </div>
 

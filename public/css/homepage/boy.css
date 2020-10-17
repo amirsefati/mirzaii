@@ -44,3 +44,7 @@
     }
 }
 
+.breakpoint-on .classynav ul li.has-down > a::after {
+    top: -5px;
+    right: 45px;
+}

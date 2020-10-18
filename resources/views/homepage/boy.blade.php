@@ -41,7 +41,7 @@
                 <nav class="classy-navbar justify-content-between" id="magNav">
 
                     <!-- Nav brand -->
-                    <a href="#" class="nav-brand"><img src="images/danesh_logo.png" width="60px" alt=""></a>
+                    <a href="#" class="nav-brand"><img src="images/danesh_logo.png" width="70px" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -282,8 +282,7 @@
                                 <!-- Post Contetnt -->
                                 <div class="post-content">
                                     <div class="post-meta">
-                                        <a href="#">{{$book->category}} </a>
-                                        <a href="archive.html">تاریخ</a>
+                                       
                                     </div>
                                     <a href="video-post.html" class="post-title">{{$book->title}}</a>
                                     <p> {{$book->desc}} 
@@ -403,11 +402,11 @@
             <div class="single-sidebar-widget p-30">
                 <!-- Section Title -->
                 <div class="section-heading">
-                    <h5>آمار مدرسه</h5>
+                    <h5>تقویم</h5>
                 </div>
 
                 <!-- Catagory Widget -->
-                <ul class="catagory-widgets">
+                <!-- <ul class="catagory-widgets">
                     @foreach($config as $config2)
                         @if($config2->cate == 'config')
                             @if($config2->config_name == 'count_student')
@@ -427,7 +426,7 @@
                             @endif
                         @endif
                     @endforeach
-                </ul>
+                </ul> -->
             </div>
 
             <!-- Sidebar Widget -->
@@ -438,9 +437,9 @@
             <!-- Sidebar Widget -->
             <div class="single-sidebar-widget p-30">
                 <!-- Section Title -->
-                <div class="section-heading">
+                <!-- <div class="section-heading">
                     <h5>متولدین امروز</h5>
-                </div>
+                </div> -->
 
                 <!-- Single YouTube Channel
                 <div class="single-youtube-channel d-flex">

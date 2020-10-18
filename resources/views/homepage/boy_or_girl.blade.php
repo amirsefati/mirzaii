@@ -27,7 +27,7 @@
         <div class="row">
             <div class="col-md-12 mt-2 mr-3 ml-2 max_height" style="height:70vh;border:.4px solid gray;border-radius:20px;box-shadow: 2px 3px 6px 1px rgba(0,0,0,0.75);">
                 <div class="row">
-                    <div class="col-md-6 col-6 max_height" style="text-align: center;background:#369683;border-radius:20px 0px 0px 20px;height:70vh;">
+                    <div class="col-md-6 col-6 max_height" style="text-align: center;background:#ED3974;border-radius:20px 0px 0px 20px;height:70vh;">
                     <div style="margin-top: 16vh;">
                         
 
@@ -39,7 +39,7 @@
 
                     </div>
                     </div>
-                    <div class="col-md-6 col-6 max_height" style="text-align: center;;background:#ED3974;border-radius:0px 20px 20px 0px;height:70vh;">
+                    <div class="col-md-6 col-6 max_height" style="text-align: center;;background:#369683;border-radius:0px 20px 20px 0px;height:70vh;">
                     <div style="margin-top: 16vh;">
                     <a href="/home/boy" >
                             <img class="img_danesh" src="/images/danesh_logo_b.png"  alt=""><br>

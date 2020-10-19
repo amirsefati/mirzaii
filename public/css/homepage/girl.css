@@ -8,3 +8,21 @@
     top: -5px;
     right: 45px;
 }
+.header-area .mag-main-menu .classy-navbar{
+    background: linear-gradient(to top, #F76C5E, #EA3973);
+}
+.section-heading{
+    border-left: 4px solid transparent!important;
+}
+.p-30{
+    background: #FB89D1;
+}
+.mag-posts-content{
+    background: #F0DD94;
+}
+.section-heading{
+    background: transparent;
+}
+.post-sidebar-area{
+    background: #FB89D1;
+}

@@ -41,7 +41,7 @@
                 <nav class="classy-navbar justify-content-between" id="magNav">
 
                     <!-- Nav brand -->
-                    <a href="#" class="nav-brand"><img src="images/danesh_logo.png" width="70px" alt=""></a>
+                    <a href="#" class="nav-brand"><img src="images/danesh_logo_b.png" width="85px" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -196,8 +196,8 @@
               
             </div>
             
-            <div style="text-align:center">
-                <a href="/book_intro"><p>ادامه معرفی کتاب</p></a>
+            <div style="text-align:center;margin-bottom:0px;background:transparent">
+                <a href="/book_intro"><p style="margin-bottom:0px;background:#B6F6F4">ادامه معرفی کتاب</p></a>
             </div>
             
             <!-- Sidebar Widget -->
@@ -584,6 +584,7 @@
     <script type="text/javascript" src="{{asset('js/homepage/plugins/plugins.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/homepage/active.js')}}"></script>
 
+    
    
 </body>
 

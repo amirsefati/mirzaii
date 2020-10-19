@@ -41,7 +41,7 @@
                 <nav class="classy-navbar justify-content-between" id="magNav">
 
                     <!-- Nav brand -->
-                    <a href="#" class="nav-brand"><img src="images/afarinesh_logo.png" width="70px" alt=""></a>
+                    <a href="#" class="nav-brand"><img src="images/afarinesh_logo_b.png" width="70px" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -200,7 +200,7 @@
             </div>
 
             <div style="text-align:center">
-                <a href="/book_intro"><p>ادامه معرفی کتاب</p></a>
+                <a href="/book_intro"><p style="margin-bottom:0px;background:#FB89D1">ادامه معرفی کتاب</p></a>
             </div>
             <!-- Sidebar Widget -->
             <div class="single-sidebar-widget p-30">

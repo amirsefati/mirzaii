@@ -1,9 +1,11 @@
 .submit-video{
     background-color:#27A599!important;
 }
-
+a{
+    background: transparent;
+}
 .section-heading{
-    border-left: 4px solid #27A599!important;
+    border-left: 4px solid transparent!important;
 }
 .footer-area .footer-widget .widget-title{
     border-left: 3px solid #27A599!important;
@@ -47,4 +49,18 @@
 .breakpoint-on .classynav ul li.has-down > a::after {
     top: -5px;
     right: 45px;
+}
+
+.header-area .mag-main-menu .classy-navbar{
+    background: linear-gradient(to top, #b2fefa, #0ed2f7);
+}
+
+.p-30{
+    background: #B6F6F4;
+}
+.mag-posts-content{
+    background: #F0DD94;
+}
+.section-heading{
+    background: transparent;
 }

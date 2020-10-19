@@ -181,9 +181,9 @@
                                 <img src="{{$book->img}}" alt="">
                             </div>
                             <div class="post-content" style="width: 95%;">
-                                {{$book->title}}
                                 
-                                <p style="font-size:11px;">{!!mb_substr($book->desc,0,180) !!}</p>
+                                <p style="color:whitesmoke">{{$book->title}}</p>
+                                <p style="font-size:11px;color:whitesmoke">{!!mb_substr($book->desc,0,180) !!}</p>
                                 <div class="post-meta d-flex justify-content-between">
                                     <!-- <a href="#"><i class="fa fa-eye" aria-hidden="true"></i> 34</a>
                                     <a href="#"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> 84</a>
@@ -200,7 +200,7 @@
             </div>
 
             <div style="text-align:center">
-                <a href="/book_intro"><p style="margin-bottom:0px;background:#FB89D1">ادامه معرفی کتاب</p></a>
+                <a href="/book_intro"><p style="margin-bottom:0px;background:#FB89D1;color:white">ادامه معرفی کتاب</p></a>
             </div>
             <!-- Sidebar Widget -->
             <div class="single-sidebar-widget p-30">
@@ -218,8 +218,8 @@
                                 <img src="{{$book->img}}" alt="">
                             </div>
                             <div class="post-content" style="width: 95%;">
-                                {{$book->title}}
-                                <p>{{$book->desc}}</p>
+                                <p style="color:whitesmoke"> {{$book->title}}</p>
+                                <p style="color:whitesmoke">{{$book->desc}}</p>
                             </div>
                         </div>
                     @endif

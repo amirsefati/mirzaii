@@ -90,7 +90,7 @@
 
             <div class="col-md-4 details_user_info">
                 <p class="p_info" style="font-size: 16px;">نام دانش آموز : {{$user_info->name}} {{$user_info->family}}</p>
-                <p class="p_info" style="font-size: 13px;">شماره شناسنامه : {{$user_info->identity_code}}</p>
+                <p class="p_info" style="font-size: 13px;"> کد ملی : {{$user_info->identity_code}}</p>
                 <p class="p_info" style="font-size: 15px;">کلاس : {{$class_info[0]->name}} - {{$class_info[0]->desc}} - {{$class_info[0]->kind}}انه </p>
                 <p class="p_info" style="font-size: 14px;">معلم  :  
                     @foreach($list_class as $teacher)

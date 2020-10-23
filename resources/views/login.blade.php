@@ -20,7 +20,18 @@
             <div class="col-md-6 col-xs-12 input_right_padding">
                 <div class="row mt-5">
                     <div class="col-md-12" style="text-align: center;">
-                        <p>مجموعه مدارس دانش و آفرینش</p>
+                    <a href="/">
+                    @if(session()->has('gender'))
+                        @if(session('gender') == 'boy')  
+                            <img class="img_afarinesh" src="/images/danesh_logo_b.png" width="80px"  alt=""><br>
+                            <p style="color: black;font-size:11px">مجموعه مدارس دانش و آفرینش</p></a>
+                    
+                        @else
+                            <img class="img_afarinesh" src="/images/afarinesh_logo_b.png" width="80px"  alt=""><br>
+                            <p style="color: black;font-size:11px">مجموعه مدارس دانش و آفرینش</p></a>
+
+                   @endif
+                    @endif           
                         <p>برای ورود به سایت لطفا از کد ملی خود استفاده کنید</p>
 
                         <p style="color:red">{{$err}}</p>

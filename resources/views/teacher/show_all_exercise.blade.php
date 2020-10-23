@@ -21,7 +21,7 @@
                         <th style="width:10%;"> نام دانش آموز</th>
                         <th style="width:20%;">  نام درس</th>
                         <th style="width:20%;">  عنوان جلسه </th>
-                        <th style="width:20%;">  تکیلف </th>
+                        <th style="width:20%;">  تکلیف </th>
                         <th style="width:20%;">  ارزشیابی توصیفی  </th>
 
                         </tr>

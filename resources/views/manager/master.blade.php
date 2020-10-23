@@ -15,7 +15,7 @@
 <link href="{{asset('css/main.css')}}" rel="stylesheet">
 <link href="{{asset('css/manager.css')}}" rel="stylesheet">
 <link href="{{asset('css/date_jalali/jquery.md.bootstrap.datetimepicker.style.css')}}" rel="stylesheet">
-<link href="{{asset('fullcalender/main.css')}}" rel="stylesheet">
+<link href="{{asset('full_calender/main.css')}}" rel="stylesheet">
 
 
 

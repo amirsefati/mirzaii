@@ -24,12 +24,12 @@
 
 <body>
     <!-- Preloader -->
-    <div class="preloader d-flex align-items-center justify-content-center">
+    <!-- <div class="preloader d-flex align-items-center justify-content-center">
         <div class="spinner">
             <div class="double-bounce1"></div>
             <div class="double-bounce2"></div>
         </div>
-    </div>
+    </div> -->
 
     <!-- ##### Header Area Start ##### -->
     <header class="header-area">
@@ -408,9 +408,7 @@
                 <div class="section-heading">
                     <h5>تقویم</h5>
                 </div>
-                <div style="text-align:center">
-                    <iframe src="http://www.k2cod.com/jalali/3.php" style="width: 166px;height:160px;"></iframe>
-                </div>
+                
                 <!-- Catagory Widget -->
                 <!-- <ul class="catagory-widgets">
                     @foreach($config as $config2)

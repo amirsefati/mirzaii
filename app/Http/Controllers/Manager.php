@@ -334,6 +334,16 @@ class Manager extends Controller
             'date_born' => $request->born_date,
             'sadere' => $request->sadere,
 
+            'father_work' => $request->father_work,
+            'mother_work' => $request->mother_work,
+            'father_greduate' => $request->father_graduate,
+            'mother_greduate' => $request->mother_graduate,
+            'father_study' => $request->father_field,
+            'father_greduate' => $request->father_graduate,
+            'mother_study' => $request->mother_field,
+
+            'serial_identity' => $request->serial,
+
             'profile_img' => $img_url,
             'doc_img' => $doc_url
         ]);

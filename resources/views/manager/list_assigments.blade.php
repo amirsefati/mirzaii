@@ -28,8 +28,8 @@
                 @foreach($assignment1 as $assigment)
                 <tr>
                     <td>
-                    {{App\Models\Assigment::where('id',$assigment->id)->first()->assigment_to_course[0]->grade}} -    
-                    {{App\Models\Assigment::where('id',$assigment->id)->first()->assigment_to_course[0]->title}} 
+                    {{App\Models\Assigment::where('id',$assigment->id)->first()->assigment_to_course}} -    
+                    {{App\Models\Assigment::where('id',$assigment->id)->first()->assigment_to_course}} 
                     </td>
 
                     <td>

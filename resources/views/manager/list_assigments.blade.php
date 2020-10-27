@@ -26,6 +26,7 @@
                 @foreach($assignments as $assignment1)
 
                 @foreach($assignment1 as $assigment)
+                @if(strlen(App\Models\Assigment::where('id',$assigment->id)->first()->assigment_to_course) > 10)
                 <tr>
                     <td>
                     {{App\Models\Assigment::where('id',$assigment->id)->first()->assigment_to_course}} -    
@@ -72,7 +73,7 @@
                         @endif
                     </td>
                 </tr>
-                
+                @endif
                 @endforeach
                 @endforeach
                 </table>

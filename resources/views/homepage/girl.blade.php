@@ -351,7 +351,7 @@
                             @endif
                         @endif
 
-                        @if($config1->cate == 'config')
+                        <!-- @if($config1->cate == 'config')
                             @if($config1->config_name == 'fax')
                             <a href="#" class="twitter-followers">  
                             <div class="row">
@@ -364,7 +364,7 @@
                                 </div>
                             </a>
                             @endif
-                        @endif
+                        @endif -->
 
                         @if($config1->cate == 'config')
                             @if($config1->config_name == 'telegram')
@@ -408,8 +408,10 @@
                 <div class="section-heading">
                     <h5>تقویم</h5>
                 </div>
-                
-                <!-- Catagory Widget -->
+
+                <script type="text/javascript" src="http://1abzar.ir/abzar/tools/taghvim/?mod=1&abzar=1&kadr=1&kc=BBBBBB"></script><div style="display:none"><h2><a href="#">&#1578;&#1602;&#1608;&#1740;&#1605;</a></h2></div>
+
+            <!-- Catagory Widget -->
                 <!-- <ul class="catagory-widgets">
                     @foreach($config as $config2)
                         @if($config2->cate == 'config')

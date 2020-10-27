@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="مجموعه مدارس دانش و آفرینش">
+    <meta name="keywords" content="مدرسه دانش،مدرسه آفرینش">
+    <meta name="author" content="sefati100@gmail.com">
+   
+    <link rel="icon" href="{{asset('images/school.png')}}">
+
     <title>مجموعه مدارس دانش و آفرینش</title>
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v26.0.2/dist/font-face.css" rel="stylesheet" type="text/css" />   
     <link href="{{asset('css/main.css')}}" rel="stylesheet"></head>

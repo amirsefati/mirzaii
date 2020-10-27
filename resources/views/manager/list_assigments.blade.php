@@ -29,8 +29,8 @@
                 @if(strlen(App\Models\Assigment::where('id',$assigment->id)->first()->assigment_to_course) > 10)
                 <tr>
                     <td>
-                    {{App\Models\Assigment::where('id',$assigment->id)->first()->assigment_to_course->grade}} -    
-                    {{App\Models\Assigment::where('id',$assigment->id)->first()->assigment_to_course->title}} 
+                    {{App\Models\Assigment::where('id',$assigment->id)->first()->assigment_to_course[0]->grade}} -    
+                    {{App\Models\Assigment::where('id',$assigment->id)->first()->assigment_to_course[0]->title}} 
                     </td>
 
                     <td>

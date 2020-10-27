@@ -244,6 +244,12 @@
                                         </li>
                                         
                                         
+                                        <li>
+                                            <a href="/manager/list_assigments">
+                                                <i class="metismenu-icon">
+                                                </i> جلسات مدرسه
+                                            </a>
+                                        </li>
                                         
                                         
                                        

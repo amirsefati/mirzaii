@@ -153,9 +153,10 @@ Route::prefix('manager')->middleware([Managermidd::class])->group(function(){
     Route::get('show_event/{id}',[Manager::class,'show_event']);
     Route::get('hide_event/{id}',[Manager::class,'hide_event']);
 
+    Route::get('list_assigments',[Manager::class,'list_assigments']);
 
     
-
+    
 
     
 

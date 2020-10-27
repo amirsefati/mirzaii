@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Assigment;
 use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Course;
@@ -284,6 +285,7 @@ class Manager extends Controller
     }
 
     public function list_teacher(){
+        #list teachers
         if(Auth::user()->gender == 'پسر'){
             $school = 1;
         }
@@ -913,6 +915,27 @@ class Manager extends Controller
             'show' => 1
         ]);
         return redirect('/manager/homepage_event');
+    }
+
+    public function list_assigments(){
+        if(Auth::user()->gender == 'پسر'){
+            $school = 1;
+        }
+        else{
+            $school = 2;
+        }
+        $list_teacher = User::where('level',2)->where('sadere',$school)->get();
+
+        $assignments = [];
+        foreach($list_teacher as $teacher){
+            $assgiment = Assigment::where('teacher_created',$teacher->id)->get();
+            if(strlen($assgiment) > 10){
+                array_push($assignments,$assgiment);
+
+            }
+        }
+        $assignments = $assignments;
+        return view('manager.list_assigments',compact('assignments'));
     }
 
 }

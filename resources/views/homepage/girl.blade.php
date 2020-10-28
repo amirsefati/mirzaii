@@ -140,9 +140,9 @@
                                         <div class="post-meta" data-animation="fadeInUp" data-delay="100ms">
                                             <a href="#">
                                             </a>
-                                            <a href="archive.html">{{$book->category}}</a>
+                                            <a href="">{{$book->category}}</a>
                                         </div>
-                                        <a href="video-post.html" class="post-title" data-animation="fadeInUp" data-delay="300ms">{{$book->title}}</a>
+                                        <a href="" class="post-title" data-animation="fadeInUp" data-delay="300ms">{{$book->title}}</a>
                                     </div>
                             </div>
                         </div>
@@ -287,7 +287,7 @@
 
                                     
                                     </div>
-                                    <a href="video-post.html" class="post-title">{{$book->title}}</a>
+                                    <a href="" class="post-title">{{$book->title}}</a>
                                     <p> {{$book->desc}} 
                                     </p>
                                 </div>
@@ -518,7 +518,7 @@
                                 <img src="homepage/img/bg-img/12.jpg" alt="">
                             </div>
                             <div class="post-content">
-                                <a href="single-post.html" class="post-title">بازگشایی مدارس بعد از تعطیلات</a>
+                                <a href="" class="post-title">بازگشایی مدارس بعد از تعطیلات</a>
                                 <div class="post-meta d-flex justify-content-between">
                                 </div>
                             </div>
@@ -529,7 +529,7 @@
                                 <img src="homepage/img/bg-img/13.jpg" alt="">
                             </div>
                             <div class="post-content">
-                                <a href="single-post.html" class="post-title">تعطیلات نوروزی و تکالیف روزانه</a>
+                                <a href="" class="post-title">تعطیلات نوروزی و تکالیف روزانه</a>
                                 <div class="post-meta d-flex justify-content-between">
                                 </div>
                             </div>

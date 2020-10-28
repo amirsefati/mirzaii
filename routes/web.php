@@ -30,6 +30,8 @@ Route::get('/home/{gender}',[Authentication::class,'select_gender']);
 Route::get('/book/{id}',[Authentication::class,'book_detail']);
 
 
+Route::get('/book_intro',[Authentication::class,'book_intro']);
+
 Route::get('/user',[Authentication::class,'user_to_page']);
 
 Route::get('/login',[Authentication::class,'login']);

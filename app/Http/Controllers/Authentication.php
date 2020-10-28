@@ -94,4 +94,8 @@ class Authentication extends Controller
     public function book_detail($id){
         return view('homepage.book_details');
     }
+
+    public function book_intro(){
+        return redirect('/');
+    }
 }

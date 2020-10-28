@@ -94,9 +94,9 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text cursor-pointer" id="date_select" data-mdpersiandatetimepicker="" data-mdpersiandatetimepicker-group="rangeSelector1" data-fromdate="" data-uniqueid="1601319385285" data-original-title="" title="">تقویم</span>
                                         </div>
-                                        <input type="text" name="born_date" id="input_date_select" value="{{$student->date_born}}" class="form-control" placeholder="مشاهده برای تاریخ" aria-label="date4" aria-describedby="date4" readonly>
+                                        <input type="text" name="born_date" id="input_date_select" value="" class="form-control" placeholder="مشاهده برای تاریخ" aria-label="date4" aria-describedby="date4" readonly>
                                     </div>
-                                    <small id="showDate_class" style="color:#A63D40">دوشنبه ۰۴ شهریور ۱۳۹۸</small>
+                                    <small id="showDate_class" style="color:#A63D40">{{$student->date_born}}</small>
 
                                 </div>
 

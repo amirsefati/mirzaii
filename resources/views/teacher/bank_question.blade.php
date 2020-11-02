@@ -28,7 +28,7 @@
                                 <tr>
                                     <td>{{App\Models\User::where('id',$question->student_id)->first()->name}} {{App\Models\User::where('id',$question->student_id)->first()->family}}</td>
                                     <td>{{$question->title}}</td>
-                                    @if(strlen(App\Models\question::where('id',$question->id)->first()->question_to_answer[0]) > 5)
+                                    @if(strlen(App\Models\question::where('id',$question->id)->first()->question_to_answer) > 5)
                                     <td>{{App\Models\question::where('id',$question->id)->first()->question_to_answer[0]->answer}}</td>
                                     <td>{{App\Models\question::where('id',$question->id)->first()->question_to_answer[0]->created_at}}</td>
                                     @endif                               

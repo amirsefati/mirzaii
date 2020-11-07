@@ -509,7 +509,7 @@
 
     var dd_data = [];
     @foreach($sch_list as $sch)
-        dd_data.push({ title: "{{App\Models\Classify::where('id',$sch->class_id)->first()->name}}",url: '/manager/',start: '{{$sch->date_time}}', color :'red'});
+        dd_data.push({ title: "{{App\Models\Classify::where('id',$sch->class_id)->first()->name}}",url: '{{$sch->link}}',start: '{{$sch->date_time}}', color :'red'});
     @endforeach
 
 document.addEventListener('DOMContentLoaded', function() {

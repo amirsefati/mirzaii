@@ -880,7 +880,7 @@ class Manager extends Controller
     }
 
     public function manage_online_schedule(){
-        $sch_list = Onlineschedule::where('gender',Auth::user()->gender)->get();
+        $sch_list = Onlineschedule::where('gender',Auth::user()->gender)->where('date_time','>',date("Y-m-d HH:MM::SS"))->get();
         return view('manager.manage_online_schedule',compact('sch_list'));
     }
 

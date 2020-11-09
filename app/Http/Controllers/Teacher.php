@@ -144,7 +144,21 @@ class Teacher extends Controller
     }
 
     public function notice_class_manage(){
-        $notice_class = Notice_class::all();
+        $user_id = Auth::user()->id;
+        $user = User::where('id',$user_id)->first();
+        $class_list = $user->class_to_classify;
+        $notice_class1 = [];
+        foreach($class_list as $class){
+            array_push($notice_class1,Classify::where('id',$class->id)->first()->classify_to_notice_class); 
+        }
+
+        $notice_class = [];
+
+        foreach($notice_class1 as $class){
+            foreach($class as $cc){
+                array_push($notice_class,$cc);
+            }
+        }
         return view('teacher.notice_class_manage',compact('notice_class'));
     }
 

@@ -29,6 +29,7 @@
                     <tbody>
                         @foreach($exercise as $ex)
                             @if(strlen($ex) > 10)
+                            <tr>
                             <td>{{App\Models\User::where('id',$ex->user_id)->first()->name}} {{App\Models\User::where('id',$ex->user_id)->first()->family}}</td>
                             <td>{{App\Models\Course::where('id',$ex->course_id)->first()->title}} - {{App\Models\Course::where('id',$ex->course_id)->first()->grade}}</td>
                             <td>{{App\Models\Assigment::where('id',$ex->assigment_id)->first()->title}}</td>
@@ -58,6 +59,7 @@
                                 </div>
                                 </form>
                             </td>
+                            </tr>
                             @else
 
                             @endif

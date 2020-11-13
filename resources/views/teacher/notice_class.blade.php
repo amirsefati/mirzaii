@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="col-md-4 mt-3">
-                    <label for="file"> قابلیت نمایش  :</label>
+                    <label for="file">  رنگ اطلاعیه  :</label>
                     <select name="show" class="form-control" id="">
                         <option value="#92DCE5">آبی</option>
                         <option value="#F2C078">کرمی</option>

@@ -54,16 +54,16 @@
                 <div class="col-md-4 mt-3">
                     <label for="file">  رنگ اطلاعیه  :</label>
                     <select name="show" class="form-control" id="">
-                        <option value="#92DCE5">آبی</option>
-                        <option value="#F2C078">کرمی</option>
-                        <option value="#A5C882">سبرآبی</option>
-                        <option value="#0CA4A5">نمدونم</option>
-                        <option value="#FF8C42">نارنجی</option>
-                        <option value="#DB3069">قرمز</option>
-                        <option value="#7FB069">یه سبز دیگه</option>
-                        <option value="#F9C80E">یه زرد دیگه</option>
-                        <option value="#EE7674">صورتی</option>
-                        <option value="#BDC667">...</option>
+                        <option value="#92DCE5" style="color:#92DCE5">رنگ بندی اطلاعیه</option>
+                        <option value="#F2C078" style="color:#F2C078">رنگ بندی اطلاعیه</option>
+                        <option value="#A5C882" style="color:#A5C882">رنگ بندی اطلاعیه</option>
+                        <option value="#0CA4A5" style="color:#0CA4A5">رنگ بندی اطلاعیه</option>
+                        <option value="#FF8C42" style="color:#FF8C42">رنگ بندی اطلاعیه</option>
+                        <option value="#DB3069" style="color:#DB3069">رنگ بندی اطلاعیه</option>
+                        <option value="#7FB069" style="color:#7FB069">رنگ بندی اطلاعیه</option>
+                        <option value="#F9C80E" style="color:#F9C80E">رنگ بندی اطلاعیه</option>
+                        <option value="#EE7674" style="color:#EE7674">رنگ بندی اطلاعیه</option>
+                        <option value="#BDC667" style="color:#BDC667">رنگ بندی اطلاعیه</option>
 
                         
                     </select>

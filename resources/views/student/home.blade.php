@@ -11,7 +11,7 @@
     <link href="{{asset('css/student.css')}}" rel="stylesheet"></head>
 
 
-    <title>Document</title>
+    <title>مجموعه مدارس دانش و آفرینش</title>
 </head>
 <body>
     <div style="display: none;">
@@ -138,10 +138,13 @@
                 <div class="carousel_school">
                 @foreach($class_notification as $class)
                     <div class="item_in">
-                        <div>
-                            <img src="{{$class->img}}" class="img_notice_school" alt="">
+                        <div class="notice_class_border" style="background:{{$class->show}}">
                         <p class="title_in_school">{{$class->title}}</p>
-                        <p class="desc_in_school"> ... {{substr($class->desc,0,55)}}</p>
+                        <p class="desc_in_school">  {{$class->desc}}</p>
+                        <br/>
+                        <div style="direction: ltr;">
+                        <img src="/images/notice_boy.png" width="50px"  alt="">
+                        </div>
                         </div>
                         
                     </div>

@@ -54,8 +54,18 @@
                 <div class="col-md-4 mt-3">
                     <label for="file"> قابلیت نمایش  :</label>
                     <select name="show" class="form-control" id="">
-                        <option value="1">نمایش</option>
-                        <option value="0">پنهان سازی</option>
+                        <option value="#92DCE5">آبی</option>
+                        <option value="#F2C078">کرمی</option>
+                        <option value="#A5C882">سبرآبی</option>
+                        <option value="#0CA4A5">نمدونم</option>
+                        <option value="#FF8C42">نارنجی</option>
+                        <option value="#DB3069">قرمز</option>
+                        <option value="#7FB069">یه سبز دیگه</option>
+                        <option value="#F9C80E">یه زرد دیگه</option>
+                        <option value="#EE7674">صورتی</option>
+                        <option value="#BDC667">...</option>
+
+                        
                     </select>
                 </div>
 

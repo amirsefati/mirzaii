@@ -245,5 +245,7 @@ Route::prefix('student')->middleware([Studentmidd::class])->group(function(){
 
     Route::post('/update_user_settings_profile',[Student::class,'update_user_settings_profile']);
 
+    Route::post('/upload_exercise_update',[Student::class,'upload_exercise_update']);
+
     
 });

@@ -3,60 +3,131 @@
 @section('content')
 
 @if(strlen($assignment) > 10)
-@if(strlen($assignment->file_doc) > 10)
-@if(App\Models\Exercise::where('user_id',Auth::user()->id)->where('assigment_id',$assignment->id)->count() < 1)
-<form action="/student/upload_exercise" method="post" enctype="multipart/form-data">
-@csrf
-<input type="text" name="course_id" value="{{$course->id}}" hidden>
-<input type="text" name="assignment_id" value="{{$assignment->id}}" hidden>
-<input type="text" name="user_id" value="{{Auth::user()->id}}" hidden>
+    @if(strlen($assignment->file_doc) > 10)
+        @if(App\Models\Exercise::where('user_id',Auth::user()->id)->where('assigment_id',$assignment->id)->count() < 1)
+            <form action="/student/upload_exercise" method="post" enctype="multipart/form-data">
+            @csrf
+            <input type="text" name="course_id" value="{{$course->id}}" hidden>
+            <input type="text" name="assignment_id" value="{{$assignment->id}}" hidden>
+            <input type="text" name="user_id" value="{{Auth::user()->id}}" hidden>
 
-<div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-10">
-        <div class="card mt-3 mb-4">
-            <div class="card-header" style="text-align:right;direction:rtl;background:#F45B69;color:white">آپلود تکلیف</div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-12">
-                        <a href="#exercise">    
-                        ابتدا فایل تمرین را دانلود سپس تکلیف را آپلود کنید
-                        </a>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-10 mt-4">
-                        برای آپلود میتوانید همزمان چندین فایل را انتخاب کنید
-
-                        <div class="custom-file mt-4">
-                            <input type="file" class="custom-file-input" name="file[]" id="file" multiple required>
-                            <label class="custom-file-label" for="customFile">آپلود</label>
-                        </div>
-                        <br><br>
-                        <div class="progress" style="height: 20px;">
-                            <div class="progress-bar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                            0%
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div class="card mt-3 mb-4">
+                        <div class="card-header" style="text-align:right;direction:rtl;background:#F45B69;color:white">آپلود تکلیف</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a href="#exercise">    
+                                    ابتدا فایل تمرین را دانلود سپس تکلیف را آپلود کنید
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        <br>
-                        <div style="text-align: center;">
-                            <input type="submit" name="upload" value="آپلود" class="btn btn-success pl-5 pr-5 uppload" />
-                        </div>
 
-                        <br><br>
-                        <div id="success" class="row" style="direction: rtl;">
-                        </div>
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-10 mt-4">
+                                    برای آپلود میتوانید همزمان چندین فایل را انتخاب کنید
 
+                                    <div class="custom-file mt-4">
+                                        <input type="file" class="custom-file-input" name="file[]" id="file" multiple required>
+                                        <label class="custom-file-label" for="customFile">آپلود</label>
+                                    </div>
+                                    <br><br>
+                                    <div class="progress" style="height: 20px;">
+                                        <div class="progress-bar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                        0%
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div style="text-align: center;">
+                                        <input type="submit" name="upload" value="آپلود" class="btn btn-success pl-5 pr-5 uppload" />
+                                    </div>
+
+                                    <br><br>
+                                    <div id="success" class="row" style="direction: rtl;">
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-
             </div>
-        </div>
-    </div>
-</div>
-</form>
+            </form>
+        @else
+
+        <form action="/student/upload_exercise_update" method="post" enctype="multipart/form-data">
+            @csrf
+            <input type="text" name="course_id" value="{{$course->id}}" hidden>
+            <input type="text" name="assignment_id" value="{{$assignment->id}}" hidden>
+            <input type="text" name="user_id" value="{{Auth::user()->id}}" hidden>
+
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div class="card mt-3 mb-4">
+                        <div class="card-header" style="text-align:right;direction:rtl;background:#FFC759;color:white">اصلاح تکیلف</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                     <p style="font-size: 18px; color:crimson;font-weight: bold;">   شما تکلیف خود را آپلود کرده اید </p>
+                                     <p style="font-size: 16px;">  در صورت <strong>اشتباه</strong> دوباره تکلیف خود را آپلود کنید </p>
+                                     <p style="font-size: 14px;font-weight: bold;">  در غیر این صورت از ارسال مجدد صرف نظر کنید </p>
+                                     @foreach(App\Models\Exercise::where('user_id',Auth::user()->id)->where('assigment_id',$assignment->id)->get() as $exercise)
+                                     
+                                        @foreach(json_decode($exercise->file) as $ex)
+                                            <ul style="direction: rtl;">
+                                                <li>
+                                                <a href="{{$ex}}">
+                                                فایل تمرین شما 
+                                                </a>
+                                                </li>
+                                            </ul>
+                                        @endforeach
+
+                                     @endforeach
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-1"></div>
+                                <div class="col-md-10 mt-4">
+
+                                    برای آپلود میتوانید همزمان چندین فایل را انتخاب کنید
+                                    <small>
+                                    (دوباره تمام تکلیف خود را بارگذاری کنید در صورت آپلود مجدد تکلیف قبلی حذف میگردد)</small>
+                                    <div class="custom-file mt-4">
+                                        <input type="file" class="custom-file-input" name="file[]" id="file" multiple required>
+                                        <label class="custom-file-label" for="customFile">آپلود</label>
+                                    </div>
+                                    <br><br>
+                                    <div class="progress" style="height: 20px;">
+                                        <div class="progress-bar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                                        0%
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div style="text-align: center;">
+                                        <input type="submit" name="upload" value="اصلاح تکلیف" class="btn btn-warning pl-5 pr-5 uppload" />
+                                    </div>
+
+                                    <br><br>
+                                    <div id="success" class="row" style="direction: rtl;">
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+
+
 
 @endif
 @endif

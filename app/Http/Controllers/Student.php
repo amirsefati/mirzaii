@@ -132,4 +132,23 @@ class Student extends Controller
 
             return redirect('/student');
         }
+
+        public function upload_exercise_update(Request $request){
+            $images = [];
+        foreach($request->file('file') as $img){
+            $name = rand(100000000,90000000000).'.'.$img->getClientOriginalExtension();
+            $destinationPath = public_path('/images/exercise/');
+            $img->move($destinationPath, $name);
+            $upload_file = '/images/exercise/' . $name;
+            array_push($images,$upload_file);
+        }
+        $count_file = count($images);
+        Exercise::where('user_id',$request->user_id)->where('course_id',$request->course_id)
+        ->where('assigment_id',$request->assignment_id)
+        ->update([
+            'file' => json_encode($images)
+        ]);
+            return response()->json(['success'=>$count_file]);
+        }
+        
 }

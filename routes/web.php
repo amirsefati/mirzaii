@@ -247,5 +247,7 @@ Route::prefix('student')->middleware([Studentmidd::class])->group(function(){
 
     Route::post('/upload_exercise_update',[Student::class,'upload_exercise_update']);
 
+    Route::get('/karname',[Student::class,'karname']);
+
     
 });

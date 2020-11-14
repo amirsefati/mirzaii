@@ -60,9 +60,9 @@
             <div class="col-md-6"></div>
             <div class="col-md-2 col-4 pt-2">
                 <div style="text-align: center;">
-                <a href="/student/send_question">
+                <a href="/student/karname">
                     <img src="/images/question.png" width="38px" alt=""> &nbsp;
-                    <span class="menu_top"> سوال</span>
+                    <span class="menu_top"> کارنامه</span>
                 </a>
                 </div>
             </div>

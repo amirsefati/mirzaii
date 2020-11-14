@@ -150,5 +150,11 @@ class Student extends Controller
         ]);
             return back();
         }
+
+        public function karname(){
+            $karname = Exercise::where('user_id',Auth::user()->id)->get();
+            return view('student.karname',compact('karname'));
+
+        }
         
 }

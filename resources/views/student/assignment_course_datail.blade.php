@@ -35,11 +35,7 @@
                                         <label class="custom-file-label" for="customFile">آپلود</label>
                                     </div>
                                     <br><br>
-                                    <div class="progress" style="height: 20px;">
-                                        <div class="progress-bar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                                        0%
-                                        </div>
-                                    </div>
+                                    
                                     <br>
                                     <div style="text-align: center;">
                                         <input type="submit" name="upload" value="آپلود" class="btn btn-success pl-5 pr-5 uppload" />
@@ -104,11 +100,7 @@
                                         <label class="custom-file-label" for="customFile">آپلود</label>
                                     </div>
                                     <br><br>
-                                    <div class="progress" style="height: 20px;">
-                                        <div class="progress-bar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                                        0%
-                                        </div>
-                                    </div>
+                                    
                                     <br>
                                     <div style="text-align: center;">
                                         <input type="submit" name="upload" value="اصلاح تکلیف" class="btn btn-warning pl-5 pr-5 uppload" />

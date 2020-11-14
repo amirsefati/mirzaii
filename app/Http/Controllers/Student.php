@@ -112,8 +112,8 @@ class Student extends Controller
             'assigment_id' => $request->assignment_id,
             'file' => json_encode($images)
         ]);
-        return response()->json(['success'=>$count_file]);
-        }
+        return back();
+    }
 
 
         public function settings_profile(){
@@ -142,13 +142,13 @@ class Student extends Controller
             $upload_file = '/images/exercise/' . $name;
             array_push($images,$upload_file);
         }
-        $count_file = count($images);
+
         Exercise::where('user_id',$request->user_id)->where('course_id',$request->course_id)
         ->where('assigment_id',$request->assignment_id)
         ->update([
             'file' => json_encode($images)
         ]);
-            return response()->json(['success'=>$count_file]);
+            return back();
         }
         
 }

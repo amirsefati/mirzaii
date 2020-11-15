@@ -456,6 +456,21 @@ class Teacher extends Controller
         return view('teacher.show_all_exercise',compact('exercise'));
     }
 
+    public function show_all_exercise_backup(){
+        $list_assginment = Assigment::where('teacher_created',Auth::user()->id)->whereNotNull('file_doc')->get();
+        $assigment_ids = [];
+        foreach($list_assginment as $assigment){
+            array_push($assigment_ids,$assigment->id);
+        }
+        $exercise = [];
+        foreach($assigment_ids as $id){
+            $exercise_item = Exercise::where('assigment_id',$id)->first();
+            array_push($exercise,$exercise_item);
+        }
+
+        return view('teacher.show_all_exercise_backup',compact('exercise'));
+    }
+
     public function add_mark_to_student_ok(Request $request){
         $request->validate([
             'mark_send' => 'required'

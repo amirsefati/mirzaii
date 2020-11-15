@@ -157,9 +157,16 @@
                                 <li>
                                     <a href="/teacher/show_all_exercise" >
                                         <i class="metismenu-icon pe-7s-note2"></i>
-                                         تکالیف
+                                         تکالیف تصحیح نشده
                                     </a>
                                 </li>   
+
+                                <li>
+                                    <a href="/teacher/show_all_exercise_backup" >
+                                        <i class="metismenu-icon pe-7s-note2"></i>
+                                         تکالیف
+                                    </a>
+                                </li>  
 
                                 <li>
                                     <a href="/teacher/online_video" >

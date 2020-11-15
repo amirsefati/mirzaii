@@ -215,6 +215,8 @@ Route::prefix('teacher')->middleware([Teachermidd::class])->group(function(){
     Route::get('delete_course_from_class/{course_id}/{class_id}',[Teacher::class,'delete_course_from_class']);
     
     Route::get('show_all_exercise',[Teacher::class,'show_all_exercise']);
+    Route::get('show_all_exercise_backup',[Teacher::class,'show_all_exercise_backup']);
+
     
     Route::post('add_mark_to_student_ok',[Teacher::class,'add_mark_to_student_ok']);
 
@@ -225,7 +227,7 @@ Route::prefix('teacher')->middleware([Teachermidd::class])->group(function(){
     Route::get('edit_online_video/{id}',[Teacher::class,'edit_online_video']);
     Route::post('edit_online_video',[Teacher::class,'edit_online_video_post']);
 
-
+    
     
 });
 

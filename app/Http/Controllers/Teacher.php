@@ -476,8 +476,17 @@ class Teacher extends Controller
             'mark_send' => 'required'
         ]);
 
-        Exercise::where('id',$request->exercise_id)->update(['mark'=>$request->mark_send]);
-        return redirect('/teacher/show_all_exercise');
+        Exercise::where('id',$request->exercise_id)->update(
+            ['mark'=>$request->mark_send,
+            'status' => $request->desc]
+        );
+        if($request->page == 'backup'){
+            return redirect('/teacher/show_all_exercise_backup');
+
+        }else{
+            return redirect('/teacher/show_all_exercise');
+
+        }
     }
 
     public function online_video(){

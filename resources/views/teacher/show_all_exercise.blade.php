@@ -20,9 +20,11 @@
                         <tr>
                         <th style="width:10%;"> نام دانش آموز</th>
                         <th style="width:20%;">  نام درس</th>
-                        <th style="width:20%;">  عنوان جلسه </th>
-                        <th style="width:20%;">  تکلیف </th>
-                        <th style="width:20%;">  ارزشیابی توصیفی  </th>
+                        <th style="width:10%;">  عنوان جلسه </th>
+                        <th style="width:10%;">  تکلیف </th>
+                        <th style="width:15%;">  ارزشیابی توصیفی  </th>
+                        <th style="width:20%;">   توضیحات  </th>
+                        <th style="width:5%;">   ثبت  </th>
 
                         </tr>
                     </thead>
@@ -42,8 +44,6 @@
                                 <form action="/teacher/add_mark_to_student_ok" method="POST">
                                 @csrf
                                 <input type="text" name="exercise_id" value="{{$ex->id}}" hidden>
-                                <div class="row">
-                                    <div class="col-md-8">
                                         <select name="mark_send" class="form-control" id="">
                                             <option value="خیلی خوب">خیلی خوب</option>
                                             <option value="خوب">خوب</option>
@@ -51,13 +51,17 @@
                                             <option value="نیاز به تلاش بیشتر">نیاز به تلاش بیشتر</option>
 
                                         </select>
-                                    </div>
 
-                                    <div class="col-md-4">
-                                        <button class="btn btn-success">ثبت</button>
-                                    </div>
-                                </div>
-                                </form>
+                                    
+                            </td>
+                            <td>
+                            <input type="text" name="desc" class="form-control" placeholder="توضیحات تکمیلی">
+                            
+                            </td>
+                            <td>
+                            <button class="btn btn-success">ثبت</button>
+                            </form>
+
                             </td>
                             </tr>
                             @else

@@ -22,7 +22,7 @@
                 </tr>
                 @foreach($karname as $dars)
                     <tr>
-                        <td></td>
+                        <td>{{$dars->status}}</td>
                         <td>
                             @if(strlen($dars->mark) > 3 )
                                 <p style="font-size: 18px;">{{$dars->mark}}</p>

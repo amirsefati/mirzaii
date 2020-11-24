@@ -12,10 +12,19 @@
 
 
             <div class="card-body">
-                <form action="/teacher/add_mark_to_student_ok" method="POST">
+                <form action="/teacher/select_search" method="POST">
+                @csrf
+                <div class="row">
+                    <div class="col-md-11">
+                        <input type="text" name="search" value="{{session('key', '')}}" id="myInput" onkeyup="myFunction3()" placeholder=" جست جوی بر اساس عنوان جلسه  ">
 
-                <input type="text" name="search" value="{{session('key', '')}}" id="myInput" onkeyup="myFunction()" placeholder=" جست جوی نام درس ">
+                    </div>
+                    <div class="col-md-1">  
+                        <button class="btn btn-primary">ثبت درس</button>
 
+                    </div>
+                </div>
+                </form>
                 <div style="overflow-x: auto;">
 
                 <table id="myTable">
@@ -47,6 +56,8 @@
                                 @endforeach
                             </td>
                             <td>
+                            <form action="/teacher/add_mark_to_student_ok" method="POST">
+
                                 @csrf
                                 <input type="text" name="exercise_id" value="{{$ex->id}}" hidden>
                                         <select name="mark_send" class="form-control" id="">
@@ -59,6 +70,7 @@
 
                                     
                             </td>
+
                             <td>
                             <input type="text" name="desc" class="form-control" placeholder="توضیحات تکمیلی">
                             

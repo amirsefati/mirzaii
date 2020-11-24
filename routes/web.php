@@ -229,6 +229,8 @@ Route::prefix('teacher')->middleware([Teachermidd::class])->group(function(){
 
     Route::get('delete_exrcisebt/{id}',[Teacher::class,'delete_exrcisebt']);
 
+    Route::post('select_search',[Teacher::class,'select_search']);
+
     
     
 });

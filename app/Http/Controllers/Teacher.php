@@ -484,7 +484,6 @@ class Teacher extends Controller
             return redirect('/teacher/show_all_exercise_backup');
 
         }else{
-            session(['key' => $request->search]);
             return redirect('/teacher/show_all_exercise');
 
         }
@@ -519,6 +518,10 @@ class Teacher extends Controller
         return redirect('/teacher/show_all_exercise_backup');
     }
 
+    public function select_search(Request $request){
+        session(['key' => $request->search]);
+        return redirect('/teacher/show_all_exercise');
+    }
     
 
 }

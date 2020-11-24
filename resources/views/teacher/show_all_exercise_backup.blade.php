@@ -11,7 +11,7 @@
             </div>
 
             <div class="card-body">
-                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="جست و جو بر اساس نام ">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="جست و جو بر اساس عنوان جلسه ">
                 <div style="overflow-x: auto;">
 
                 <table id="myTable">

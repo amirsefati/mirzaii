@@ -10,7 +10,6 @@
                 لیست تمام تکالیف
             </div>
 
-
             <div class="card-body">
                 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="جست و جو بر اساس نام ">
                 <div style="overflow-x: auto;">
@@ -19,12 +18,12 @@
                     <thead>
                         <tr>
                         <th style="width:10%;"> نام دانش آموز</th>
-                        <th style="width:20%;">  نام درس</th>
+                        <th style="width:15%;">  نام درس</th>
                         <th style="width:10%;">  عنوان جلسه </th>
                         <th style="width:10%;">  تکلیف </th>
                         <th style="width:20%;">  ارزشیابی توصیفی  </th>
                         <th style="width:20%;">   توضیحات  </th>
-                        <th style="width:10%;">    ویرایش   </th>
+                        <th style="width:15;">    ویرایش   </th>
 
                         </tr>
                     </thead>
@@ -64,7 +63,9 @@
                             <td>
                             <button class="btn btn-warning">{{$ex->mark}}</button>
                                 </form>
-
+                            <a href="/teacher/delete_exrcisebt/{{$ex->id}}">
+                                <button class="btn btn-danger p-1">حذف</button>
+                            </a>
                             </td>
                             </tr>
                             @else

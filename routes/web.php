@@ -227,6 +227,8 @@ Route::prefix('teacher')->middleware([Teachermidd::class])->group(function(){
     Route::get('edit_online_video/{id}',[Teacher::class,'edit_online_video']);
     Route::post('edit_online_video',[Teacher::class,'edit_online_video_post']);
 
+    Route::get('delete_exrcisebt/{id}',[Teacher::class,'delete_exrcisebt']);
+
     
     
 });

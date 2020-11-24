@@ -31,8 +31,10 @@
                             @endif
 
                         </td>
-                        <td>{{App\Models\Assigment::where('id',$dars->assigment_id)->first()->title}}</td>
-                        <td>{{App\Models\Course::where('id',$dars->course_id)->first()->title}}</td>
+                        @if(App\Models\Assigment::where('id',$dars->assigment_id)->count() > 0)
+                            <td>{{App\Models\Assigment::where('id',$dars->assigment_id)->first()->title}}</td>
+                            <td>{{App\Models\Course::where('id',$dars->course_id)->first()->title}}</td>
+                        @endif
 
                    </tr>
                 

@@ -12,7 +12,10 @@
 
 
             <div class="card-body">
-                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="جست و جو بر اساس نام ">
+                <form action="/teacher/add_mark_to_student_ok" method="POST">
+
+                <input type="text" name="search" value="{{session('key', '')}}" id="myInput" onkeyup="myFunction()" placeholder=" جست جوی نام درس ">
+
                 <div style="overflow-x: auto;">
 
                 <table id="myTable">
@@ -29,8 +32,11 @@
                         </tr>
                     </thead>
                     <tbody>
+
                         @foreach($exercise as $ex)
+
                             @if(strlen($ex) > 10)
+
                             <tr>
                             <td>{{App\Models\User::where('id',$ex->user_id)->first()->name}} {{App\Models\User::where('id',$ex->user_id)->first()->family}}</td>
                             <td>{{App\Models\Course::where('id',$ex->course_id)->first()->title}} - {{App\Models\Course::where('id',$ex->course_id)->first()->grade}}</td>
@@ -41,7 +47,6 @@
                                 @endforeach
                             </td>
                             <td>
-                                <form action="/teacher/add_mark_to_student_ok" method="POST">
                                 @csrf
                                 <input type="text" name="exercise_id" value="{{$ex->id}}" hidden>
                                         <select name="mark_send" class="form-control" id="">

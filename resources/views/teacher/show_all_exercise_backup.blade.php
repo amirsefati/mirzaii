@@ -47,7 +47,7 @@
                                 <input type="text" name="exercise_id" value="{{$ex->id}}" hidden>
                                  
                                         <select name="mark_send" class="form-control" id="" required>
-                                            <option value="">انتخاب کنید ...</option>
+                                            <option value="{{$ex->mark}}"> ثبت شده ( {{$ex->mark}} )</option>
                                             <option value="خیلی خوب">خیلی خوب</option>
                                             <option value="خوب">خوب</option>
                                             <option value="قابل قبول">قابل قبول</option>
@@ -58,10 +58,10 @@
                                     
                             </td>
                             <td>
-                                <input type="text" class="form-control" name="desc" placeholder="{{$ex->status}}">
+                                <input type="text" class="form-control" name="desc" value="{{$ex->status}}">
                             </td>
                             <td>
-                            <button class="btn btn-warning">{{$ex->mark}}</button>
+                            <button class="btn btn-warning">ثبت تغییرات</button>
                                 </form>
                             <a href="/teacher/delete_exrcisebt/{{$ex->id}}">
                                 <button class="btn btn-danger p-1">حذف</button>

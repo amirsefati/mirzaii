@@ -160,7 +160,7 @@ Route::prefix('manager')->middleware([Managermidd::class])->group(function(){
     Route::get('all_exercise',[Manager::class,'all_exercise']);
 
     
-    
+    Route::post('select_search',[Manager::class,'select_search']);
     
 
     

@@ -12,7 +12,7 @@
 
 
             <div class="card-body">
-                <form action="/teacher/select_search" method="POST">
+                <form action="/manager/select_search" method="POST">
                 @csrf
                 <div class="row">
                     <div class="col-md-11">
@@ -53,7 +53,9 @@
                             @if(strlen(App\Models\Assigment::where('id',$ex->assigment_id)->first()) > 5)
                             <td>{{App\Models\Assigment::where('id',$ex->assigment_id)->first()->title}}</td>
                             @else
-                            <td>حذف شده</td>
+                            <td>
+                                <p style="color:red">حذف شده</p>
+                            </td>
                             @endif
                             <td>
                                 @foreach(json_decode($ex->file) as $file1)

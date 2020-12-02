@@ -943,4 +943,9 @@ class Manager extends Controller
         return view('manager.all_exercise',compact('all_exercise'));
     }
 
+    public function select_search(){
+        session(['key' => $request->search]);
+        return redirect('/manager/all_exercise');  
+    }
+
 }

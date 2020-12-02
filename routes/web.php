@@ -157,9 +157,10 @@ Route::prefix('manager')->middleware([Managermidd::class])->group(function(){
 
     Route::get('list_assigments',[Manager::class,'list_assigments']);
 
-    
-    
+    Route::get('all_exercise',[Manager::class,'all_exercise']);
 
+    
+    
     
 
     

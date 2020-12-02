@@ -349,6 +349,12 @@
                                             </a>
                                         </li>
                                     </ul>
+                                    <li>
+                                    <a href="/manager/all_exercise" >
+                                        <i class="metismenu-icon pe-7s-rocket"></i>
+                                         تمرینات  
+                                    </a>
+                                    </li>
                                 </li>
 
                                 <li class="app-sidebar__heading">پاسخ ها

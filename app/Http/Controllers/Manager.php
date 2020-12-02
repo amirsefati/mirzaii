@@ -938,4 +938,9 @@ class Manager extends Controller
         return view('manager.list_assigments',compact('assignments'));
     }
 
+    public function all_exercise(){
+        $all_exercise = Exercise::all();
+        return view('manager.all_exercise',compact('all_exercise'));
+    }
+
 }

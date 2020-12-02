@@ -63,14 +63,9 @@
                             <td>
 
 
-                                @csrf
-                                <input type="text" name="exercise_id" value="{{$ex->id}}" hidden>
                                         <select name="mark_send" class="form-control" id="">
-                                            <option value="خیلی خوب">خیلی خوب</option>
-                                            <option value="خوب">خوب</option>
-                                            <option value="قابل قبول">قابل قبول</option>
-                                            <option value="نیاز به تلاش بیشتر">نیاز به تلاش بیشتر</option>
-
+                                            <option>{{$ex->mark}}</option>
+                               
                                         </select>
 
                                     

@@ -50,7 +50,11 @@
                             <td>{{App\Models\User::where('id',$ex->user_id)->first()->name}} {{App\Models\User::where('id',$ex->user_id)->first()->family}}</td>
                             <td>{{App\Models\Course::where('id',$ex->course_id)->first()->course_to_classify[0]->name}}</td>
                             <td>{{App\Models\Course::where('id',$ex->course_id)->first()->title}} - {{App\Models\Course::where('id',$ex->course_id)->first()->grade}}</td>
+                            @if(strlen(App\Models\Assigment::where('id',$ex->assigment_id)->first()) > 5)
                             <td>{{App\Models\Assigment::where('id',$ex->assigment_id)->first()->title}}</td>
+                            @else
+                            <td>حذف شده</td>
+                            @endif
                             <td>
                                 @foreach(json_decode($ex->file) as $file1)
                                     <a href="{{$file1}}">دانلود</a>

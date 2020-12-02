@@ -449,7 +449,7 @@ class Teacher extends Controller
         }
         $exercise = [];
         foreach($assigment_ids as $id){
-            $exercise_item = Exercise::where('assigment_id',$id)->whereNull('mark')->first();
+            $exercise_item = Exercise::where('assigment_id',$id)->whereNull('mark')->get();
             array_push($exercise,$exercise_item);
         }
 
@@ -464,7 +464,7 @@ class Teacher extends Controller
         }
         $exercise = [];
         foreach($assigment_ids as $id){
-            $exercise_item = Exercise::where('assigment_id',$id)->first();
+            $exercise_item = Exercise::where('assigment_id',$id)->get();
             array_push($exercise,$exercise_item);
         }
 

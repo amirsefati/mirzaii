@@ -28,8 +28,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($exercise as $ex)
-                            @if(strlen($ex) > 10)
+                    @foreach($exercise as $ex1)
+                        @foreach($ex1 as $ex)
+
+                        @if(strlen($ex) > 10)
                             <tr>
                             <td>{{App\Models\User::where('id',$ex->user_id)->first()->name}} {{App\Models\User::where('id',$ex->user_id)->first()->family}}</td>
                             <td>{{App\Models\Course::where('id',$ex->course_id)->first()->title}} - {{App\Models\Course::where('id',$ex->course_id)->first()->grade}}</td>
@@ -71,6 +73,7 @@
                             @else
 
                             @endif
+                        @endforeach
                         @endforeach
                     </tbody>
                 </table>

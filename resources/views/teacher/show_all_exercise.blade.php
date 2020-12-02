@@ -42,8 +42,8 @@
                     </thead>
                     <tbody>
 
-                        @foreach($exercise as $ex)
-
+                    @foreach($exercise as $ex1)
+                        @foreach($ex1 as $ex)
                             @if(strlen($ex) > 10)
 
                             <tr>
@@ -85,6 +85,8 @@
 
                             @endif
                         @endforeach
+                        @endforeach
+
                     </tbody>
                 </table>
                 </div>

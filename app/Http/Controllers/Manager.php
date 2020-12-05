@@ -939,13 +939,18 @@ class Manager extends Controller
     }
 
     public function all_exercise(){
-        $all_exercise = Exercise::all();
+        $all_exercise = Exercise::orderBy('created_at','DESC')->get();
         return view('manager.all_exercise',compact('all_exercise'));
     }
 
     public function select_search(Request $request){
         session(['key' => $request->search]);
         return redirect('/manager/all_exercise');  
+    }
+
+    public function delete_exercise($id){
+        Exercise::find($id)->delete();
+        return redirect('/manager/all_exercise');
     }
 
 }

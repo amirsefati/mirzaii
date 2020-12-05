@@ -36,7 +36,8 @@
                         <th style="width:10%;">  عنوان جلسه </th>
                         <th style="width:10%;">  تکلیف </th>
                         <th style="width:15%;">  ارزشیابی توصیفی  </th>
-                        <th style="width:15%;">   توضیحات  </th>
+                        <th style="width:15%">   توضیحات  </th>
+                        <th style="width:5%;">  حذف  </th>
 
                         </tr>
                     </thead>
@@ -77,7 +78,11 @@
                             <input type="text" name="desc" class="form-control" placeholder="توضیحات تکمیلی">
                             
                             </td>
-                       
+                            <td>
+                                <a href="/manager/delete_exercise/{{$ex->id}}">
+                                    <button class="btn btn-danger">حذف</button>
+                                </a>
+                            </td>
                             </tr>
                             @else
 

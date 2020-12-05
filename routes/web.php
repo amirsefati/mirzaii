@@ -162,7 +162,9 @@ Route::prefix('manager')->middleware([Managermidd::class])->group(function(){
     
     Route::post('select_search',[Manager::class,'select_search']);
     
+    Route::get('delete_exercise/{id}',[Manager::class,'delete_exercise']);
 
+    
     
 });
 

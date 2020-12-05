@@ -13,7 +13,8 @@
                     <th style="width:20%;">نام</th>
                     <th style="width:15%;">نام پدر</th>
                     <th style="width:15%;">کد ملی </th>
-                    <th style="width:40%;">تلفن</th>
+                    <th style="width:35%;">تلفن</th>
+                    <th style="width:5%;">پسورد</th>
                     <th style="width:5%;">حذف</th>
 
                 </tr>
@@ -30,6 +31,7 @@
                     <td>{{$student->father_name}}</td>
                     <td>{{$student->identity_code}}</td>
                     <td>پدر : {{$student->phone_father}} - مادر : {{$student->phone_mother}} - منزل : {{$student->phone}}</td>
+                    <td style="font-size: 9px;">{{$student->password}}</td>
                     <td>
                         <a href="/manager/delete_student_girl/{{$student->id}}">
                             <img src="/images/delete.png" width="25px" alt="">

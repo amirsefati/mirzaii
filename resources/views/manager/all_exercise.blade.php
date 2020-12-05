@@ -16,6 +16,8 @@
                 @csrf
                 <div class="row">
                     <div class="col-md-11">
+                        <input type="text" name="search2" value="{{session('key2', '')}}" id="myInput4" onkeyup="myFunction4()" placeholder=" جست جوی بر اساس کلاس  ">
+
                         <input type="text" name="search" value="{{session('key', '')}}" id="myInput" onkeyup="myFunction3()" placeholder=" جست جوی بر اساس عنوان جلسه  ">
 
                     </div>

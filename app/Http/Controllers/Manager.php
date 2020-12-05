@@ -945,6 +945,8 @@ class Manager extends Controller
 
     public function select_search(Request $request){
         session(['key' => $request->search]);
+        session(['key2' => $request->search2]);
+
         return redirect('/manager/all_exercise');  
     }
 

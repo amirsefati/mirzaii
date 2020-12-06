@@ -939,15 +939,23 @@ class Manager extends Controller
     }
 
     public function all_exercise(){
-        $all_exercise = Exercise::orderBy('created_at','DESC')->get();
-        return view('manager.all_exercise',compact('all_exercise'));
+        $all_class = Classify::where('kind',Auth::user()->gender)->get();
+        return view('manager.all_exercise',compact('all_class'));
     }
 
-    public function select_search(Request $request){
-        session(['key' => $request->search]);
-        session(['key2' => $request->search2]);
+    public function all_exercise_class($id){
+        $course_list = Classify::find($id)->classify_to_course;
+        return view('manager.all_exercise_class',compact(['course_list','id']));
+    }
+    public function all_exercise_class_course($id){
+        $assignment_list = Course::find($id)->course_to_assigment;
+        return view('manager.all_exercise_class_course',compact(['assignment_list','id']));
 
-        return redirect('/manager/all_exercise');  
+    }
+    public function all_exercise_class_course_assignment($id){
+        $exercise_list = Exercise::where('assigment_id',$id)->get();
+        return view('manager.all_exercise_class_course_assignment',compact(['exercise_list','id']));
+
     }
 
     public function delete_exercise($id){

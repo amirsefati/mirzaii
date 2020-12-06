@@ -158,6 +158,9 @@ Route::prefix('manager')->middleware([Managermidd::class])->group(function(){
     Route::get('list_assigments',[Manager::class,'list_assigments']);
 
     Route::get('all_exercise',[Manager::class,'all_exercise']);
+    Route::get('all_exercise/{class}',[Manager::class,'all_exercise_class']);
+    Route::get('all_exercise/course/{course}',[Manager::class,'all_exercise_class_course']);
+    Route::get('all_exercise/course/assignment/{course}',[Manager::class,'all_exercise_class_course_assignment']);
 
     
     Route::post('select_search',[Manager::class,'select_search']);

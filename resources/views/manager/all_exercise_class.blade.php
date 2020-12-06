@@ -10,7 +10,7 @@
                لیست  دروس کلاس
             </div>
             <div class="pr-3 pt-2">
-                 کلاس {{App\Models\Classify::find($id)->name}} 
+                <a href="/manager/all_exercise/{{App\Models\Classify::find($id)->id}}"> کلاس {{App\Models\Classify::find($id)->name}} </a>
 
             </div>
 

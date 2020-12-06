@@ -10,7 +10,7 @@
                 لیست تکلیف ها درس ({{App\Models\Course::find($id)->title}})
             </div>
             <div class="pr-3 pt-2">
-             کلاس {{App\Models\Course::find($id)->course_to_classify[0]->name}} / درس {{App\Models\Course::find($id)->title}} {{App\Models\Course::find($id)->grade}}
+            <a href="/manager/all_exercise/{{App\Models\Course::find($id)->course_to_classify[0]->id}}"> کلاس {{App\Models\Course::find($id)->course_to_classify[0]->name}}</a> / <a href="/manager/all_exercise/{{App\Models\Course::find($id)->id}}"> درس {{App\Models\Course::find($id)->title}} {{App\Models\Course::find($id)->grade}}</a>
 
             </div>
 

@@ -23,6 +23,8 @@
                         <th style="width:10%;">  تکلیف </th>
                         <th style="width:20%;">  ارزشیابی توصیفی  </th>
                         <th style="width:20%;">   توضیحات  </th>
+                        <th style="width:10%;">   صوت  </th>
+
                         <th style="width:15;">    ویرایش   </th>
 
                         </tr>
@@ -49,7 +51,7 @@
                                 <input type="text" name="exercise_id" value="{{$ex->id}}" hidden>
                                  
                                         <select name="mark_send" class="form-control" id="" required>
-                                            <option value="{{$ex->mark}}"> ثبت شده ( {{$ex->mark}} )</option>
+                                            <option value="{{$ex->mark}}">  {{$ex->mark}} (ثبت شده )</option>
                                             <option value="خیلی خوب">خیلی خوب</option>
                                             <option value="خوب">خوب</option>
                                             <option value="قابل قبول">قابل قبول</option>
@@ -61,6 +63,12 @@
                             </td>
                             <td>
                                 <input type="text" class="form-control" name="desc" value="{{$ex->status}}">
+                            </td>
+                            <td>
+                            <audio controls>
+                            <source src="{{$ex->etc_1}}" type="audio/ogg">
+                            Your browser does not support the audio element.
+                            </audio>
                             </td>
                             <td>
                             <button class="btn btn-warning">ثبت تغییرات</button>

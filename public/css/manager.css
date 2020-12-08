@@ -140,3 +140,9 @@ body{
     /* Add a grey background color to the table header and on hover */
     background-color: #f1f1f1;
   }
+
+  .audio_control_recorder_sefati{
+      border: .4px solid gray;
+      padding: 10px;
+      border-radius: 10px;
+  }

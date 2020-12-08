@@ -12,6 +12,6 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        //
+        '/teacher/add_mark_to_student_ok_audio'
     ];
 }

@@ -13,6 +13,7 @@
 
             <div class="card-body">
                 <form action="/teacher/select_search" method="POST">
+                
                 @csrf
                 <div class="row">
                     <div class="col-md-11">
@@ -47,7 +48,8 @@
                             @if(strlen($ex) > 10)
 
                             <tr>
-                            <td>{{App\Models\User::where('id',$ex->user_id)->first()->name}} {{App\Models\User::where('id',$ex->user_id)->first()->family}}</td>
+                            <td><a href="/teacher/show_all_exercise/{{$ex->id}}">
+                                {{App\Models\User::where('id',$ex->user_id)->first()->name}} {{App\Models\User::where('id',$ex->user_id)->first()->family}}</a></td>
                             <td>{{App\Models\Course::where('id',$ex->course_id)->first()->title}} - {{App\Models\Course::where('id',$ex->course_id)->first()->grade}}</td>
                             <td>{{App\Models\Assigment::where('id',$ex->assigment_id)->first()->title}}</td>
                             <td>

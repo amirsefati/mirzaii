@@ -522,6 +522,26 @@ class Teacher extends Controller
         session(['key' => $request->search]);
         return redirect('/teacher/show_all_exercise');
     }
-    
+
+    public function show_all_exercise_audio($id){
+        $ex = Exercise::where('id',$id)->first();
+        return view('teacher.show_all_exercise_audio',compact('ex'));
+    }
+
+    public function add_mark_to_student_ok_audio(Request $request){
+            $doc = $request->file('audio_data');
+            $name = time().'.' . '.wav';
+            $destinationPath = public_path('/audio_file/');
+            $doc->move($destinationPath, $name);
+            $file = '/audio_file/' . $name;
+            
+        Exercise::where('id',$request->id)->update([
+            'mark'=>$request->mark,
+            'status' => $request->desc,
+            'etc_1' => $file,
+        ]);
+
+        return '200';
+    }
 
 }

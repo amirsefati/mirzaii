@@ -13,6 +13,8 @@
 
             <table class="table" style="width:100%" style="direction: rtl;">
                 <tr class="header" >
+                    <th style="width:15%;">صوت</th>
+
                     <th style="width:15%;">توضیحات</th>
                     <th style="width:15%;">نمره</th>
                     <th style="width:30%;">عنوان تمرین</th>
@@ -22,6 +24,12 @@
                 </tr>
                 @foreach($karname as $dars)
                     <tr>
+                        <td>
+                            <audio controls>
+                            <source src="{{$dars->etc_1}}" type="audio/ogg">
+                            Your browser does not support the audio element.
+                            </audio>
+                        </td>
                         <td>{{$dars->status}}</td>
                         <td>
                             @if(strlen($dars->mark) > 3 )

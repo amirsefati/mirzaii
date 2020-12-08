@@ -44,6 +44,7 @@
                     <div class="col-md-4">
                         <label for="mark_send">ارسال توضیحات</label>
                         <select id="markww" class="form-control" id="">
+                            <option value="{{$ex->mark}}">{{$ex->mark}} (انتخاب شده)</option>
                             <option value="خیلی خوب">خیلی خوب</option>
                             <option value="خوب">خوب</option>
                             <option value="قابل قبول">قابل قبول</option>
@@ -53,7 +54,7 @@
 
                     <div class="col-md-8">
                         <label for="mark_send">ارسال توضیحات کامل</label>
-                        <input type="text" id="descww"  class="form-control">
+                        <input type="text" id="descww" value="{{$ex->status}}"   class="form-control">
                         <input type="text" id="id_f" value="{{$ex->id}}" hidden>
                         
                     </div>

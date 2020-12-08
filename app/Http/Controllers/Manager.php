@@ -960,7 +960,7 @@ class Manager extends Controller
 
     public function delete_exercise($id){
         Exercise::find($id)->delete();
-        return redirect('/manager/all_exercise');
+        return back();
     }
 
 }

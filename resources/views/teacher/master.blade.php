@@ -320,7 +320,7 @@ $('#date3-1').MdPersianDateTimePicker({
         
         });
 </script>
-<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+<script src="{{asset('js/recorder.js')}}"></script>
 <script>
 //webkitURL is deprecated but nevertheless 
 URL = window.URL || window.webkitURL;
@@ -371,6 +371,7 @@ navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
     //start the recording process 
     rec.record()
     console.log("Recording started");
+    document.getElementById('is_recording').textContent = "...در حال ضبط کردن"
 }).catch(function(err) {
     //enable the record button if getUserMedia() fails 
     recordButton.disabled = false;
@@ -380,6 +381,8 @@ navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
 }
 
 function pauseRecording() {
+    document.getElementById('is_recording').textContent = "وقفه در ضبط کردن"
+
     console.log("pauseButton clicked rec.recording=", rec.recording);
     if (rec.recording) {
         //pause 
@@ -393,6 +396,8 @@ function pauseRecording() {
 }
 
 function stopRecording() {
+    document.getElementById('is_recording').textContent = "اتمام صوت"
+
     console.log("stopButton clicked");
     //disable the stop button, enable the record too allow for new recordings 
     stopButton.disabled = true;

@@ -69,6 +69,7 @@
                                 <button class="btn btn-warning" type="button" id="pauseButton" disabled>وقفه</button>
                                 <button class="btn btn-danger"  type="button" id="stopButton" disabled>اتمام ضبط</button>
                             </div>
+                            <p id="is_recording"></p>
                             <br>
                             <p>فایل ضبط شده</p>
                             <ol id="recordingsList"></ol>

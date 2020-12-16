@@ -458,7 +458,7 @@ function createDownloadLink(blob) {
 
         xhr.open("POST", "/teacher/add_mark_to_student_ok_audio", true);
         xhr.send(fd);
-        window.location.replace('/teacher/show_all_exercise')
+        // window.location.replace('/teacher/show_all_exercise')
     })
     li.appendChild(document.createTextNode(" ")) //add a space in between 
     li.appendChild(upload) //add the upload link to li

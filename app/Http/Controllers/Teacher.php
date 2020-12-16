@@ -530,11 +530,11 @@ class Teacher extends Controller
 
     public function add_mark_to_student_ok_audio(Request $request){
             $doc = $request->file('audio_data');
-            $name = time().'.' . '.wav';
+            $name = time().'.' . 'wav';
             $destinationPath = public_path('/audio_file/');
             $doc->move($destinationPath, $name);
             $file = '/audio_file/' . $name;
-            
+
         Exercise::where('id',$request->id)->update([
             'mark'=>$request->mark,
             'status' => $request->desc,
